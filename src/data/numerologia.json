@@ -1,0 +1,135 @@
+{
+    "numerologia_1_9": [
+      {
+        "numero": 1,
+        "arquetipo": "El Lider",
+        "energia_principal": "Inicio, individualidad, accion, voluntad.",
+        "descripcion_breve": "Impulsa a abrir caminos, tomar decisiones y liderar con valentia.",
+        "caracteristicas_generales": ["independiente", "directo", "pionero", "competitivo", "orientado a objetivos"],
+        "fortalezas": ["liderazgo", "iniciativa", "confianza", "determinacion", "capacidad de empezar de cero"],
+        "debilidades": ["ego", "impaciencia", "terquedad", "autoritarismo", "dificultad para pedir ayuda"],
+        "aprendizaje_clave": "Liderar sin imponerse: convertir la fuerza en inspiracion y servicio.",
+        "sombra": "Necesidad de control o de tener la razon.",
+        "relaciones": "Busca admiracion y libertad; aprende a escuchar y a compartir protagonismo.",
+        "trabajo_dinero": "Excelente para emprender, vender y dirigir; debe evitar decisiones impulsivas.",
+        "palabras_clave": ["inicio", "liderazgo", "accion", "yo", "valentia"]
+      },
+      {
+        "numero": 2,
+        "arquetipo": "El Mediador",
+        "energia_principal": "Cooperacion, sensibilidad, equilibrio, vinculos.",
+        "descripcion_breve": "Invita a unir, escuchar y construir paz a traves de alianzas.",
+        "caracteristicas_generales": ["empatico", "diplomatico", "receptivo", "paciente", "colaborador"],
+        "fortalezas": ["cooperacion", "intuicion emocional", "tacto", "escucha", "trabajo en equipo"],
+        "debilidades": ["indecision", "dependencia afectiva", "miedo al conflicto", "hipersensibilidad", "complacencia"],
+        "aprendizaje_clave": "Poner limites: amar y colaborar sin perderse a si mismo.",
+        "sombra": "Callar por miedo a incomodar; resentimiento acumulado.",
+        "relaciones": "Necesita armonia y seguridad; prospera con comunicacion clara y limites sanos.",
+        "trabajo_dinero": "Brilla en roles de soporte, negociacion y servicio; le conviene decidir con firmeza.",
+        "palabras_clave": ["alianza", "equilibrio", "pareja", "escucha", "armonia"]
+      },
+      {
+        "numero": 3,
+        "arquetipo": "El Creativo",
+        "energia_principal": "Expresion, alegria, comunicacion, creatividad.",
+        "descripcion_breve": "Potencia el carisma, la expresion artistica y la capacidad de inspirar con la palabra.",
+        "caracteristicas_generales": ["sociable", "ingenioso", "expresivo", "optimista", "curioso"],
+        "fortalezas": ["comunicacion", "creatividad", "humor", "carisma", "capacidad de motivar"],
+        "debilidades": ["dispersión", "superficialidad", "exceso", "procrastinacion", "buscar aprobacion"],
+        "aprendizaje_clave": "Convertir talento en resultados: disciplina para sostener lo que se empieza.",
+        "sombra": "Evitar el vacio interno con ruido, fiestas o validacion externa.",
+        "relaciones": "Necesita juego y comunicacion; debe cuidar promesas y consistencia.",
+        "trabajo_dinero": "Ideal para marketing, ventas, contenido, arte; requiere sistema y foco.",
+        "palabras_clave": ["expresion", "creatividad", "comunicacion", "alegria", "carisma"]
+      },
+      {
+        "numero": 4,
+        "arquetipo": "El Constructor",
+        "energia_principal": "Orden, estructura, disciplina, estabilidad.",
+        "descripcion_breve": "Enfoca en construir bases solidas, procesos y resultados sostenibles.",
+        "caracteristicas_generales": ["metodico", "responsable", "practico", "constante", "realista"],
+        "fortalezas": ["disciplina", "organizacion", "perseverancia", "confiabilidad", "capacidad de materializar"],
+        "debilidades": ["rigidez", "miedo al cambio", "perfeccionismo", "exceso de control", "dificultad para soltar"],
+        "aprendizaje_clave": "Ser flexible: mejorar sistemas sin volverse prisionero de ellos.",
+        "sombra": "Trabajar por miedo y no por proposito; volverse frio o cerrado.",
+        "relaciones": "Demuestra amor con hechos; debe expresar mas afecto y adaptarse.",
+        "trabajo_dinero": "Excelente en operacion, finanzas, procesos; evitar estancarse por exceso de cautela.",
+        "palabras_clave": ["estructura", "disciplina", "constancia", "base", "orden"]
+      },
+      {
+        "numero": 5,
+        "arquetipo": "El Explorador",
+        "energia_principal": "Cambio, libertad, movimiento, experiencia.",
+        "descripcion_breve": "Empuja a evolucionar, probar, viajar, vender, moverse y reinventarse.",
+        "caracteristicas_generales": ["adaptable", "curioso", "atrevido", "versatil", "dinamico"],
+        "fortalezas": ["flexibilidad", "persuasion", "rapidez mental", "valentia para cambiar", "innovacion"],
+        "debilidades": ["impulsividad", "inestabilidad", "excesos", "falta de compromiso", "ansiedad"],
+        "aprendizaje_clave": "Libertad con responsabilidad: elegir cambios con direccion.",
+        "sombra": "Huir del aburrimiento y de lo profundo; sabotear rutinas necesarias.",
+        "relaciones": "Necesita espacio; aprende a ser consistente y honesto con acuerdos.",
+        "trabajo_dinero": "Brilla en ventas, negocios, viajes, marketing; requiere reglas para no dispersarse.",
+        "palabras_clave": ["cambio", "libertad", "aventura", "movimiento", "reinventarse"]
+      },
+      {
+        "numero": 6,
+        "arquetipo": "El Cuidador",
+        "energia_principal": "Amor, familia, responsabilidad, armonia, servicio.",
+        "descripcion_breve": "Invita a cuidar, embellecer, sostener y crear hogar o comunidad.",
+        "caracteristicas_generales": ["protector", "afectuoso", "responsable", "estetico", "orientado al servicio"],
+        "fortalezas": ["cuidado", "lealtad", "sentido de responsabilidad", "armonizacion", "capacidad de sostener"],
+        "debilidades": ["sobreproteccion", "control afectivo", "culpa", "perfeccionismo", "cargar con todo"],
+        "aprendizaje_clave": "Cuidar sin sacrificarse: poner limites y permitir que otros crezcan.",
+        "sombra": "Necesitar ser necesario; manipular desde la culpa o el deber.",
+        "relaciones": "Busca compromiso y calidez; debe equilibrar dar y recibir.",
+        "trabajo_dinero": "Bien en salud, educacion, bienestar, servicio al cliente; delegar para no agotarse.",
+        "palabras_clave": ["amor", "familia", "servicio", "armonía", "responsabilidad"]
+      },
+      {
+        "numero": 7,
+        "arquetipo": "El Sabio",
+        "energia_principal": "Introspeccion, analisis, espiritualidad, verdad.",
+        "descripcion_breve": "Lleva a estudiar, investigar y conectar con una sabiduria mas profunda.",
+        "caracteristicas_generales": ["observador", "analitico", "reservado", "profundo", "intuitivo"],
+        "fortalezas": ["analisis", "investigacion", "discernimiento", "intuicion", "autonomia"],
+        "debilidades": ["aislamiento", "escepticismo", "sobrepensar", "frialdad aparente", "desconfianza"],
+        "aprendizaje_clave": "Compartir lo aprendido: bajar la mente al corazon y a la vida real.",
+        "sombra": "Creerse superior por saber; cerrarse emocionalmente.",
+        "relaciones": "Necesita espacio y confianza; debe comunicar emociones y no desaparecer.",
+        "trabajo_dinero": "Ideal para data, investigacion, tecnologia, consultoria; evitar parálisis por analisis.",
+        "palabras_clave": ["sabiduria", "analisis", "busqueda", "introspeccion", "verdad"]
+      },
+      {
+        "numero": 8,
+        "arquetipo": "El Ejecutivo",
+        "energia_principal": "Poder, logro, dinero, autoridad, justicia.",
+        "descripcion_breve": "Activa ambicion sana, liderazgo y capacidad de materializar en grande.",
+        "caracteristicas_generales": ["estrategico", "ambicioso", "practico", "fuerte", "orientado a resultados"],
+        "fortalezas": ["liderazgo", "vision de negocio", "disciplina", "gestion", "resiliencia"],
+        "debilidades": ["control", "dureza", "materialismo", "impaciencia", "trabajo excesivo"],
+        "aprendizaje_clave": "Usar el poder con etica: prosperar sin perder humanidad.",
+        "sombra": "Medir el valor propio solo por dinero o estatus.",
+        "relaciones": "Necesita respeto y admiracion; debe abrirse emocionalmente y escuchar.",
+        "trabajo_dinero": "Excelente para empresa, finanzas, direccion; cuidar equilibrio vida-trabajo.",
+        "palabras_clave": ["poder", "logro", "dinero", "liderazgo", "autoridad"]
+      },
+      {
+        "numero": 9,
+        "arquetipo": "El Humanitario",
+        "energia_principal": "Cierre, compasion, servicio, vision global.",
+        "descripcion_breve": "Invita a culminar ciclos, perdonar y aportar al bienestar colectivo.",
+        "caracteristicas_generales": ["compasivo", "idealista", "generoso", "visionario", "emocionalmente profundo"],
+        "fortalezas": ["empatía", "generosidad", "vision global", "inspiracion", "capacidad de sanar"],
+        "debilidades": ["idealizacion", "desilusion", "martirio", "apego al pasado", "dificultad para poner limites"],
+        "aprendizaje_clave": "Servir sin salvar: ayudar con limites y cerrar ciclos a tiempo.",
+        "sombra": "Cargar con el dolor del mundo; resentirse por dar de mas.",
+        "relaciones": "Busca conexiones con sentido; debe equilibrar entrega y autocuidado.",
+        "trabajo_dinero": "Brilla en causas, arte con mensaje, ayuda social; necesita estructura para sostener proyectos.",
+        "palabras_clave": ["compasion", "cierre", "servicio", "perdon", "humanidad"]
+      }
+    ],
+    "resumen": {
+      "rango": "1-9",
+      "total": 9
+    }
+  }
+  

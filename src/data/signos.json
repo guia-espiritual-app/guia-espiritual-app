@@ -1,0 +1,140 @@
+{
+    "signos_zodiacales": [
+      {
+        "nombre": "Aries",
+        "fechas": "21 de marzo - 19 de abril",
+        "elemento": "Fuego",
+        "planeta_regente": "Marte",
+        "caracteristicas_generales": "Iniciador, directo, competitivo, valiente y con mucha energia para actuar.",
+        "compatibilidad_alta": ["Leo", "Sagitario", "Geminis", "Acuario"],
+        "compatibilidad_baja": ["Cancer", "Capricornio"],
+        "fortalezas": ["valentia", "iniciativa", "liderazgo", "determinacion", "franqueza"],
+        "debilidades": ["impulsividad", "impaciencia", "terquedad", "temperamento", "falta de tacto"]
+      },
+      {
+        "nombre": "Tauro",
+        "fechas": "20 de abril - 20 de mayo",
+        "elemento": "Tierra",
+        "planeta_regente": "Venus",
+        "caracteristicas_generales": "Practico, estable, sensorial, leal y orientado a la seguridad material y emocional.",
+        "compatibilidad_alta": ["Virgo", "Capricornio", "Cancer", "Piscis"],
+        "compatibilidad_baja": ["Leo", "Acuario"],
+        "fortalezas": ["constancia", "lealtad", "paciencia", "practicidad", "sensatez"],
+        "debilidades": ["terquedad", "posesividad", "resistencia al cambio", "comodidad excesiva", "celos"]
+      },
+      {
+        "nombre": "Geminis",
+        "fechas": "21 de mayo - 20 de junio",
+        "elemento": "Aire",
+        "planeta_regente": "Mercurio",
+        "caracteristicas_generales": "Curioso, comunicativo, adaptable, mentalmente rapido y sociable.",
+        "compatibilidad_alta": ["Libra", "Acuario", "Aries", "Leo"],
+        "compatibilidad_baja": ["Virgo", "Piscis"],
+        "fortalezas": ["comunicacion", "adaptabilidad", "ingenio", "sociabilidad", "aprendizaje rapido"],
+        "debilidades": ["dispersión", "inconstancia", "indecision", "superficialidad", "nerviosismo"]
+      },
+      {
+        "nombre": "Cancer",
+        "fechas": "21 de junio - 22 de julio",
+        "elemento": "Agua",
+        "planeta_regente": "Luna",
+        "caracteristicas_generales": "Emocional, protector, intuitivo, hogareno y muy vinculado a la familia.",
+        "compatibilidad_alta": ["Escorpio", "Piscis", "Tauro", "Virgo"],
+        "compatibilidad_baja": ["Aries", "Libra"],
+        "fortalezas": ["empatía", "intuicion", "proteccion", "lealtad", "sensibilidad"],
+        "debilidades": ["cambios de humor", "apego", "susceptibilidad", "defensividad", "nostalgia"]
+      },
+      {
+        "nombre": "Leo",
+        "fechas": "23 de julio - 22 de agosto",
+        "elemento": "Fuego",
+        "planeta_regente": "Sol",
+        "caracteristicas_generales": "Carismatico, creativo, orgulloso, generoso y con necesidad de expresarse y brillar.",
+        "compatibilidad_alta": ["Aries", "Sagitario", "Geminis", "Libra"],
+        "compatibilidad_baja": ["Tauro", "Escorpio"],
+        "fortalezas": ["confianza", "generosidad", "creatividad", "liderazgo", "calidez"],
+        "debilidades": ["orgullo", "necesidad de atencion", "dramaticidad", "terquedad", "sensibilidad al rechazo"]
+      },
+      {
+        "nombre": "Virgo",
+        "fechas": "23 de agosto - 22 de septiembre",
+        "elemento": "Tierra",
+        "planeta_regente": "Mercurio",
+        "caracteristicas_generales": "Analitico, detallista, servicial, organizado y orientado a mejorar procesos y resultados.",
+        "compatibilidad_alta": ["Tauro", "Capricornio", "Cancer", "Escorpio"],
+        "compatibilidad_baja": ["Geminis", "Sagitario"],
+        "fortalezas": ["organizacion", "disciplina", "analisis", "practicidad", "responsabilidad"],
+        "debilidades": ["perfeccionismo", "critica", "ansiedad", "rigidez", "sobrepensar"]
+      },
+      {
+        "nombre": "Libra",
+        "fechas": "23 de septiembre - 22 de octubre",
+        "elemento": "Aire",
+        "planeta_regente": "Venus",
+        "caracteristicas_generales": "Diplomatico, sociable, estetico y enfocado en equilibrio, justicia y armonia en relaciones.",
+        "compatibilidad_alta": ["Geminis", "Acuario", "Leo", "Sagitario"],
+        "compatibilidad_baja": ["Cancer", "Capricornio"],
+        "fortalezas": ["diplomacia", "sentido de justicia", "encanto", "cooperacion", "estetica"],
+        "debilidades": ["indecision", "evitar conflictos", "complacencia", "dependencia afectiva", "falta de limites"]
+      },
+      {
+        "nombre": "Escorpio",
+        "fechas": "23 de octubre - 21 de noviembre",
+        "elemento": "Agua",
+        "planeta_regente": "Pluton (tradicionalmente Marte)",
+        "caracteristicas_generales": "Intenso, profundo, reservado, transformador y muy leal cuando confia.",
+        "compatibilidad_alta": ["Cancer", "Piscis", "Virgo", "Capricornio"],
+        "compatibilidad_baja": ["Leo", "Acuario"],
+        "fortalezas": ["intensidad", "lealtad", "resiliencia", "intuicion", "determinacion"],
+        "debilidades": ["celos", "control", "desconfianza", "obsesion", "rencor"]
+      },
+      {
+        "nombre": "Sagitario",
+        "fechas": "22 de noviembre - 21 de diciembre",
+        "elemento": "Fuego",
+        "planeta_regente": "Jupiter",
+        "caracteristicas_generales": "Aventurero, optimista, directo, filosofico y amante de la libertad.",
+        "compatibilidad_alta": ["Aries", "Leo", "Libra", "Acuario"],
+        "compatibilidad_baja": ["Virgo", "Piscis"],
+        "fortalezas": ["optimismo", "honestidad", "vision", "entusiasmo", "adaptabilidad"],
+        "debilidades": ["impaciencia", "falta de tacto", "inconstancia", "exceso", "compromiso limitado"]
+      },
+      {
+        "nombre": "Capricornio",
+        "fechas": "22 de diciembre - 19 de enero",
+        "elemento": "Tierra",
+        "planeta_regente": "Saturno",
+        "caracteristicas_generales": "Ambicioso, disciplinado, reservado, estrategico y orientado a metas a largo plazo.",
+        "compatibilidad_alta": ["Tauro", "Virgo", "Escorpio", "Piscis"],
+        "compatibilidad_baja": ["Aries", "Libra"],
+        "fortalezas": ["disciplina", "responsabilidad", "perseverancia", "estrategia", "autocontrol"],
+        "debilidades": ["rigidez", "pesimismo", "frialdad aparente", "exceso de trabajo", "dificultad para expresar emociones"]
+      },
+      {
+        "nombre": "Acuario",
+        "fechas": "20 de enero - 18 de febrero",
+        "elemento": "Aire",
+        "planeta_regente": "Urano (tradicionalmente Saturno)",
+        "caracteristicas_generales": "Independiente, original, humanitario, mental y orientado a ideas innovadoras.",
+        "compatibilidad_alta": ["Geminis", "Libra", "Aries", "Sagitario"],
+        "compatibilidad_baja": ["Tauro", "Escorpio"],
+        "fortalezas": ["originalidad", "vision", "independencia", "innovacion", "objetividad"],
+        "debilidades": ["distancia emocional", "terquedad", "rebeldia", "imprevisibilidad", "desapego"]
+      },
+      {
+        "nombre": "Piscis",
+        "fechas": "19 de febrero - 20 de marzo",
+        "elemento": "Agua",
+        "planeta_regente": "Neptuno (tradicionalmente Jupiter)",
+        "caracteristicas_generales": "Sensible, compasivo, imaginativo, espiritual y muy receptivo al ambiente.",
+        "compatibilidad_alta": ["Cancer", "Escorpio", "Tauro", "Capricornio"],
+        "compatibilidad_baja": ["Geminis", "Sagitario"],
+        "fortalezas": ["empatía", "intuicion", "creatividad", "compasion", "adaptacion emocional"],
+        "debilidades": ["escapismo", "idealizacion", "confusion de limites", "hipersensibilidad", "indecision"]
+      }
+    ],
+    "resumen": {
+      "total": 12
+    }
+  }
+  

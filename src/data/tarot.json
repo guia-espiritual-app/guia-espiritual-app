@@ -1,0 +1,716 @@
+{
+    "cartas_tarot": [
+      {
+        "nombre": "El Loco",
+        "numero": 0,
+        "palo": "Arcanos Mayores",
+        "significado_derecho": "Nuevos comienzos, libertad, espontaneidad, fe en el camino.",
+        "significado_invertido": "Imprudencia, riesgo innecesario, inmadurez, falta de dirección.",
+        "palabras_clave": ["inicio", "aventura", "confianza", "libertad", "salto de fe"],
+        "descripcion_breve": "Invita a dar el primer paso sin tener todo controlado, confiando en el aprendizaje."
+      },
+      {
+        "nombre": "El Mago",
+        "numero": 1,
+        "palo": "Arcanos Mayores",
+        "significado_derecho": "Voluntad, habilidad, manifestación, recursos disponibles.",
+        "significado_invertido": "Manipulación, engaño, talento desperdiciado, falta de enfoque.",
+        "palabras_clave": ["acción", "manifestación", "habilidad", "poder personal", "recursos"],
+        "descripcion_breve": "Recuerda que ya tienes herramientas para crear resultados si actúas con intención."
+      },
+      {
+        "nombre": "La Sacerdotisa",
+        "numero": 2,
+        "palo": "Arcanos Mayores",
+        "significado_derecho": "Intuición, misterio, sabiduría interna, paciencia.",
+        "significado_invertido": "Desconexión interna, secretos dañinos, negación de la intuición.",
+        "palabras_clave": ["intuición", "silencio", "sabiduría", "misterio", "subconsciente"],
+        "descripcion_breve": "Sugiere escuchar tu voz interna y observar antes de decidir."
+      },
+      {
+        "nombre": "La Emperatriz",
+        "numero": 3,
+        "palo": "Arcanos Mayores",
+        "significado_derecho": "Abundancia, creatividad, cuidado, fertilidad, placer.",
+        "significado_invertido": "Bloqueo creativo, dependencia, exceso, descuido propio.",
+        "palabras_clave": ["creatividad", "abundancia", "nutrición", "belleza", "cuidado"],
+        "descripcion_breve": "Habla de crecimiento y de nutrir proyectos, relaciones y bienestar."
+      },
+      {
+        "nombre": "El Emperador",
+        "numero": 4,
+        "palo": "Arcanos Mayores",
+        "significado_derecho": "Orden, autoridad, estructura, estabilidad, liderazgo.",
+        "significado_invertido": "Rigidez, control excesivo, tiranía, falta de límites saludables.",
+        "palabras_clave": ["estructura", "liderazgo", "disciplina", "estabilidad", "límites"],
+        "descripcion_breve": "Pide poner bases claras y liderar con responsabilidad."
+      },
+      {
+        "nombre": "El Hierofante",
+        "numero": 5,
+        "palo": "Arcanos Mayores",
+        "significado_derecho": "Tradición, aprendizaje, guía, valores compartidos, comunidad.",
+        "significado_invertido": "Rebeldía sin causa, dogma, rigidez moral, consejo errado.",
+        "palabras_clave": ["tradición", "mentor", "valores", "institución", "enseñanza"],
+        "descripcion_breve": "Señala la utilidad de aprender de reglas, maestros o sistemas establecidos."
+      },
+      {
+        "nombre": "Los Enamorados",
+        "numero": 6,
+        "palo": "Arcanos Mayores",
+        "significado_derecho": "Elección alineada, amor, unión, coherencia entre valores y acción.",
+        "significado_invertido": "Indecisión, desalineación, tentación, conflicto en vínculos.",
+        "palabras_clave": ["elección", "amor", "valores", "unión", "coherencia"],
+        "descripcion_breve": "Invita a decidir desde tus valores y a construir vínculos conscientes."
+      },
+      {
+        "nombre": "El Carro",
+        "numero": 7,
+        "palo": "Arcanos Mayores",
+        "significado_derecho": "Avance, determinación, victoria, autocontrol, dirección clara.",
+        "significado_invertido": "Falta de control, prisa, rumbo confuso, bloqueo por tensión interna.",
+        "palabras_clave": ["avance", "disciplina", "dirección", "voluntad", "victoria"],
+        "descripcion_breve": "Marca un momento de empuje: avanzar con enfoque y control emocional."
+      },
+      {
+        "nombre": "La Fuerza",
+        "numero": 8,
+        "palo": "Arcanos Mayores",
+        "significado_derecho": "Valentía, autocontrol, compasión, fortaleza interna, paciencia.",
+        "significado_invertido": "Inseguridad, impulsividad, ira, falta de dominio propio.",
+        "palabras_clave": ["coraje", "calma", "dominio", "compasión", "resiliencia"],
+        "descripcion_breve": "Habla de dominar lo difícil desde la calma, no desde la imposición."
+      },
+      {
+        "nombre": "El Ermitaño",
+        "numero": 9,
+        "palo": "Arcanos Mayores",
+        "significado_derecho": "Introspección, búsqueda interna, prudencia, guía interior.",
+        "significado_invertido": "Aislamiento, evasión, soledad no elegida, miedo a mirar dentro.",
+        "palabras_clave": ["introspección", "sabiduría", "pausa", "búsqueda", "soledad"],
+        "descripcion_breve": "Sugiere parar para aclarar, aprender y volver con luz propia."
+      },
+      {
+        "nombre": "La Rueda de la Fortuna",
+        "numero": 10,
+        "palo": "Arcanos Mayores",
+        "significado_derecho": "Cambio, ciclos, destino, oportunidad, giro inesperado.",
+        "significado_invertido": "Resistencia al cambio, mala racha, repetir patrones, estancamiento.",
+        "palabras_clave": ["ciclo", "cambio", "oportunidad", "destino", "giro"],
+        "descripcion_breve": "Recuerda que todo cambia: aprovechar el giro y adaptarse."
+      },
+      {
+        "nombre": "La Justicia",
+        "numero": 11,
+        "palo": "Arcanos Mayores",
+        "significado_derecho": "Equilibrio, verdad, responsabilidad, decisiones justas, causa y efecto.",
+        "significado_invertido": "Injusticia, parcialidad, evasión de consecuencias, deshonestidad.",
+        "palabras_clave": ["equilibrio", "verdad", "decisión", "responsabilidad", "ley"],
+        "descripcion_breve": "Invita a decidir con objetividad y asumir consecuencias con madurez."
+      },
+      {
+        "nombre": "El Colgado",
+        "numero": 12,
+        "palo": "Arcanos Mayores",
+        "significado_derecho": "Pausa, nueva perspectiva, rendición, sacrificio consciente.",
+        "significado_invertido": "Estancamiento, victimismo, resistencia, sacrificio inútil.",
+        "palabras_clave": ["perspectiva", "pausa", "soltar", "rendición", "reencuadre"],
+        "descripcion_breve": "Pide mirar distinto y soltar el control para destrabar."
+      },
+      {
+        "nombre": "La Muerte",
+        "numero": 13,
+        "palo": "Arcanos Mayores",
+        "significado_derecho": "Cierre, transformación, renacimiento, dejar atrás lo viejo.",
+        "significado_invertido": "Resistencia al cambio, apego, transición prolongada, miedo a soltar.",
+        "palabras_clave": ["transformación", "cierre", "renacer", "soltar", "cambio"],
+        "descripcion_breve": "Anuncia un final necesario que abre espacio a una nueva etapa."
+      },
+      {
+        "nombre": "La Templanza",
+        "numero": 14,
+        "palo": "Arcanos Mayores",
+        "significado_derecho": "Equilibrio, armonía, moderación, sanación, integración.",
+        "significado_invertido": "Exceso, desbalance, impaciencia, falta de medida, choques internos.",
+        "palabras_clave": ["armonía", "moderación", "sanación", "integración", "calma"],
+        "descripcion_breve": "Invita a mezclar con sabiduría, ajustar ritmos y recuperar balance."
+      },
+      {
+        "nombre": "El Diablo",
+        "numero": 15,
+        "palo": "Arcanos Mayores",
+        "significado_derecho": "Apegos, deseo, tentación, sombras, cadenas autoimpuestas.",
+        "significado_invertido": "Liberación, romper hábitos, conciencia, recuperar poder personal.",
+        "palabras_clave": ["apego", "tentación", "sombra", "deseo", "liberación"],
+        "descripcion_breve": "Señala ataduras o excesos; pide honestidad y recuperar control."
+      },
+      {
+        "nombre": "La Torre",
+        "numero": 16,
+        "palo": "Arcanos Mayores",
+        "significado_derecho": "Ruptura, revelación, derrumbe de lo falso, cambio abrupto.",
+        "significado_invertido": "Evitar lo inevitable, crisis interna, miedo al cambio, reconstrucción lenta.",
+        "palabras_clave": ["ruptura", "verdad", "crisis", "liberación", "reconstrucción"],
+        "descripcion_breve": "Rompe estructuras frágiles para abrir paso a una verdad más sólida."
+      },
+      {
+        "nombre": "La Estrella",
+        "numero": 17,
+        "palo": "Arcanos Mayores",
+        "significado_derecho": "Esperanza, inspiración, fe, propósito, calma tras la tormenta.",
+        "significado_invertido": "Desánimo, falta de fe, desconexión, pesimismo, dudas.",
+        "palabras_clave": ["esperanza", "inspiración", "propósito", "sanación", "fe"],
+        "descripcion_breve": "Devuelve confianza y guía: avanzar con serenidad y visión."
+      },
+      {
+        "nombre": "La Luna",
+        "numero": 18,
+        "palo": "Arcanos Mayores",
+        "significado_derecho": "Intuición profunda, sueños, confusión, sombras, lo oculto.",
+        "significado_invertido": "Claridad emergente, engaño revelado, ansiedad, paranoia disminuye.",
+        "palabras_clave": ["intuición", "sueños", "misterio", "sombras", "confusión"],
+        "descripcion_breve": "Habla de navegar lo incierto y escuchar señales sin caer en el miedo."
+      },
+      {
+        "nombre": "El Sol",
+        "numero": 19,
+        "palo": "Arcanos Mayores",
+        "significado_derecho": "Éxito, alegría, claridad, vitalidad, reconocimiento.",
+        "significado_invertido": "Ego, exceso de confianza, retrasos, alegría opacada, falta de gratitud.",
+        "palabras_clave": ["éxito", "claridad", "alegría", "energía", "verdad"],
+        "descripcion_breve": "Ilumina el camino: optimismo, resultados y transparencia."
+      },
+      {
+        "nombre": "El Juicio",
+        "numero": 20,
+        "palo": "Arcanos Mayores",
+        "significado_derecho": "Despertar, llamado, evaluación, perdón, renacer.",
+        "significado_invertido": "Culpa, autocrítica, negación del llamado, miedo a cambiar.",
+        "palabras_clave": ["despertar", "llamado", "perdón", "renacer", "evaluación"],
+        "descripcion_breve": "Invita a cerrar cuentas con el pasado y responder a tu propósito."
+      },
+      {
+        "nombre": "El Mundo",
+        "numero": 21,
+        "palo": "Arcanos Mayores",
+        "significado_derecho": "Culminación, logro, integración, éxito completo, expansión.",
+        "significado_invertido": "Cierre pendiente, meta incompleta, dispersión, falta de conclusión.",
+        "palabras_clave": ["culminación", "logro", "integración", "expansión", "cierre"],
+        "descripcion_breve": "Marca cierre de ciclo y recompensa: integrar aprendizajes y celebrar."
+      },
+  
+      {
+        "nombre": "As de Bastos",
+        "numero": 1,
+        "palo": "Bastos",
+        "significado_derecho": "Inspiración, impulso creativo, deseo de comenzar, energía.",
+        "significado_invertido": "Bloqueo creativo, falta de motivación, impulsividad sin plan.",
+        "palabras_clave": ["inspiración", "inicio", "energía", "creatividad", "pasión"],
+        "descripcion_breve": "Chispa inicial para crear o emprender; canaliza la energía con intención."
+      },
+      {
+        "nombre": "Dos de Bastos",
+        "numero": 2,
+        "palo": "Bastos",
+        "significado_derecho": "Planificación, visión, decisiones estratégicas, expansión.",
+        "significado_invertido": "Miedo a lo nuevo, indecisión, planes cortos, zona de confort.",
+        "palabras_clave": ["plan", "visión", "expansión", "decisión", "estrategia"],
+        "descripcion_breve": "Mirar más lejos: elegir rumbo y salir de lo conocido."
+      },
+      {
+        "nombre": "Tres de Bastos",
+        "numero": 3,
+        "palo": "Bastos",
+        "significado_derecho": "Progreso, resultados en camino, colaboración, crecimiento.",
+        "significado_invertido": "Retrasos, falta de apoyo, expectativas irreales, mala coordinación.",
+        "palabras_clave": ["progreso", "crecimiento", "alianzas", "horizonte", "avance"],
+        "descripcion_breve": "Tus acciones empiezan a dar frutos; sostén la visión y ajusta."
+      },
+      {
+        "nombre": "Cuatro de Bastos",
+        "numero": 4,
+        "palo": "Bastos",
+        "significado_derecho": "Celebración, hogar, estabilidad, logros compartidos.",
+        "significado_invertido": "Tensión familiar, celebración opacada, inestabilidad, falta de apoyo.",
+        "palabras_clave": ["celebración", "hogar", "estabilidad", "comunidad", "logro"],
+        "descripcion_breve": "Buen momento para celebrar y consolidar bases con tu gente."
+      },
+      {
+        "nombre": "Cinco de Bastos",
+        "numero": 5,
+        "palo": "Bastos",
+        "significado_derecho": "Competencia, conflicto, fricción creativa, desafío.",
+        "significado_invertido": "Evitar confrontación, tensión interna, caos, conflicto innecesario.",
+        "palabras_clave": ["conflicto", "competencia", "fricción", "reto", "ego"],
+        "descripcion_breve": "Choque de energías: canaliza el conflicto hacia mejora, no desgaste."
+      },
+      {
+        "nombre": "Seis de Bastos",
+        "numero": 6,
+        "palo": "Bastos",
+        "significado_derecho": "Victoria, reconocimiento, confianza, avance público.",
+        "significado_invertido": "Ego herido, reconocimiento tardío, inseguridad, necesidad de validación.",
+        "palabras_clave": ["éxito", "reconocimiento", "confianza", "triunfo", "logro"],
+        "descripcion_breve": "Señala éxito visible; mantén humildad y constancia."
+      },
+      {
+        "nombre": "Siete de Bastos",
+        "numero": 7,
+        "palo": "Bastos",
+        "significado_derecho": "Defensa, límites, perseverancia, mantener tu postura.",
+        "significado_invertido": "Rendirse, sentirse atacado, falta de límites, agotamiento.",
+        "palabras_clave": ["defensa", "límites", "coraje", "perseverancia", "posición"],
+        "descripcion_breve": "Te pide sostener lo tuyo y poner límites con firmeza."
+      },
+      {
+        "nombre": "Ocho de Bastos",
+        "numero": 8,
+        "palo": "Bastos",
+        "significado_derecho": "Rapidez, noticias, movimiento, progreso acelerado.",
+        "significado_invertido": "Retrasos, mala comunicación, prisa, saturación.",
+        "palabras_clave": ["rapidez", "movimiento", "mensajes", "avance", "flujo"],
+        "descripcion_breve": "Todo se mueve rápido: responder con agilidad y claridad."
+      },
+      {
+        "nombre": "Nueve de Bastos",
+        "numero": 9,
+        "palo": "Bastos",
+        "significado_derecho": "Resistencia, experiencia, cautela, último esfuerzo.",
+        "significado_invertido": "Paranoia, agotamiento, bajar la guardia, sentir que no puedes más.",
+        "palabras_clave": ["resistencia", "cautela", "perseverar", "experiencia", "aguante"],
+        "descripcion_breve": "Estás cerca: protege tu energía y termina lo empezado."
+      },
+      {
+        "nombre": "Diez de Bastos",
+        "numero": 10,
+        "palo": "Bastos",
+        "significado_derecho": "Carga, responsabilidad, exceso de tareas, presión.",
+        "significado_invertido": "Soltar cargas, delegar, colapso por exceso, priorizar.",
+        "palabras_clave": ["carga", "estrés", "responsabilidad", "delegar", "prioridad"],
+        "descripcion_breve": "Mucho peso encima: toca ordenar, delegar y simplificar."
+      },
+      {
+        "nombre": "Sota de Bastos",
+        "numero": 11,
+        "palo": "Bastos",
+        "significado_derecho": "Entusiasmo, curiosidad, nuevas ideas, exploración.",
+        "significado_invertido": "Inmadurez, impulsividad, falta de seguimiento, ideas sin acción.",
+        "palabras_clave": ["entusiasmo", "idea", "explorar", "inicio", "pasión"],
+        "descripcion_breve": "Trae una idea fresca y ganas de probar; conviértelo en plan."
+      },
+      {
+        "nombre": "Caballero de Bastos",
+        "numero": 12,
+        "palo": "Bastos",
+        "significado_derecho": "Acción, aventura, valentía, impulso, carisma.",
+        "significado_invertido": "Impulsividad, inconsistencia, arrogancia, promesas vacías.",
+        "palabras_clave": ["acción", "aventura", "impulso", "coraje", "energía"],
+        "descripcion_breve": "Energía para avanzar ya; cuida la constancia y el enfoque."
+      },
+      {
+        "nombre": "Reina de Bastos",
+        "numero": 13,
+        "palo": "Bastos",
+        "significado_derecho": "Confianza, magnetismo, liderazgo cálido, creatividad.",
+        "significado_invertido": "Celos, inseguridad, necesidad de control, temperamento.",
+        "palabras_clave": ["confianza", "liderazgo", "carisma", "creatividad", "seguridad"],
+        "descripcion_breve": "Lidera desde la seguridad y la pasión, inspirando a otros."
+      },
+      {
+        "nombre": "Rey de Bastos",
+        "numero": 14,
+        "palo": "Bastos",
+        "significado_derecho": "Visión, liderazgo, emprendimiento, decisión, expansión.",
+        "significado_invertido": "Autoritarismo, impaciencia, ego, visión sin ejecución realista.",
+        "palabras_clave": ["visión", "liderazgo", "emprender", "decisión", "expansión"],
+        "descripcion_breve": "Marca liderazgo estratégico: visión + acción con responsabilidad."
+      },
+  
+      {
+        "nombre": "As de Copas",
+        "numero": 1,
+        "palo": "Copas",
+        "significado_derecho": "Amor, apertura emocional, nuevas relaciones, sanación del corazón.",
+        "significado_invertido": "Bloqueo emocional, amor no correspondido, tristeza, cerrar el corazón.",
+        "palabras_clave": ["amor", "emociones", "apertura", "sanación", "nuevo vínculo"],
+        "descripcion_breve": "Un nuevo flujo emocional: dar y recibir desde el corazón."
+      },
+      {
+        "nombre": "Dos de Copas",
+        "numero": 2,
+        "palo": "Copas",
+        "significado_derecho": "Unión, acuerdo, conexión genuina, reciprocidad.",
+        "significado_invertido": "Desbalance, ruptura, falta de reciprocidad, malentendidos.",
+        "palabras_clave": ["unión", "pareja", "reciprocidad", "acuerdo", "vínculo"],
+        "descripcion_breve": "Conexión equilibrada y sincera; habla de alianza o relación mutua."
+      },
+      {
+        "nombre": "Tres de Copas",
+        "numero": 3,
+        "palo": "Copas",
+        "significado_derecho": "Celebración, amistad, comunidad, apoyo emocional.",
+        "significado_invertido": "Excesos, chismes, aislamiento, triángulos emocionales.",
+        "palabras_clave": ["amistad", "celebración", "red", "apoyo", "alegría"],
+        "descripcion_breve": "Buen momento para compartir, celebrar y apoyarte en tu círculo."
+      },
+      {
+        "nombre": "Cuatro de Copas",
+        "numero": 4,
+        "palo": "Copas",
+        "significado_derecho": "Apatía, reevaluación, pausa emocional, insatisfacción.",
+        "significado_invertido": "Nueva apertura, aceptar oportunidades, salir del estancamiento.",
+        "palabras_clave": ["apatía", "pausa", "reflexión", "insatisfacción", "oportunidad"],
+        "descripcion_breve": "Invita a mirar lo que estás ignorando por cansancio o desánimo."
+      },
+      {
+        "nombre": "Cinco de Copas",
+        "numero": 5,
+        "palo": "Copas",
+        "significado_derecho": "Pérdida, duelo, decepción, mirar lo que falta.",
+        "significado_invertido": "Aceptación, perdón, recuperación, ver lo que queda.",
+        "palabras_clave": ["duelo", "pérdida", "decepción", "aceptar", "recuperación"],
+        "descripcion_breve": "Dolor por lo perdido; también recuerda que aún quedan oportunidades."
+      },
+      {
+        "nombre": "Seis de Copas",
+        "numero": 6,
+        "palo": "Copas",
+        "significado_derecho": "Nostalgia, recuerdos, infancia, ternura, reencuentros.",
+        "significado_invertido": "Idealización del pasado, estancamiento, inmadurez emocional.",
+        "palabras_clave": ["nostalgia", "recuerdos", "inocencia", "reencuentro", "ternura"],
+        "descripcion_breve": "Conecta con lo simple y lo auténtico; puede traer un regreso del pasado."
+      },
+      {
+        "nombre": "Siete de Copas",
+        "numero": 7,
+        "palo": "Copas",
+        "significado_derecho": "Opciones, fantasía, imaginación, deseo, confusión.",
+        "significado_invertido": "Claridad, elección consciente, priorizar, aterrizar sueños.",
+        "palabras_clave": ["opciones", "fantasía", "confusión", "deseo", "decisión"],
+        "descripcion_breve": "Muchas posibilidades: elegir con criterio y no solo con ilusión."
+      },
+      {
+        "nombre": "Ocho de Copas",
+        "numero": 8,
+        "palo": "Copas",
+        "significado_derecho": "Dejar atrás, búsqueda de sentido, retirarse, madurez.",
+        "significado_invertido": "Apego, miedo a irse, volver a lo mismo, indecisión emocional.",
+        "palabras_clave": ["soltar", "búsqueda", "partida", "sentido", "madurez"],
+        "descripcion_breve": "Irse de lo que ya no llena para buscar algo más verdadero."
+      },
+      {
+        "nombre": "Nueve de Copas",
+        "numero": 9,
+        "palo": "Copas",
+        "significado_derecho": "Satisfacción, deseo cumplido, placer, gratitud.",
+        "significado_invertido": "Exceso, complacencia, vacío pese a tener, expectativas.",
+        "palabras_clave": ["satisfacción", "placer", "deseo", "gratitud", "bienestar"],
+        "descripcion_breve": "Placer y logro emocional; recuerda agradecer y no caer en exceso."
+      },
+      {
+        "nombre": "Diez de Copas",
+        "numero": 10,
+        "palo": "Copas",
+        "significado_derecho": "Armonía, familia, felicidad compartida, amor pleno.",
+        "significado_invertido": "Conflictos familiares, expectativas irreales, falta de armonía.",
+        "palabras_clave": ["familia", "armonía", "amor", "felicidad", "hogar"],
+        "descripcion_breve": "Plenitud emocional en vínculos; sensación de hogar y pertenencia."
+      },
+      {
+        "nombre": "Sota de Copas",
+        "numero": 11,
+        "palo": "Copas",
+        "significado_derecho": "Mensajes emocionales, sensibilidad, creatividad, apertura.",
+        "significado_invertido": "Inmadurez emocional, susceptibilidad, fantasía, bloqueo creativo.",
+        "palabras_clave": ["sensibilidad", "mensaje", "intuición", "creatividad", "apertura"],
+        "descripcion_breve": "Trae una emoción nueva o mensaje; invita a expresar lo que sientes."
+      },
+      {
+        "nombre": "Caballero de Copas",
+        "numero": 12,
+        "palo": "Copas",
+        "significado_derecho": "Romance, encanto, propuesta, idealismo, conexión.",
+        "significado_invertido": "Inconstancia, seducción vacía, drama, promesas sin hechos.",
+        "palabras_clave": ["romance", "propuesta", "encanto", "idealismo", "corazón"],
+        "descripcion_breve": "Energía romántica y expresiva; actuar con honestidad emocional."
+      },
+      {
+        "nombre": "Reina de Copas",
+        "numero": 13,
+        "palo": "Copas",
+        "significado_derecho": "Empatía, intuición emocional, contención, compasión.",
+        "significado_invertido": "Desborde emocional, dependencia, absorción, falta de límites.",
+        "palabras_clave": ["empatía", "intuición", "compasión", "emociones", "cuidado"],
+        "descripcion_breve": "Invita a sentir con madurez y a cuidar sin perder límites."
+      },
+      {
+        "nombre": "Rey de Copas",
+        "numero": 14,
+        "palo": "Copas",
+        "significado_derecho": "Madurez emocional, diplomacia, calma, liderazgo empático.",
+        "significado_invertido": "Manipulación emocional, frialdad, represión, volatilidad.",
+        "palabras_clave": ["madurez", "calma", "empatía", "equilibrio", "diplomacia"],
+        "descripcion_breve": "Control emocional sereno; liderar desde la comprensión y el equilibrio."
+      },
+  
+      {
+        "nombre": "As de Espadas",
+        "numero": 1,
+        "palo": "Espadas",
+        "significado_derecho": "Claridad mental, verdad, decisión, idea poderosa.",
+        "significado_invertido": "Confusión, mal juicio, palabras hirientes, falta de claridad.",
+        "palabras_clave": ["claridad", "verdad", "decisión", "mente", "corte"],
+        "descripcion_breve": "Una verdad se revela: pensar claro y decidir con firmeza."
+      },
+      {
+        "nombre": "Dos de Espadas",
+        "numero": 2,
+        "palo": "Espadas",
+        "significado_derecho": "Indecisión, pausa, protegerse, equilibrio tenso.",
+        "significado_invertido": "Negación, información oculta, decisión forzada, ansiedad.",
+        "palabras_clave": ["indecisión", "pausa", "bloqueo", "equilibrio", "elección"],
+        "descripcion_breve": "Momento de elegir; hace falta mirar lo que estás evitando."
+      },
+      {
+        "nombre": "Tres de Espadas",
+        "numero": 3,
+        "palo": "Espadas",
+        "significado_derecho": "Dolor, traición, tristeza, ruptura, verdad difícil.",
+        "significado_invertido": "Sanación, perdón, soltar el resentimiento, recuperación.",
+        "palabras_clave": ["dolor", "ruptura", "tristeza", "verdad", "sanación"],
+        "descripcion_breve": "Herida emocional o verdad dura; atravesarla abre camino a sanar."
+      },
+      {
+        "nombre": "Cuatro de Espadas",
+        "numero": 4,
+        "palo": "Espadas",
+        "significado_derecho": "Descanso, recuperación, pausa mental, retiro.",
+        "significado_invertido": "Agotamiento, estrés, no parar a tiempo, inquietud.",
+        "palabras_clave": ["descanso", "pausa", "recuperación", "silencio", "mente"],
+        "descripcion_breve": "Pide parar y recuperar energía mental antes de seguir."
+      },
+      {
+        "nombre": "Cinco de Espadas",
+        "numero": 5,
+        "palo": "Espadas",
+        "significado_derecho": "Conflicto, victoria amarga, ego, tensiones, ganar a cualquier costo.",
+        "significado_invertido": "Reconciliación, soltar el orgullo, aprender del conflicto, reparación.",
+        "palabras_clave": ["conflicto", "ego", "tensión", "límite", "consecuencias"],
+        "descripcion_breve": "Cuidado con ganar perdiendo: evaluar costos del conflicto."
+      },
+      {
+        "nombre": "Seis de Espadas",
+        "numero": 6,
+        "palo": "Espadas",
+        "significado_derecho": "Transición, calma gradual, viaje, dejar atrás problemas.",
+        "significado_invertido": "Resistencia a avanzar, volver al drama, transición difícil.",
+        "palabras_clave": ["transición", "viaje", "calma", "soltar", "proceso"],
+        "descripcion_breve": "Moverse hacia algo más tranquilo; sanar paso a paso."
+      },
+      {
+        "nombre": "Siete de Espadas",
+        "numero": 7,
+        "palo": "Espadas",
+        "significado_derecho": "Estrategia, discreción, astucia, actuar en silencio.",
+        "significado_invertido": "Mentiras expuestas, culpa, autoengaño, mala estrategia.",
+        "palabras_clave": ["estrategia", "discreción", "astucia", "engaño", "plan"],
+        "descripcion_breve": "Invita a actuar con inteligencia; alerta ante engaños o atajos."
+      },
+      {
+        "nombre": "Ocho de Espadas",
+        "numero": 8,
+        "palo": "Espadas",
+        "significado_derecho": "Bloqueo mental, miedo, sentirse atrapado, limitaciones autoimpuestas.",
+        "significado_invertido": "Liberación, cambio de perspectiva, recuperar poder, salir del miedo.",
+        "palabras_clave": ["miedo", "bloqueo", "limitación", "perspectiva", "liberación"],
+        "descripcion_breve": "El encierro es mental: hay salida cuando cambias la mirada."
+      },
+      {
+        "nombre": "Nueve de Espadas",
+        "numero": 9,
+        "palo": "Espadas",
+        "significado_derecho": "Ansiedad, insomnio, preocupación, culpa, rumiación.",
+        "significado_invertido": "Alivio, pedir ayuda, soltar culpa, mejorar la mente.",
+        "palabras_clave": ["ansiedad", "miedo", "culpa", "rumiación", "estrés"],
+        "descripcion_breve": "Mente saturada; pide apoyo, descanso y distinguir miedo de realidad."
+      },
+      {
+        "nombre": "Diez de Espadas",
+        "numero": 10,
+        "palo": "Espadas",
+        "significado_derecho": "Final doloroso, cierre, tocar fondo, liberación tras el fin.",
+        "significado_invertido": "Recuperación lenta, soltar dramatismo, resistirse al cierre.",
+        "palabras_clave": ["final", "cierre", "dolor", "liberación", "renacer"],
+        "descripcion_breve": "Un ciclo termina; aunque duela, abre un nuevo comienzo."
+      },
+      {
+        "nombre": "Sota de Espadas",
+        "numero": 11,
+        "palo": "Espadas",
+        "significado_derecho": "Curiosidad mental, aprendizaje, vigilancia, comunicación.",
+        "significado_invertido": "Chismes, impulsividad verbal, paranoia, información mal usada.",
+        "palabras_clave": ["aprendizaje", "curiosidad", "comunicación", "alerta", "verdad"],
+        "descripcion_breve": "Mente despierta: aprende, pregunta y comunica con precisión."
+      },
+      {
+        "nombre": "Caballero de Espadas",
+        "numero": 12,
+        "palo": "Espadas",
+        "significado_derecho": "Determinación, acción rápida, ambición, ir al grano.",
+        "significado_invertido": "Agresividad, prisa, discusiones, actuar sin pensar.",
+        "palabras_clave": ["determinación", "acción", "rapidez", "verdad", "ambición"],
+        "descripcion_breve": "Avanza directo; cuida la forma para no cortar de más."
+      },
+      {
+        "nombre": "Reina de Espadas",
+        "numero": 13,
+        "palo": "Espadas",
+        "significado_derecho": "Claridad, objetividad, límites, honestidad, criterio.",
+        "significado_invertido": "Dureza, frialdad, crítica, resentimiento, palabras cortantes.",
+        "palabras_clave": ["objetividad", "límites", "claridad", "criterio", "verdad"],
+        "descripcion_breve": "Pide pensar con cabeza fría y poner límites con verdad."
+      },
+      {
+        "nombre": "Rey de Espadas",
+        "numero": 14,
+        "palo": "Espadas",
+        "significado_derecho": "Autoridad mental, estrategia, justicia, liderazgo racional.",
+        "significado_invertido": "Abuso de poder, rigidez, juicio severo, frialdad.",
+        "palabras_clave": ["estrategia", "autoridad", "lógica", "decisión", "justicia"],
+        "descripcion_breve": "Decidir con lógica y ética; liderazgo basado en claridad."
+      },
+  
+      {
+        "nombre": "As de Oros",
+        "numero": 1,
+        "palo": "Oros",
+        "significado_derecho": "Oportunidad material, prosperidad, inicio financiero, recursos.",
+        "significado_invertido": "Oportunidad perdida, mala inversión, avaricia, falta de base.",
+        "palabras_clave": ["prosperidad", "oportunidad", "recursos", "dinero", "inicio"],
+        "descripcion_breve": "Semilla de prosperidad: oportunidad tangible para construir."
+      },
+      {
+        "nombre": "Dos de Oros",
+        "numero": 2,
+        "palo": "Oros",
+        "significado_derecho": "Equilibrio, adaptabilidad, manejo del tiempo y dinero, multitarea.",
+        "significado_invertido": "Desorden, estrés, mala administración, sobrecarga.",
+        "palabras_clave": ["equilibrio", "gestión", "adaptación", "prioridades", "flexibilidad"],
+        "descripcion_breve": "Pide ajustar prioridades y manejar recursos con flexibilidad."
+      },
+      {
+        "nombre": "Tres de Oros",
+        "numero": 3,
+        "palo": "Oros",
+        "significado_derecho": "Trabajo en equipo, maestría, reconocimiento por habilidades.",
+        "significado_invertido": "Falta de colaboración, trabajo mediocre, orgullo, mala coordinación.",
+        "palabras_clave": ["equipo", "oficio", "calidad", "colaboración", "aprendizaje"],
+        "descripcion_breve": "Construir con otros: excelencia, método y colaboración."
+      },
+      {
+        "nombre": "Cuatro de Oros",
+        "numero": 4,
+        "palo": "Oros",
+        "significado_derecho": "Seguridad, ahorro, control, conservar, estabilidad material.",
+        "significado_invertido": "Avaricia, miedo a perder, rigidez, soltar recursos.",
+        "palabras_clave": ["seguridad", "ahorro", "control", "posesión", "estabilidad"],
+        "descripcion_breve": "Cuidar lo tuyo, pero sin caer en el miedo o la rigidez."
+      },
+      {
+        "nombre": "Cinco de Oros",
+        "numero": 5,
+        "palo": "Oros",
+        "significado_derecho": "Carencia, dificultad económica, sentirse excluido, prueba.",
+        "significado_invertido": "Recuperación, apoyo, mejorar finanzas, pedir ayuda.",
+        "palabras_clave": ["carencia", "prueba", "apoyo", "recuperación", "humildad"],
+        "descripcion_breve": "Momento duro: buscar apoyo y recordar que no estás solo."
+      },
+      {
+        "nombre": "Seis de Oros",
+        "numero": 6,
+        "palo": "Oros",
+        "significado_derecho": "Generosidad, equilibrio dar-recibir, ayuda, intercambio justo.",
+        "significado_invertido": "Deudas, desigualdad, manipulación con dinero, dar por interés.",
+        "palabras_clave": ["generosidad", "equilibrio", "ayuda", "intercambio", "justicia"],
+        "descripcion_breve": "Habla de apoyo y reciprocidad; dar y recibir con equilibrio."
+      },
+      {
+        "nombre": "Siete de Oros",
+        "numero": 7,
+        "palo": "Oros",
+        "significado_derecho": "Paciencia, evaluación, inversión a largo plazo, resultados graduales.",
+        "significado_invertido": "Impaciencia, mala inversión, frustración, abandonar pronto.",
+        "palabras_clave": ["paciencia", "inversión", "evaluación", "proceso", "cosecha"],
+        "descripcion_breve": "Revisar progreso y sostener el proceso: la cosecha toma tiempo."
+      },
+      {
+        "nombre": "Ocho de Oros",
+        "numero": 8,
+        "palo": "Oros",
+        "significado_derecho": "Disciplina, aprender, mejorar habilidades, trabajo dedicado.",
+        "significado_invertido": "Rutina sin sentido, perfeccionismo, falta de calidad, aburrimiento.",
+        "palabras_clave": ["disciplina", "oficio", "práctica", "mejora", "constancia"],
+        "descripcion_breve": "Progreso por práctica: dominar una habilidad con constancia."
+      },
+      {
+        "nombre": "Nueve de Oros",
+        "numero": 9,
+        "palo": "Oros",
+        "significado_derecho": "Independencia, bienestar, disfrute, éxito material propio.",
+        "significado_invertido": "Dependencia, exceso de apariencia, gastar de más, inseguridad.",
+        "palabras_clave": ["independencia", "lujo", "logro", "bienestar", "autosuficiencia"],
+        "descripcion_breve": "Disfrutar lo logrado por mérito propio; equilibrio entre placer y prudencia."
+      },
+      {
+        "nombre": "Diez de Oros",
+        "numero": 10,
+        "palo": "Oros",
+        "significado_derecho": "Legado, estabilidad, familia, patrimonio, seguridad a largo plazo.",
+        "significado_invertido": "Conflictos por herencia, fragilidad financiera, falta de base, ruptura familiar.",
+        "palabras_clave": ["legado", "patrimonio", "familia", "estabilidad", "largo plazo"],
+        "descripcion_breve": "Construcción sólida: seguridad y legado compartido o familiar."
+      },
+      {
+        "nombre": "Sota de Oros",
+        "numero": 11,
+        "palo": "Oros",
+        "significado_derecho": "Estudio, oportunidad práctica, aprendiz, nuevos proyectos materiales.",
+        "significado_invertido": "Procrastinación, falta de foco, oportunidad desperdiciada, inmadurez.",
+        "palabras_clave": ["aprendizaje", "oportunidad", "proyecto", "práctico", "inicio"],
+        "descripcion_breve": "Trae una oportunidad tangible; aprender y poner bases con disciplina."
+      },
+      {
+        "nombre": "Caballero de Oros",
+        "numero": 12,
+        "palo": "Oros",
+        "significado_derecho": "Constancia, responsabilidad, trabajo lento pero seguro, confiabilidad.",
+        "significado_invertido": "Terquedad, lentitud excesiva, rutina, estancamiento por comodidad.",
+        "palabras_clave": ["constancia", "responsabilidad", "disciplina", "progreso", "seguridad"],
+        "descripcion_breve": "Avance firme y constante: hacer lo necesario sin prisa, sin pausa."
+      },
+      {
+        "nombre": "Reina de Oros",
+        "numero": 13,
+        "palo": "Oros",
+        "significado_derecho": "Abundancia práctica, cuidado, administración, bienestar, hogar.",
+        "significado_invertido": "Materialismo, descuido, sobreprotección, inseguridad financiera.",
+        "palabras_clave": ["abundancia", "cuidado", "hogar", "administración", "práctico"],
+        "descripcion_breve": "Crear bienestar con organización, cuidado y enfoque práctico."
+      },
+      {
+        "nombre": "Rey de Oros",
+        "numero": 14,
+        "palo": "Oros",
+        "significado_derecho": "Éxito material, estabilidad, liderazgo financiero, generosidad responsable.",
+        "significado_invertido": "Avaricia, corrupción, ostentación, control por dinero.",
+        "palabras_clave": ["éxito", "estabilidad", "liderazgo", "finanzas", "seguridad"],
+        "descripcion_breve": "Maestría material: prosperar con ética, orden y visión a largo plazo."
+      }
+    ],
+    "resumen": {
+      "total": 78,
+      "arcanos_mayores": 22,
+      "arcanos_menores": 56
+    }
+  }
+  
