@@ -253,13 +253,87 @@ export default function RegistrosAkashicos() {
             <label className="block text-purple-200 mb-2 font-medium">
               Fecha de nacimiento <span className="text-red-400">*</span>
             </label>
-            <input
-              type="date"
-              value={formData.fecha}
-              onChange={(e) => setFormData({...formData, fecha: e.target.value})}
-              required
-              className="w-full bg-black/30 border-2 border-purple-400 focus:border-yellow-300 rounded-xl px-4 py-3 text-purple-100 outline-none transition-colors"
-            />
+            {(() => {
+              const [y = '', m = '', d = ''] = (formData.fecha || '').split('-')
+              const selectedYear = y
+              const selectedMonth = m
+              const selectedDay = d
+
+              const years = Array.from({ length: 2026 - 1920 + 1 }, (_, i) => String(2026 - i))
+              const months = [
+                { value: '01', label: 'Enero' },
+                { value: '02', label: 'Febrero' },
+                { value: '03', label: 'Marzo' },
+                { value: '04', label: 'Abril' },
+                { value: '05', label: 'Mayo' },
+                { value: '06', label: 'Junio' },
+                { value: '07', label: 'Julio' },
+                { value: '08', label: 'Agosto' },
+                { value: '09', label: 'Septiembre' },
+                { value: '10', label: 'Octubre' },
+                { value: '11', label: 'Noviembre' },
+                { value: '12', label: 'Diciembre' },
+              ]
+              const days = Array.from({ length: 31 }, (_, i) => String(i + 1).padStart(2, '0'))
+
+              const updateFecha = (next) => {
+                const nextYear = next.year ?? selectedYear
+                const nextMonth = next.month ?? selectedMonth
+                const nextDay = next.day ?? selectedDay
+                const nextFecha =
+                  nextYear && nextMonth && nextDay ? `${nextYear}-${nextMonth}-${nextDay}` : ''
+                setFormData({ ...formData, fecha: nextFecha })
+              }
+
+              const selectClass =
+                'w-full bg-black/30 border-2 border-purple-400 focus:border-yellow-300 rounded-xl px-3 py-3 text-purple-100 outline-none transition-colors'
+
+              return (
+                <div className="flex gap-2">
+                  <select
+                    value={selectedDay}
+                    onChange={(e) => updateFecha({ day: e.target.value })}
+                    required
+                    className={selectClass}
+                  >
+                    <option value="">Día</option>
+                    {days.map((day) => (
+                      <option key={day} value={day}>
+                        {parseInt(day, 10)}
+                      </option>
+                    ))}
+                  </select>
+
+                  <select
+                    value={selectedMonth}
+                    onChange={(e) => updateFecha({ month: e.target.value })}
+                    required
+                    className={selectClass}
+                  >
+                    <option value="">Mes</option>
+                    {months.map((mo) => (
+                      <option key={mo.value} value={mo.value}>
+                        {mo.label}
+                      </option>
+                    ))}
+                  </select>
+
+                  <select
+                    value={selectedYear}
+                    onChange={(e) => updateFecha({ year: e.target.value })}
+                    required
+                    className={selectClass}
+                  >
+                    <option value="">Año</option>
+                    {years.map((yr) => (
+                      <option key={yr} value={yr}>
+                        {yr}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )
+            })()}
           </div>
 
           <div>

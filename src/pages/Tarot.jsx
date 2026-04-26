@@ -137,82 +137,139 @@ export default function Tarot() {
   }
 
   return (
-    <div className="max-w-md mx-auto px-4 pt-10 pb-4">
+    <div className="max-w-md mx-auto px-4 pt-10 pb-24">
       <h1 className="text-3xl font-bold text-yellow-300 mb-2 text-center">🃏 Tarot</h1>
       
       <div className="mt-6">
-        <div className={`grid ${tipoLectura === 'una' ? 'grid-cols-1' : 'grid-cols-3'} gap-4 mb-6`}>
-          {cartasSeleccionadas.map((carta, index) => {
-            const estaVolteada = cartasVolteadas[index]
-            const etiquetaTiempo = tipoLectura === 'tres'
-              ? ['Pasado', 'Presente', 'Futuro'][index]
-              : null
-            const mensajeInterpretativo = obtenerMensajeInterpretativo(tipoLectura, index, carta)
+        {/* Lectura 1 carta: tarjeta clásica */}
+        {tipoLectura === 'una' && (
+          <div className="grid grid-cols-1 gap-4 mb-6">
+            {cartasSeleccionadas.map((carta, index) => {
+              const estaVolteada = cartasVolteadas[index]
+              const mensajeInterpretativo = obtenerMensajeInterpretativo(tipoLectura, index, carta)
 
-            return (
-              <div key={index} className="flex flex-col items-center">
-                {etiquetaTiempo && (
-                  <p className="text-xs text-purple-300 mb-2 font-medium">{etiquetaTiempo}</p>
-                )}
-                <button
-                  onClick={() => !estaVolteada && voltearCarta(index)}
-                  disabled={estaVolteada}
-                  className={`w-full aspect-[2/3] rounded-xl border-2 transition-all duration-500 transform ${
-                    estaVolteada
-                      ? 'bg-gradient-to-br from-purple-900/90 to-purple-700/90 border-yellow-400/60 shadow-[0_0_20px_rgba(212,175,55,0.4)]'
-                      : 'bg-gradient-to-br from-[#1a1a2e] to-[#0f1020] border-purple-600/60 hover:border-purple-400/80 hover:shadow-[0_0_15px_rgba(139,92,246,0.5)] cursor-pointer hover:scale-105'
-                  }`}
-                >
-                  {estaVolteada ? (
-                    <div className="h-full flex flex-col justify-between p-3 text-left">
-                      <div>
-                        <h3 className="text-yellow-300 font-bold text-xl mb-2">{carta.nombre}</h3>
-                        <p className="text-gray-200 text-base mb-4">
-                          {carta.significado_derecho}
-                        </p>
-                        {mensajeInterpretativo && (
-                          <p className="text-purple-200 italic mb-3">
-                            {mensajeInterpretativo}
-                          </p>
-                        )}
-                      </div>
-                      <div className="mt-auto">
-                        <div className="flex flex-wrap gap-1">
-                          {carta.palabras_clave.map((palabra, i) => (
-                            <span
-                              key={i}
-                              className="text-xs bg-purple-600/30 text-purple-200 px-2 py-0.5 rounded border border-purple-600/60"
-                            >
-                              {palabra}
-                            </span>
-                          ))}
+              return (
+                <div key={index} className="flex flex-col items-center">
+                  <button
+                    onClick={() => !estaVolteada && voltearCarta(index)}
+                    disabled={estaVolteada}
+                    className={`w-full aspect-[2/3] rounded-xl border-2 transition-all duration-500 transform ${
+                      estaVolteada
+                        ? 'bg-gradient-to-br from-purple-900/90 to-purple-700/90 border-yellow-400/60 shadow-[0_0_20px_rgba(212,175,55,0.4)]'
+                        : 'bg-gradient-to-br from-[#1a1a2e] to-[#0f1020] border-purple-600/60 hover:border-purple-400/80 hover:shadow-[0_0_15px_rgba(139,92,246,0.5)] cursor-pointer hover:scale-105'
+                    }`}
+                  >
+                    {estaVolteada ? (
+                      <div className="h-full flex flex-col justify-between p-4 text-left leading-relaxed">
+                        <div className="space-y-3">
+                          <h3 className="text-yellow-300 font-bold text-xl">{carta.nombre}</h3>
+                          <p className="text-gray-200 text-base">{carta.significado_derecho}</p>
+                          {mensajeInterpretativo && (
+                            <p className="text-purple-200 italic">{mensajeInterpretativo}</p>
+                          )}
+                        </div>
+                        <div className="pt-3">
+                          <div className="flex flex-wrap gap-1">
+                            {carta.palabras_clave.map((palabra, i) => (
+                              <span
+                                key={i}
+                                className="text-xs bg-purple-600/30 text-purple-200 px-2 py-0.5 rounded border border-purple-600/60"
+                              >
+                                {palabra}
+                              </span>
+                            ))}
+                          </div>
                         </div>
                       </div>
+                    ) : (
+                      <div className="h-full flex items-center justify-center">
+                        <div className="text-4xl text-purple-400/60">🃏</div>
+                      </div>
+                    )}
+                  </button>
+                </div>
+              )
+            })}
+          </div>
+        )}
+
+        {/* Lectura 3 cartas: bloques verticales (evita textos montados en móvil) */}
+        {tipoLectura === 'tres' && (
+          <div className="mb-6">
+            {cartasSeleccionadas.map((carta, index) => {
+              const estaVolteada = cartasVolteadas[index]
+              const etiquetaTiempo = ['Pasado', 'Presente', 'Futuro'][index]
+              const mensajeInterpretativo = obtenerMensajeInterpretativo(tipoLectura, index, carta)
+
+              return (
+                <div key={index} className="mb-5">
+                  <p className="text-sm text-purple-300 mb-3 font-semibold text-center">
+                    {etiquetaTiempo}
+                  </p>
+
+                  <button
+                    onClick={() => !estaVolteada && voltearCarta(index)}
+                    disabled={estaVolteada}
+                    className={`w-full rounded-2xl border-2 transition-all duration-300 ${
+                      estaVolteada
+                        ? 'bg-gradient-to-br from-purple-900/70 to-purple-700/70 border-yellow-400/60 shadow-[0_0_20px_rgba(212,175,55,0.25)]'
+                        : 'bg-gradient-to-br from-[#1a1a2e] to-[#0f1020] border-purple-600/60 hover:border-purple-400/80 hover:shadow-[0_0_15px_rgba(139,92,246,0.5)] cursor-pointer'
+                    }`}
+                  >
+                    <div className="p-5 text-left leading-relaxed">
+                      {!estaVolteada ? (
+                        <div className="flex items-center justify-center py-10">
+                          <div className="text-5xl text-purple-400/70">🃏</div>
+                        </div>
+                      ) : (
+                        <div className="space-y-4">
+                          <h3 className="text-yellow-300 font-bold text-xl">{carta.nombre}</h3>
+
+                          <p className="text-gray-200 text-base leading-relaxed">
+                            {carta.significado_derecho}
+                          </p>
+
+                          {mensajeInterpretativo && (
+                            <p className="text-purple-200 italic leading-relaxed">
+                              {mensajeInterpretativo}
+                            </p>
+                          )}
+
+                          <div className="pt-2">
+                            <div className="flex flex-wrap gap-2">
+                              {carta.palabras_clave.map((palabra, i) => (
+                                <span
+                                  key={i}
+                                  className="text-xs bg-purple-600/30 text-purple-200 px-2 py-1 rounded border border-purple-600/60"
+                                >
+                                  {palabra}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
-                  ) : (
-                    <div className="h-full flex items-center justify-center">
-                      <div className="text-4xl text-purple-400/60">🃏</div>
-                    </div>
-                  )}
-                </button>
-              </div>
-            )
-          })}
-        </div>
+                  </button>
+                </div>
+              )
+            })}
+          </div>
+        )}
 
         {tipoLectura === 'tres' && todasVolteadas && (
-          <div className="mb-6 bg-gradient-to-br from-yellow-900/40 to-purple-900/40 border-2 border-yellow-500/60 rounded-2xl p-6">
-            <h2 className="text-yellow-300 font-bold text-lg mb-3 text-center">
+          <div className="mt-8 mb-6 bg-gradient-to-br from-yellow-900/40 to-purple-900/40 border-2 border-yellow-500/60 rounded-2xl p-6">
+            <h2 className="text-yellow-300 font-bold text-lg text-center mb-4">
               ✨ Lectura Final de tu Camino
             </h2>
-            <p className="text-purple-100 italic leading-relaxed">
+            <p className="text-purple-100 italic leading-relaxed break-words mb-1">
               {generarLecturaFinal()}
             </p>
           </div>
         )}
 
         {todasVolteadas && (
-          <div className="space-y-3">
+          <div className="space-y-4">
             <button
               onClick={handleSaveReading}
               disabled={saving}
@@ -222,7 +279,7 @@ export default function Tarot() {
             </button>
 
             {saveMessage && (
-              <p className="text-center text-sm font-medium">
+              <p className="text-center text-sm font-medium mb-1">
                 {saveMessage}
               </p>
             )}
