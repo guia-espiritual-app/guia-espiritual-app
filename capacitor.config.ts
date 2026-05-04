@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.guiaespiritual.app',
+  appId: 'com.guiaespiritualapp.app',
   appName: 'Guia Espiritual',
   webDir: 'dist',
   server: {

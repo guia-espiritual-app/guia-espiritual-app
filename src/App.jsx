@@ -12,6 +12,7 @@ import Historial from './pages/Historial'
 import CartaAstral from './pages/CartaAstral'
 import RegistrosAkashicos from './pages/RegistrosAkashicos'
 import PrivacyPolicy from './pages/PrivacyPolicy'
+import DeleteAccount from './pages/DeleteAccount'
 import { PremiumProvider } from './contexts/PremiumContext'
 import Planes from './pages/planes'
 
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/delete-account" element={<DeleteAccount />} />
 
           {/* Rutas protegidas con layout */}
           <Route element={<ProtectedRoute><Layout /></ProtectedRoute>}>

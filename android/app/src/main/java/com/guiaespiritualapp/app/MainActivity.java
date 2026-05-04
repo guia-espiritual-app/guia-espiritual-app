@@ -1,4 +1,4 @@
-package com.guiaespiritual.app;
+package com.guiaespiritualapp.app;
 
 import com.getcapacitor.BridgeActivity;
 

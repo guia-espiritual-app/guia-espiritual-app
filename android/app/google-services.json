@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:367768479274:android:21192a97a2e16c7bc94553",
         "android_client_info": {
-          "package_name": "com.guiaespiritual.app"
+          "package_name": "com.guiaespiritualapp.app"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "367768479274-9003dphgt7v4isgk6sb82lg75kf3bq0l.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.guiaespiritual.app",
+            "package_name": "com.guiaespiritualapp.app",
             "certificate_hash": "491152517ee04e3a9ec0a6ba42076057cc73d454"
           }
         },

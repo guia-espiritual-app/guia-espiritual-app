@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Android signing (DO NOT COMMIT)
+android/key.properties
+android/app/*.keystore
+android/app/*.jks
