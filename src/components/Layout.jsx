@@ -11,7 +11,7 @@ const navItems = [
 export default function Layout() {
   return (
     <div className="min-h-screen flex flex-col bg-[#1a1a2e] text-purple-100">
-      <main className="flex-1 pb-20">
+      <main className="flex-1 pb-20 relative z-10">
         <Outlet />
       </main>
 

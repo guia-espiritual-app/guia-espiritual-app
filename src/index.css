@@ -13,4 +13,29 @@ body {
 
 #root {
   min-height: 100vh;
+  position: relative;
+  z-index: 0;
+}
+
+/* Android WebView (Capacitor): native <select> often ignores touch or opens behind the view */
+select,
+input,
+textarea,
+button {
+  touch-action: manipulation;
+}
+
+select {
+  -webkit-appearance: menulist;
+  appearance: menulist;
+  position: relative;
+  z-index: 20;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+/* Decorative / third-party overlays must not steal touches from the app */
+#root > * {
+  position: relative;
+  z-index: 1;
 }
