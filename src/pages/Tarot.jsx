@@ -3,6 +3,8 @@ import tarotData from '../data/tarot.json'
 import { saveTarotReading } from '../services/firestoreService'
 import { useSound } from '../contexts/SoundContext'
 import TarotFlipCard from '../components/TarotFlipCard'
+import ServiceAvatar from '../components/ServiceAvatar'
+import avatarVidente from '../assets/avatares/vidente.png'
 
 export default function Tarot() {
   const { playChime } = useSound()
@@ -162,6 +164,7 @@ export default function Tarot() {
   if (!tipoLectura) {
     return (
       <div className="max-w-md mx-auto px-4 pt-10 pb-4">
+        <ServiceAvatar src={avatarVidente} alt="Vidente del Tarot" />
         <h1 className="text-3xl font-bold text-yellow-300 mb-2 text-center">🃏 Tarot</h1>
         <p className="text-purple-200 mb-6 text-center">
           Conecta con la sabiduría del tarot y recibe orientación para tu camino espiritual.
@@ -192,6 +195,7 @@ export default function Tarot() {
 
   return (
     <div className="max-w-md mx-auto px-4 pt-10 pb-24">
+      <ServiceAvatar src={avatarVidente} alt="Vidente del Tarot" />
       <h1 className="text-3xl font-bold text-yellow-300 mb-2 text-center">🃏 Tarot</h1>
       
       <div className="mt-6">

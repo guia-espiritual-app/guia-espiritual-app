@@ -2,6 +2,8 @@ import { useState } from 'react'
 import signosData from '../data/signos.json'
 import { saveHoroscopeReading } from '../services/firestoreService'
 import { useSound } from '../contexts/SoundContext'
+import ServiceAvatar from '../components/ServiceAvatar'
+import avatarSacerdotisa from '../assets/avatares/sacerdotisa.png'
 
 const rotarCompatibilidades = (compatibilidadOriginal) => {
   const mesActual = new Date().getMonth() // 0-11
@@ -104,6 +106,7 @@ export default function Horoscopo() {
   if (signoSeleccionado) {
     return (
       <div className="max-w-md mx-auto px-4 pt-10 pb-4">
+        <ServiceAvatar src={avatarSacerdotisa} alt="Sacerdotisa del Horóscopo" />
         <div className="bg-gradient-to-br from-purple-900/90 to-purple-700/90 border-2 border-purple-500/60 rounded-2xl p-6 shadow-lg shadow-purple-900/60">
           <h1 className="text-4xl font-bold text-yellow-300 mb-2 text-center">
             {simbolosZodiacales[signoSeleccionado.nombre]} {signoSeleccionado.nombre}
@@ -217,6 +220,7 @@ export default function Horoscopo() {
 
   return (
     <div className="max-w-md mx-auto px-4 pt-10 pb-4">
+      <ServiceAvatar src={avatarSacerdotisa} alt="Sacerdotisa del Horóscopo" />
       <h1 className="text-3xl font-bold text-yellow-300 mb-2 text-center">♈ Horóscopo</h1>
       <p className="text-purple-200 mb-6 text-center">
         Explora las energías de los signos y cómo influyen en tu día a día.

@@ -3,6 +3,8 @@ import numerologiaData from '../data/numerologia.json'
 import { saveNumerologyReading } from '../services/firestoreService'
 import DateSelect from '../components/DateSelect'
 import { useSound } from '../contexts/SoundContext'
+import ServiceAvatar from '../components/ServiceAvatar'
+import avatarNumerologo from '../assets/avatares/numerologo.png'
 
 export default function Numerologia() {
   const { playChime } = useSound()
@@ -79,6 +81,7 @@ export default function Numerologia() {
   if (resultado) {
     return (
       <div className="max-w-md mx-auto px-4 pt-10 pb-4">
+        <ServiceAvatar src={avatarNumerologo} alt="Numerólogo" />
         <h1 className="text-3xl font-bold text-yellow-300 mb-6 text-center">🔢 Tu Número de Vida</h1>
         
         <div className="bg-gradient-to-br from-purple-900/90 to-purple-700/90 border-2 border-yellow-400/60 rounded-2xl p-8 shadow-[0_0_30px_rgba(212,175,55,0.3)] mb-6">
@@ -167,6 +170,7 @@ export default function Numerologia() {
 
   return (
     <div className="max-w-md mx-auto px-4 pt-10 pb-4">
+      <ServiceAvatar src={avatarNumerologo} alt="Numerólogo" />
       <h1 className="text-3xl font-bold text-yellow-300 mb-2 text-center">🔢 Numerología</h1>
       <p className="text-purple-200 mb-6 text-center">
         Descubre tu número de vida y su significado profundo

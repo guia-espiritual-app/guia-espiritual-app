@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { usePremium } from '../contexts/PremiumContext'
 import { useNavigate } from 'react-router-dom'
 import DateSelect from '../components/DateSelect'
+import ServiceAvatar from '../components/ServiceAvatar'
+import avatarGuardian from '../assets/avatares/guardian.png'
 
 export default function CartaAstral() {
     const { isPremium, loading: premiumLoading } = usePremium()
@@ -93,6 +95,7 @@ if (premiumLoading) {
     return (
       <div className="max-w-md mx-auto px-4 pt-10 pb-4">
         <div className="text-center mb-6">
+          <ServiceAvatar src={avatarGuardian} alt="Guardián de la Carta Astral" />
           <div className="text-6xl mb-4">🔒</div>
           <h1 className="text-3xl font-bold text-yellow-300 mb-2">Contenido Premium</h1>
           <p className="text-purple-200 mb-6">
@@ -160,6 +163,7 @@ if (premiumLoading) {
           </span>
         </div>
 
+        <ServiceAvatar src={avatarGuardian} alt="Guardián de la Carta Astral" />
         <h1 className="text-3xl font-bold text-yellow-300 mb-2 text-center">✨ Tu Carta Astral</h1>
         <p className="text-purple-200 text-center mb-6">{resultado.nombre}</p>
 
@@ -227,6 +231,7 @@ if (premiumLoading) {
         </span>
       </div>
 
+      <ServiceAvatar src={avatarGuardian} alt="Guardián de la Carta Astral" />
       <h1 className="text-3xl font-bold text-yellow-300 mb-2 text-center">✨ Carta Astral</h1>
       <p className="text-purple-200 mb-6 text-center">
         Descubre tu mapa cósmico personal

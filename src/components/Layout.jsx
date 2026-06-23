@@ -1,11 +1,14 @@
 import { NavLink, Outlet } from 'react-router-dom'
 import { useSound } from '../contexts/SoundContext'
+import avatarVidente from '../assets/avatares/vidente.png'
+import avatarSacerdotisa from '../assets/avatares/sacerdotisa.png'
+import avatarChaman from '../assets/avatares/chaman.png'
 
 const navItems = [
   { to: '/', label: 'Home', icon: '🏠' },
-  { to: '/tarot', label: 'Tarot', icon: '🃏' },
-  { to: '/horoscopo', label: 'Horóscopo', icon: '♈' },
-  { to: '/numerologia', label: 'Numerología', icon: '🔢' },
+  { to: '/tarot', label: 'Tarot', avatar: avatarVidente },
+  { to: '/horoscopo', label: 'Horóscopo', avatar: avatarSacerdotisa },
+  { to: '/registros-akashicos', label: 'Registros', avatar: avatarChaman },
   { to: '/perfil', label: 'Perfil', icon: '👤' },
 ]
 
@@ -46,7 +49,17 @@ export default function Layout() {
                 ].join(' ')
               }
             >
-              <span className="text-xl mb-0.5">{item.icon}</span>
+              <span className="mb-0.5 flex h-8 items-center justify-center">
+                {item.avatar ? (
+                  <img
+                    src={item.avatar}
+                    alt=""
+                    className="h-8 w-8 object-contain"
+                  />
+                ) : (
+                  <span className="text-xl">{item.icon}</span>
+                )}
+              </span>
               <span>{item.label}</span>
             </NavLink>
           ))}

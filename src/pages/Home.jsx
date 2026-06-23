@@ -1,5 +1,10 @@
 import { Link } from 'react-router-dom'
 import logoGuia from '../assets/logo-guia.png'
+import avatarVidente from '../assets/avatares/vidente.png'
+import avatarSacerdotisa from '../assets/avatares/sacerdotisa.png'
+import avatarNumerologo from '../assets/avatares/numerologo.png'
+import avatarGuardian from '../assets/avatares/guardian.png'
+import avatarChaman from '../assets/avatares/chaman.png'
 
 const FRASES_MISTICAS = [
   'El universo conspira a tu favor cuando te alineas con tu verdadero propósito.',
@@ -29,11 +34,11 @@ function getFraseDelDia() {
 }
 
 const features = [
-  { to: '/tarot', icon: '🃏', title: 'Tarot', desc: 'Descubre tu camino', external: false },
-  { to: '/horoscopo', icon: '♈', title: 'Horóscopo', desc: 'Tu energía hoy', external: false },
-  { to: '/numerologia', icon: '🔢', title: 'Numerología', desc: 'Tu número de vida', external: false },
-  { to: '/carta-astral', icon: '✨', title: 'Carta Astral', desc: 'Tu mapa cósmico', external: false, premium: true },
-  { to: '/registros-akashicos', icon: '📜', title: 'Registros Akáshicos', desc: 'Sabiduría del alma', external: false, premium: true },
+  { to: '/tarot', avatar: avatarVidente, title: 'Tarot', desc: 'Descubre tu camino', external: false },
+  { to: '/horoscopo', avatar: avatarSacerdotisa, title: 'Horóscopo', desc: 'Tu energía hoy', external: false },
+  { to: '/numerologia', avatar: avatarNumerologo, title: 'Numerología', desc: 'Tu número de vida', external: false },
+  { to: '/carta-astral', avatar: avatarGuardian, title: 'Carta Astral', desc: 'Tu mapa cósmico', external: false, premium: true },
+  { to: '/registros-akashicos', avatar: avatarChaman, title: 'Registros Akáshicos', desc: 'Sabiduría del alma', external: false, premium: true },
 ]
 
 export default function Home() {
@@ -75,7 +80,11 @@ export default function Home() {
                   </span>
                 </div>
               )}
-              <div className="text-5xl mb-3">{item.icon}</div>
+              <img
+                src={item.avatar}
+                alt=""
+                className="h-[65px] w-auto object-contain mb-3 drop-shadow-[0_0_10px_rgba(251,191,36,0.15)]"
+              />
               <h2 className="text-yellow-300 font-bold text-lg mb-1">{item.title}</h2>
               <p className="text-purple-200 text-sm">{item.desc}</p>
             </>
