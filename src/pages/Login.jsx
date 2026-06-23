@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../firebase'
+import logoGuia from '../assets/logo-guia.png'
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -46,7 +47,11 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#1a1a2e] to-[#0f1020] px-4">
       <div className="w-full max-w-md bg-purple-900/40 border-2 border-purple-500/70 rounded-2xl p-8 shadow-2xl shadow-purple-900/70">
         <div className="text-center mb-8">
-          <div className="text-5xl mb-2">🔮</div>
+          <img
+            src={logoGuia}
+            alt="Guía Espiritual"
+            className="mx-auto mb-2 max-w-[220px] w-full h-auto"
+          />
           <h1 className="text-2xl font-bold text-yellow-300 mb-1">Guía Espiritual</h1>
           <p className="text-purple-200 text-sm">Ingresa para continuar tu viaje místico</p>
         </div>

@@ -2,8 +2,10 @@ import { useState } from 'react'
 import numerologiaData from '../data/numerologia.json'
 import { saveNumerologyReading } from '../services/firestoreService'
 import DateSelect from '../components/DateSelect'
+import { useSound } from '../contexts/SoundContext'
 
 export default function Numerologia() {
+  const { playChime } = useSound()
   const [nombre, setNombre] = useState('')
   const [fechaNacimiento, setFechaNacimiento] = useState('')
   const [resultado, setResultado] = useState(null)
@@ -45,6 +47,7 @@ export default function Numerologia() {
       numeroVida,
       datos: datosNumerologia
     })
+    playChime()
     setSaveMessage('')
   }
 

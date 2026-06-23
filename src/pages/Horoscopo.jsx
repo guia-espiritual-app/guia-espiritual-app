@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import signosData from '../data/signos.json'
 import { saveHoroscopeReading } from '../services/firestoreService'
+import { useSound } from '../contexts/SoundContext'
 
 const rotarCompatibilidades = (compatibilidadOriginal) => {
   const mesActual = new Date().getMonth() // 0-11
@@ -66,6 +67,7 @@ const generarPrediccionDiaria = (signo) => {
 }
 
 export default function Horoscopo() {
+  const { playChime } = useSound()
   const [signoSeleccionado, setSignoSeleccionado] = useState(null)
   const [saving, setSaving] = useState(false)
   const [saveMessage, setSaveMessage] = useState('')
@@ -92,6 +94,7 @@ export default function Horoscopo() {
 
   const verPrediccion = (signo) => {
     setSignoSeleccionado(signo)
+    playChime()
   }
 
   const volverASignos = () => {

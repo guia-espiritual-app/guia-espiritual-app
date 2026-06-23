@@ -39,3 +39,95 @@ select {
   position: relative;
   z-index: 1;
 }
+
+/* Tarot flip card */
+.tarot-flip-scene {
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  aspect-ratio: 2 / 3;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.tarot-flip-scene--revealed {
+  cursor: default;
+}
+
+.tarot-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.tarot-flip-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.tarot-flip-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.tarot-flip-back {
+  transform: rotateY(0deg);
+}
+
+.tarot-flip-back-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  background: linear-gradient(145deg, #1a1035 0%, #2d1b4e 45%, #1a1a2e 100%);
+  border: 2px solid rgba(251, 191, 36, 0.65);
+  border-radius: 0.75rem;
+  box-shadow:
+    0 0 20px rgba(251, 191, 36, 0.12),
+    inset 0 0 30px rgba(139, 92, 246, 0.15);
+}
+
+.tarot-flip-back-glow {
+  position: absolute;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.tarot-flip-front {
+  transform: rotateY(180deg);
+}
+
+.tarot-flip-front-inner {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  line-height: 1.625;
+  background: linear-gradient(to bottom right, rgba(88, 28, 135, 0.9), rgba(126, 34, 206, 0.7));
+  border: 2px solid rgba(251, 191, 36, 0.6);
+  border-radius: 0.75rem;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+@media (min-width: 768px) {
+  .tarot-flip-scene {
+    max-width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

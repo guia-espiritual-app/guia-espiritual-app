@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { usePremium } from '../contexts/PremiumContext'
+import { useSound } from '../contexts/SoundContext'
 import { useNavigate } from 'react-router-dom'
 import DateSelect from '../components/DateSelect'
 
 export default function RegistrosAkashicos() {
   const { isPremium, loading: premiumLoading } = usePremium()
+  const { playChime } = useSound()
   const navigate = useNavigate()
   
   const [formData, setFormData] = useState({
@@ -81,6 +83,7 @@ export default function RegistrosAkashicos() {
 
     const resultado = generarLectura(formData)
     setLectura(resultado)
+    playChime()
   }
 
   const nuevaConsulta = () => {

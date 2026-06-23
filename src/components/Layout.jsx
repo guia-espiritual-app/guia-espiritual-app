@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom'
+import { useSound } from '../contexts/SoundContext'
 
 const navItems = [
   { to: '/', label: 'Home', icon: '🏠' },
@@ -9,9 +10,22 @@ const navItems = [
 ]
 
 export default function Layout() {
+  const { soundEnabled, toggleSound } = useSound()
+
   return (
     <div className="min-h-screen flex flex-col bg-[#1a1a2e] text-purple-100">
-      <main className="flex-1 pb-20 relative z-10">
+      <header className="fixed inset-x-0 top-0 z-50 flex justify-end px-4 py-3 bg-[#1a1a2e]/90 border-b border-purple-700/30 backdrop-blur-md">
+        <button
+          type="button"
+          onClick={toggleSound}
+          aria-label={soundEnabled ? 'Desactivar sonido' : 'Activar sonido'}
+          className="flex items-center justify-center w-10 h-10 rounded-xl border border-purple-500/50 bg-purple-900/40 text-lg shadow-sm shadow-purple-900/40 transition-all duration-200 hover:border-yellow-400/60 hover:bg-purple-800/50 hover:shadow-[0_0_12px_rgba(212,175,55,0.25)]"
+        >
+          {soundEnabled ? '🔊' : '🔇'}
+        </button>
+      </header>
+
+      <main className="flex-1 pt-14 pb-20 relative z-10">
         <Outlet />
       </main>
 

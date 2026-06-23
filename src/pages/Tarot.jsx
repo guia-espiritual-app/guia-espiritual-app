@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import tarotData from '../data/tarot.json'
 import { saveTarotReading } from '../services/firestoreService'
+import { useSound } from '../contexts/SoundContext'
+import TarotFlipCard from '../components/TarotFlipCard'
 
 export default function Tarot() {
+  const { playChime } = useSound()
   const [tipoLectura, setTipoLectura] = useState(null)
   const [cartasSeleccionadas, setCartasSeleccionadas] = useState([])
   const [cartasVolteadas, setCartasVolteadas] = useState({})
@@ -35,6 +38,7 @@ export default function Tarot() {
   }
 
   const voltearCarta = (index) => {
+    playChime()
     setCartasVolteadas(prev => ({
       ...prev,
       [index]: true
@@ -105,6 +109,56 @@ export default function Tarot() {
     return mensajes[indice]
   }
 
+  const renderContenidoCarta = (carta, mensajeInterpretativo) => (
+    <div className="space-y-4">
+      <h3 className="text-yellow-300 font-bold text-xl">{carta.nombre}</h3>
+      <p className="text-gray-200 text-base leading-relaxed">{carta.significado_derecho}</p>
+      {mensajeInterpretativo && (
+        <p className="text-purple-200 italic leading-relaxed">{mensajeInterpretativo}</p>
+      )}
+
+      {carta.interpretacion_extendida && (
+        <p className="text-purple-100 text-sm leading-relaxed border-l-2 border-[#fbbf24]/70 pl-3 py-1 bg-purple-950/30 rounded-r-lg">
+          {carta.interpretacion_extendida}
+        </p>
+      )}
+
+      {carta.consejo && (
+        <div className="bg-purple-900/40 border border-purple-500/50 rounded-xl p-3">
+          <h4 className="text-[#fbbf24] font-semibold text-sm mb-2">✨ Consejo</h4>
+          <p className="text-gray-100 text-sm leading-relaxed">{carta.consejo}</p>
+        </div>
+      )}
+
+      {carta.en_el_amor && (
+        <div className="bg-purple-900/40 border border-purple-500/50 rounded-xl p-3">
+          <h4 className="text-[#fbbf24] font-semibold text-sm mb-2">💞 En el amor</h4>
+          <p className="text-gray-100 text-sm leading-relaxed">{carta.en_el_amor}</p>
+        </div>
+      )}
+
+      {carta.en_el_trabajo && (
+        <div className="bg-purple-900/40 border border-purple-500/50 rounded-xl p-3">
+          <h4 className="text-[#fbbf24] font-semibold text-sm mb-2">💼 En el trabajo</h4>
+          <p className="text-gray-100 text-sm leading-relaxed">{carta.en_el_trabajo}</p>
+        </div>
+      )}
+
+      <div className="pt-1">
+        <div className="flex flex-wrap gap-2">
+          {carta.palabras_clave.map((palabra, i) => (
+            <span
+              key={i}
+              className="text-xs bg-purple-600/30 text-purple-200 px-2 py-1 rounded border border-purple-600/60"
+            >
+              {palabra}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+
   if (!tipoLectura) {
     return (
       <div className="max-w-md mx-auto px-4 pt-10 pb-4">
@@ -150,108 +204,34 @@ export default function Tarot() {
 
               return (
                 <div key={index} className="flex flex-col items-center">
-                  <button
-                    onClick={() => !estaVolteada && voltearCarta(index)}
-                    disabled={estaVolteada}
-                    className={`w-full aspect-[2/3] rounded-xl border-2 transition-all duration-500 transform ${
-                      estaVolteada
-                        ? 'bg-gradient-to-br from-purple-900/90 to-purple-700/90 border-yellow-400/60 shadow-[0_0_20px_rgba(212,175,55,0.4)]'
-                        : 'bg-gradient-to-br from-[#1a1a2e] to-[#0f1020] border-purple-600/60 hover:border-purple-400/80 hover:shadow-[0_0_15px_rgba(139,92,246,0.5)] cursor-pointer hover:scale-105'
-                    }`}
+                  <TarotFlipCard
+                    flipped={!!estaVolteada}
+                    onFlip={() => voltearCarta(index)}
                   >
-                    {estaVolteada ? (
-                      <div className="h-full flex flex-col justify-between p-4 text-left leading-relaxed">
-                        <div className="space-y-3">
-                          <h3 className="text-yellow-300 font-bold text-xl">{carta.nombre}</h3>
-                          <p className="text-gray-200 text-base">{carta.significado_derecho}</p>
-                          {mensajeInterpretativo && (
-                            <p className="text-purple-200 italic">{mensajeInterpretativo}</p>
-                          )}
-                        </div>
-                        <div className="pt-3">
-                          <div className="flex flex-wrap gap-1">
-                            {carta.palabras_clave.map((palabra, i) => (
-                              <span
-                                key={i}
-                                className="text-xs bg-purple-600/30 text-purple-200 px-2 py-0.5 rounded border border-purple-600/60"
-                              >
-                                {palabra}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="h-full flex items-center justify-center">
-                        <div className="text-4xl text-purple-400/60">🃏</div>
-                      </div>
-                    )}
-                  </button>
+                    {renderContenidoCarta(carta, mensajeInterpretativo)}
+                  </TarotFlipCard>
                 </div>
               )
             })}
           </div>
         )}
 
-        {/* Lectura 3 cartas: bloques verticales (evita textos montados en móvil) */}
         {tipoLectura === 'tres' && (
-          <div className="mb-6">
+          <div className="mb-6 space-y-5">
             {cartasSeleccionadas.map((carta, index) => {
               const estaVolteada = cartasVolteadas[index]
               const etiquetaTiempo = ['Pasado', 'Presente', 'Futuro'][index]
               const mensajeInterpretativo = obtenerMensajeInterpretativo(tipoLectura, index, carta)
 
               return (
-                <div key={index} className="mb-5">
-                  <p className="text-sm text-purple-300 mb-3 font-semibold text-center">
-                    {etiquetaTiempo}
-                  </p>
-
-                  <button
-                    onClick={() => !estaVolteada && voltearCarta(index)}
-                    disabled={estaVolteada}
-                    className={`w-full rounded-2xl border-2 transition-all duration-300 ${
-                      estaVolteada
-                        ? 'bg-gradient-to-br from-purple-900/70 to-purple-700/70 border-yellow-400/60 shadow-[0_0_20px_rgba(212,175,55,0.25)]'
-                        : 'bg-gradient-to-br from-[#1a1a2e] to-[#0f1020] border-purple-600/60 hover:border-purple-400/80 hover:shadow-[0_0_15px_rgba(139,92,246,0.5)] cursor-pointer'
-                    }`}
-                  >
-                    <div className="p-5 text-left leading-relaxed">
-                      {!estaVolteada ? (
-                        <div className="flex items-center justify-center py-10">
-                          <div className="text-5xl text-purple-400/70">🃏</div>
-                        </div>
-                      ) : (
-                        <div className="space-y-4">
-                          <h3 className="text-yellow-300 font-bold text-xl">{carta.nombre}</h3>
-
-                          <p className="text-gray-200 text-base leading-relaxed">
-                            {carta.significado_derecho}
-                          </p>
-
-                          {mensajeInterpretativo && (
-                            <p className="text-purple-200 italic leading-relaxed">
-                              {mensajeInterpretativo}
-                            </p>
-                          )}
-
-                          <div className="pt-2">
-                            <div className="flex flex-wrap gap-2">
-                              {carta.palabras_clave.map((palabra, i) => (
-                                <span
-                                  key={i}
-                                  className="text-xs bg-purple-600/30 text-purple-200 px-2 py-1 rounded border border-purple-600/60"
-                                >
-                                  {palabra}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </button>
-                </div>
+                <TarotFlipCard
+                  key={index}
+                  flipped={!!estaVolteada}
+                  onFlip={() => voltearCarta(index)}
+                  label={etiquetaTiempo}
+                >
+                  {renderContenidoCarta(carta, mensajeInterpretativo)}
+                </TarotFlipCard>
               )
             })}
           </div>

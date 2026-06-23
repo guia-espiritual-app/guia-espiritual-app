@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import logoGuia from '../assets/logo-guia.png'
 
 const FRASES_MISTICAS = [
   'El universo conspira a tu favor cuando te alineas con tu verdadero propósito.',
@@ -43,7 +44,11 @@ export default function Home() {
     <div className="max-w-md mx-auto px-5 pt-8 pb-24">
       {/* Header */}
       <header className="text-center mb-8">
-        <div className="text-5xl mb-2">🔮</div>
+        <img
+          src={logoGuia}
+          alt="Guía Espiritual"
+          className="mx-auto mb-2 max-w-[220px] w-full h-auto"
+        />
         <h1 className="text-3xl font-bold text-yellow-300 mb-1">{saludo}</h1>
         <p className="text-purple-200 text-lg">¿Qué deseas descubrir hoy?</p>
       </header>
