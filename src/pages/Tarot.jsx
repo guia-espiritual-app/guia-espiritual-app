@@ -6,6 +6,35 @@ import TarotFlipCard from '../components/TarotFlipCard'
 import ServiceAvatar from '../components/ServiceAvatar'
 import avatarVidente from '../assets/avatares/vidente.png'
 
+const imagenes = import.meta.glob('../assets/cartas/*.jpg', { eager: true, import: 'default' })
+
+function obtenerImagenCarta(carta) {
+  if (!carta?.imagen) return null
+  return Object.entries(imagenes).find(([ruta]) => ruta.endsWith(`/${carta.imagen}`))?.[1] ?? null
+}
+
+function CartaImagen({ carta }) {
+  const [error, setError] = useState(false)
+  const src = obtenerImagenCarta(carta)
+
+  if (!src || error) {
+    return (
+      <div className="w-full aspect-[2/3] max-h-44 flex items-center justify-center rounded-lg border-2 border-[#fbbf24]/40 bg-purple-950/40">
+        <span className="text-4xl text-purple-400/70" aria-hidden="true">🃏</span>
+      </div>
+    )
+  }
+
+  return (
+    <img
+      src={src}
+      alt={carta.nombre}
+      onError={() => setError(true)}
+      className="w-full max-h-44 object-contain rounded-lg border-2 border-[#fbbf24]/60 shadow-[0_0_12px_rgba(251,191,36,0.2)]"
+    />
+  )
+}
+
 export default function Tarot() {
   const { playChime } = useSound()
   const [tipoLectura, setTipoLectura] = useState(null)
@@ -113,6 +142,7 @@ export default function Tarot() {
 
   const renderContenidoCarta = (carta, mensajeInterpretativo) => (
     <div className="space-y-4">
+      <CartaImagen carta={carta} />
       <h3 className="text-yellow-300 font-bold text-xl">{carta.nombre}</h3>
       <p className="text-gray-200 text-base leading-relaxed">{carta.significado_derecho}</p>
       {mensajeInterpretativo && (
