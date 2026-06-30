@@ -4,6 +4,7 @@ import { saveTarotReading } from '../services/firestoreService'
 import { useSound } from '../contexts/SoundContext'
 import TarotFlipCard from '../components/TarotFlipCard'
 import ServiceAvatar from '../components/ServiceAvatar'
+import BurbujaGU from '../components/BurbujaGU'
 import avatarVidente from '../assets/avatares/vidente.png'
 
 const imagenes = import.meta.glob('../assets/cartas/*.jpg', { eager: true, import: 'default' })
@@ -194,7 +195,12 @@ export default function Tarot() {
   if (!tipoLectura) {
     return (
       <div className="max-w-md mx-auto px-4 pt-10 pb-4">
-        <ServiceAvatar src={avatarVidente} alt="Vidente del Tarot" />
+        <BurbujaGU
+          seccion="tarot"
+          avatarSrc={avatarVidente}
+          avatarAlt="Vidente del Tarot"
+          className="mb-6"
+        />
         <h1 className="text-3xl font-bold text-yellow-300 mb-2 text-center">🃏 Tarot</h1>
         <p className="text-purple-200 mb-6 text-center">
           Conecta con la sabiduría del tarot y recibe orientación para tu camino espiritual.

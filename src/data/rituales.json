@@ -1,0 +1,869 @@
+{
+  "categorias": [
+    {
+      "nombre": "Amor",
+      "emoji": "❤️",
+      "orden": 1,
+      "color": "#e11d48"
+    },
+    {
+      "nombre": "Prosperidad",
+      "emoji": "💰",
+      "orden": 2,
+      "color": "#f59e0b"
+    },
+    {
+      "nombre": "Salud Espiritual",
+      "emoji": "🪷",
+      "orden": 3,
+      "color": "#06b6d4"
+    },
+    {
+      "nombre": "Protección",
+      "emoji": "🛡️",
+      "orden": 4,
+      "color": "#8b5cf6"
+    },
+    {
+      "nombre": "Limpias Energéticas",
+      "emoji": "🌿",
+      "orden": 5,
+      "color": "#10b981"
+    }
+  ],
+  "rituales": [
+    {
+      "id": 1,
+      "nombre": "Corazón Agradecido",
+      "categoria": "Amor",
+      "gratuito": true,
+      "duracion": "5 min",
+      "proposito": "Fortalecer el agradecimiento por las personas y experiencias positivas que han llegado a tu vida.",
+      "materiales": [
+        "1 vela roja.",
+        "1 hoja de papel.",
+        "1 lápiz o bolígrafo."
+      ],
+      "preparacion": [
+        "Busca un lugar tranquilo.",
+        "Coloca el celular en silencio.",
+        "Toma medio vaso de agua.",
+        "Respira profundamente siete veces.",
+        "Enciende la vela roja."
+      ],
+      "desarrollo": [
+        "Escribe en la hoja el nombre de tres personas por las que sientas gratitud.",
+        "Recuerda un momento positivo compartido con cada una.",
+        "Cierra los ojos durante un minuto.",
+        "Visualiza una luz roja y dorada rodeando esos recuerdos.",
+        "Sonríe suavemente mientras agradeces mentalmente.",
+        "Dobla la hoja y guárdala durante siete días."
+      ],
+      "oracion": "Gracias por las personas que han aportado amor, compañía y aprendizaje a mi vida. Que la gratitud fortalezca mis relaciones y abra mi corazón a nuevas experiencias positivas.",
+      "resultados": [
+        "Mayor gratitud.",
+        "Bienestar emocional.",
+        "Apertura afectiva.",
+        "Actitud positiva hacia las relaciones."
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Apertura Al Amor Universal",
+      "categoria": "Amor",
+      "gratuito": true,
+      "duracion": "5 min",
+      "proposito": "Favorecer una actitud receptiva hacia el amor, la amistad y las relaciones saludables.",
+      "materiales": [
+        "1 vela rosada.",
+        "1 flor fresca.",
+        "1 vaso con agua."
+      ],
+      "preparacion": [
+        "Busca un lugar tranquilo.",
+        "Coloca la flor frente a ti.",
+        "Enciende la vela rosada.",
+        "Realiza siete respiraciones profundas."
+      ],
+      "desarrollo": [
+        "Observa la flor durante un minuto.",
+        "Visualiza una luz rosada expandiéndose desde tu pecho.",
+        "Imagina que esa luz llena todo tu cuerpo.",
+        "Repite mentalmente que estás abierto a recibir amor y armonía.",
+        "Mantén la visualización durante tres minutos.",
+        "Finaliza agradeciendo."
+      ],
+      "oracion": "Abro mi corazón al amor, la comprensión y las relaciones que contribuyen a mi crecimiento. Que la armonía y el respeto acompañen mis vínculos presentes y futuros.",
+      "resultados": [
+        "Mayor apertura emocional.",
+        "Sensación de bienestar.",
+        "Disposición para nuevas conexiones."
+      ]
+    },
+    {
+      "id": 3,
+      "nombre": "Atracción De Una Pareja Compatible",
+      "categoria": "Amor",
+      "gratuito": false,
+      "duracion": "15 min",
+      "proposito": "Favorecer la reflexión sobre las cualidades que deseas encontrar en una relación sana y ayudarte a mantener una actitud receptiva hacia personas compatibles con tus valores y objetivos.",
+      "materiales": [
+        "1 vela rosada.",
+        "1 vela blanca.",
+        "1 hoja blanca.",
+        "1 bolígrafo.",
+        "1 cuarzo rosa (opcional).",
+        "1 vaso con agua."
+      ],
+      "preparacion": [
+        "Busca un lugar tranquilo.",
+        "Toma medio vaso de agua.",
+        "Enciende las velas.",
+        "Mantén las piernas y brazos descruzados.",
+        "Realiza siete respiraciones profundas."
+      ],
+      "desarrollo": [
+        "Coloca las velas frente a ti.",
+        "Ubica el cuarzo rosa entre ambas velas.",
+        "Escribe en la hoja las cualidades que deseas encontrar en una pareja.",
+        "Enfócate en valores, actitudes y características emocionales.",
+        "Evita escribir nombres específicos.",
+        "Lee la lista lentamente.",
+        "Visualiza una relación basada en respeto y crecimiento mutuo.",
+        "Imagina conversaciones positivas y momentos felices.",
+        "Mantén la visualización durante cinco minutos.",
+        "Agradece por las experiencias amorosas presentes y futuras.",
+        "Dobla la hoja tres veces hacia ti.",
+        "Guárdala durante siete días."
+      ],
+      "oracion": "Dios de amor, luz divina y energía universal, ayúdame a reconocer las relaciones que contribuyen a mi bienestar y crecimiento. Permite que llegue a mi vida una persona compatible con mis valores y propósitos. Que nuestras intenciones estén guiadas por el respeto, la comprensión y la armonía. Agradezco las experiencias que fortalecen mi corazón y mi evolución personal. Recomendaciones Posteriores Mantén pensamientos positivos. Participa en actividades que disfrutes.",
+      "resultados": [
+        "Claridad sobre lo que buscas en una relación.",
+        "Mayor apertura emocional.",
+        "Actitud receptiva hacia nuevas conexiones."
+      ]
+    },
+    {
+      "id": 4,
+      "nombre": "Fortalecimiento De La Relación Amorosa",
+      "categoria": "Amor",
+      "gratuito": false,
+      "duracion": "15 min",
+      "proposito": "Favorecer la gratitud, la comunicación positiva y el fortalecimiento emocional dentro de una relación existente.",
+      "materiales": [
+        "2 velas rojas o rosadas.",
+        "1 hoja blanca.",
+        "Bolígrafo.",
+        "1 vaso con agua."
+      ],
+      "preparacion": [
+        "Busca tranquilidad.",
+        "Enciende las velas.",
+        "Respira profundamente siete veces."
+      ],
+      "desarrollo": [
+        "Escribe el nombre de tu pareja en la hoja.",
+        "Debajo escribe cinco aspectos que valoras de la relación.",
+        "Lee cada aspecto lentamente.",
+        "Recuerda momentos felices compartidos.",
+        "Visualiza una luz rosada envolviendo a ambos.",
+        "Imagina conversaciones armoniosas.",
+        "Agradece por los aprendizajes recibidos.",
+        "Permanece en silencio durante cinco minutos.",
+        "Dobla la hoja y guárdala durante siete días."
+      ],
+      "oracion": "Padre celestial, energía universal y fuente de amor, bendice esta relación con comprensión y respeto. Fortalece nuestra capacidad de escucharnos y apoyarnos mutuamente. Permite que la paciencia y la comunicación guíen nuestras decisiones. Que siempre prevalezca aquello que contribuya al bienestar de ambos. Gracias por las experiencias compartidas y por el crecimiento que obtenemos juntos. Recomendaciones Posteriores Expresa gratitud a tu pareja. Practica la escucha activa. Evita conversaciones impulsivas ese día.",
+      "resultados": [
+        "Mayor valoración de la relación.",
+        "Mejor comunicación.",
+        "Fortalecimiento emocional.",
+        "Ambiente afectivo más positivo."
+      ]
+    },
+    {
+      "id": 5,
+      "nombre": "Sanación De Heridas Amorosas",
+      "categoria": "Amor",
+      "gratuito": false,
+      "duracion": "20 min",
+      "proposito": "Favorecer la liberación emocional de experiencias pasadas y fortalecer la capacidad de avanzar con mayor serenidad.",
+      "materiales": [
+        "1 vela blanca.",
+        "1 cuarzo rosa (opcional).",
+        "Papel blanco.",
+        "Bolígrafo.",
+        "Recipiente resistente al fuego."
+      ],
+      "preparacion": [
+        "Busca un lugar tranquilo.",
+        "Toma medio vaso de agua.",
+        "Enciende la vela blanca.",
+        "Realiza nueve respiraciones profundas."
+      ],
+      "desarrollo": [
+        "Escribe aquello que deseas dejar atrás.",
+        "Expresa libremente tus emociones.",
+        "Lee el texto lentamente.",
+        "Reconoce los aprendizajes obtenidos.",
+        "Agradece por aquello que te ayudó a crecer.",
+        "Rompe la hoja en pequeños fragmentos.",
+        "Deposítalos en el recipiente.",
+        "Visualiza una luz blanca transformando el dolor en sabiduría.",
+        "Mantén la visualización durante cinco minutos.",
+        "Finaliza agradeciendo."
+      ],
+      "oracion": "Luz divina, Dios de misericordia y energía universal, ayúdame a sanar las heridas de mi corazón. Transforma el dolor en aprendizaje y la tristeza en fortaleza. Permíteme liberar aquello que ya cumplió su propósito. Que mi corazón encuentre paz, confianza y esperanza para seguir avanzando. Gracias por cada experiencia que ha contribuido a mi crecimiento personal. Recomendaciones Posteriores Descansa adecuadamente. Evita tomar decisiones impulsivas. Practica actividades que te generen bienestar.",
+      "resultados": [
+        "Liberación emocional.",
+        "Mayor paz interior.",
+        "Disposición para nuevas experiencias positivas."
+      ]
+    },
+    {
+      "id": 6,
+      "nombre": "Gratitud Para La Prosperidad",
+      "categoria": "Prosperidad",
+      "gratuito": true,
+      "duracion": "5 min",
+      "proposito": "Fortalecer el agradecimiento por los recursos, oportunidades y bendiciones presentes en la vida.",
+      "materiales": [
+        "3 monedas.",
+        "1 vela amarilla.",
+        "Papel.",
+        "Bolígrafo."
+      ],
+      "preparacion": [
+        "Busca un lugar tranquilo.",
+        "Enciende la vela amarilla.",
+        "Coloca las monedas frente a ti.",
+        "Respira profundamente siete veces."
+      ],
+      "desarrollo": [
+        "Escribe tres cosas por las que te sientes agradecido económicamente.",
+        "Observa las monedas durante un minuto.",
+        "Visualiza una luz dorada rodeándolas.",
+        "Agradece mentalmente por los recursos actuales.",
+        "Guarda las monedas durante siete días en tu billetera."
+      ],
+      "oracion": "Gracias por las oportunidades, recursos y aprendizajes que fortalecen mi camino.",
+      "resultados": [
+        "Mayor gratitud.",
+        "Mejor actitud hacia el dinero.",
+        "Sensación de abundancia."
+      ]
+    },
+    {
+      "id": 7,
+      "nombre": "Moneda Dorada De La Abundancia",
+      "categoria": "Prosperidad",
+      "gratuito": true,
+      "duracion": "5 min",
+      "proposito": "Crear un símbolo personal de enfoque y motivación económica.",
+      "materiales": [
+        "1 moneda dorada.",
+        "Vela amarilla.",
+        "Canela."
+      ],
+      "preparacion": [
+        "Enciende la vela.",
+        "Coloca la moneda frente a ti.",
+        "Respira profundamente."
+      ],
+      "desarrollo": [
+        "Sostén la moneda entre tus manos.",
+        "Piensa en una meta económica concreta.",
+        "Visualiza esa meta cumplida.",
+        "Espolvorea una pequeña cantidad de canela cerca de la moneda.",
+        "Guarda la moneda en tu billetera."
+      ],
+      "oracion": "Que la prosperidad llegue a mi vida mediante esfuerzo, sabiduría y oportunidades positivas.",
+      "resultados": [
+        "Motivación.",
+        "Claridad financiera.",
+        "Enfoque en metas."
+      ]
+    },
+    {
+      "id": 8,
+      "nombre": "Suerte En Los Negocios",
+      "categoria": "Prosperidad",
+      "gratuito": false,
+      "duracion": "15 min",
+      "proposito": "Favorecer la concentración y actitud positiva hacia proyectos, emprendimientos y actividades comerciales.",
+      "materiales": [
+        "Vela verde.",
+        "3 hojas de laurel.",
+        "Canela.",
+        "3 monedas.",
+        "Papel blanco."
+      ],
+      "preparacion": [
+        "Realiza la práctica preferiblemente un jueves.",
+        "Limpia el espacio.",
+        "Respira profundamente siete veces."
+      ],
+      "desarrollo": [
+        "Coloca la vela en el centro.",
+        "Ubica las monedas formando un triángulo.",
+        "Coloca el laurel alrededor.",
+        "Escribe el nombre de tu proyecto o negocio.",
+        "Escribe tres objetivos específicos.",
+        "Enciende la vela.",
+        "Visualiza crecimiento y estabilidad.",
+        "Mantén la concentración durante diez minutos.",
+        "Agradece por las oportunidades presentes y futuras."
+      ],
+      "oracion": "Dios de abundancia, luz divina y energía universal, bendice mis proyectos y mis decisiones. Permite que mis esfuerzos generen resultados positivos. Que siempre actúe con honestidad, responsabilidad y sabiduría. Que las oportunidades correctas lleguen en el momento adecuado. Gracias por el crecimiento que se manifiesta en mi vida. Recomendaciones Posteriores Organizar metas. Revisar finanzas. Tomar acciones concretas.",
+      "resultados": [
+        "Mayor claridad empresarial.",
+        "Motivación.",
+        "Confianza."
+      ]
+    },
+    {
+      "id": 9,
+      "nombre": "Apertura A Oportunidades Económicas",
+      "categoria": "Prosperidad",
+      "gratuito": false,
+      "duracion": "15 min",
+      "proposito": "Favorecer la apertura mental hacia nuevas oportunidades de crecimiento económico.",
+      "materiales": [
+        "Llave.",
+        "Vela amarilla.",
+        "Vela blanca.",
+        "Papel."
+      ],
+      "preparacion": [
+        "Busca un lugar tranquilo.",
+        "Coloca la llave frente a ti.",
+        "Enciende las velas."
+      ],
+      "desarrollo": [
+        "Escribe tres áreas donde deseas nuevas oportunidades.",
+        "Sostén la llave entre tus manos.",
+        "Visualiza una puerta abriéndose.",
+        "Imagina nuevas posibilidades laborales o económicas.",
+        "Mantén la visualización durante diez minutos.",
+        "Guarda la llave durante siete días."
+      ],
+      "oracion": "Luz divina y energía universal, abre ante mí los caminos que favorezcan mi crecimiento. Ayúdame a reconocer oportunidades positivas. Que mis decisiones estén guiadas por la sabiduría y la prudencia. Gracias por las puertas que se abren para mi bienestar. Recomendaciones Posteriores Estar atento a nuevas oportunidades. Tomar iniciativa. Mantener una actitud receptiva.",
+      "resultados": [
+        "Mayor claridad.",
+        "Optimismo.",
+        "Apertura mental."
+      ]
+    },
+    {
+      "id": 10,
+      "nombre": "Abundancia Y Flujo Financiero",
+      "categoria": "Prosperidad",
+      "gratuito": false,
+      "duracion": "20 min",
+      "proposito": "Fortalecer una relación saludable con el dinero y los recursos.",
+      "materiales": [
+        "Miel.",
+        "Canela.",
+        "3 monedas.",
+        "Vela dorada.",
+        "Vaso con agua."
+      ],
+      "preparacion": [
+        "Limpia el espacio.",
+        "Toma medio vaso de agua.",
+        "Enciende la vela."
+      ],
+      "desarrollo": [
+        "Coloca las monedas formando un triángulo.",
+        "Añade una pequeña cantidad de miel y canela al vaso.",
+        "Visualiza un flujo continuo de prosperidad.",
+        "Imagina tus metas económicas desarrollándose positivamente.",
+        "Mantén la concentración durante diez minutos.",
+        "Agradece por los recursos recibidos."
+      ],
+      "oracion": "Padre celestial, energía universal y fuente de prosperidad, armoniza mi relación con el dinero y los recursos. Permíteme administrar con sabiduría lo que recibo. Que la abundancia llegue de manera justa y equilibrada. Que mis acciones contribuyan a mi bienestar y al de quienes me rodean. Gracias por las bendiciones visibles e invisibles que sostienen mi camino. Recomendaciones Posteriores Revisar objetivos financieros. Mantener hábitos responsables. Evitar pensamientos de escasez.",
+      "resultados": [
+        "Mayor confianza económica.",
+        "Claridad financiera.",
+        "🌿  BIENESTAR Y EQUILIBRIO"
+      ]
+    },
+    {
+      "id": 11,
+      "nombre": "Baño De Luz Y Renovación Interior",
+      "categoria": "Salud Espiritual",
+      "gratuito": true,
+      "duracion": "5 min",
+      "proposito": "Favorecer una sensación de renovación emocional y bienestar espiritual.",
+      "materiales": [
+        "Vela blanca.",
+        "Recipiente con agua limpia."
+      ],
+      "preparacion": [
+        "Busca un lugar tranquilo.",
+        "Enciende la vela blanca.",
+        "Realiza siete respiraciones profundas."
+      ],
+      "desarrollo": [
+        "Observa la llama durante un minuto.",
+        "Coloca las manos cerca del recipiente con agua.",
+        "Visualiza una luz blanca descendiendo desde lo alto.",
+        "Imagina que esa luz llena todo tu cuerpo.",
+        "Permanece en silencio durante tres minutos."
+      ],
+      "oracion": "Que la luz divina renueve mi energía, fortalezca mi espíritu y armonice mi vida.",
+      "resultados": [
+        "Sensación de bienestar.",
+        "Relajación emocional.",
+        "Mayor tranquilidad interior."
+      ]
+    },
+    {
+      "id": 12,
+      "nombre": "Paz Del Alma Con Vela Blanca",
+      "categoria": "Salud Espiritual",
+      "gratuito": true,
+      "duracion": "5 min",
+      "proposito": "Favorecer la serenidad mental y emocional.",
+      "materiales": [
+        "Vela blanca.",
+        "Flor blanca.",
+        "Vaso con agua."
+      ],
+      "preparacion": [
+        "Busca un lugar silencioso.",
+        "Coloca la flor frente a la vela.",
+        "Realiza siete respiraciones profundas."
+      ],
+      "desarrollo": [
+        "Enciende la vela.",
+        "Observa la flor durante un minuto.",
+        "Visualiza una luz blanca envolviendo tu cuerpo.",
+        "Imagina que toda preocupación se disuelve lentamente.",
+        "Finaliza agradeciendo."
+      ],
+      "oracion": "Que la paz habite en mi mente, en mi corazón y en cada uno de mis pensamientos.",
+      "resultados": [
+        "Relajación.",
+        "Paz interior.",
+        "Disminución de tensión emocional."
+      ]
+    },
+    {
+      "id": 13,
+      "nombre": "Fortalecimiento De La Energía Vital",
+      "categoria": "Salud Espiritual",
+      "gratuito": false,
+      "duracion": "15 min",
+      "proposito": "Fortalecer la sensación de vitalidad, equilibrio y bienestar espiritual.",
+      "materiales": [
+        "Vela verde.",
+        "Romero fresco.",
+        "Cuarzo transparente.",
+        "Vaso con agua."
+      ],
+      "preparacion": [
+        "Realiza la práctica preferiblemente en la mañana.",
+        "Ventila el espacio.",
+        "Toma medio vaso de agua.",
+        "Respira profundamente nueve veces."
+      ],
+      "desarrollo": [
+        "Enciende la vela verde.",
+        "Sostén el cuarzo entre tus manos.",
+        "Coloca el romero frente a la vela.",
+        "Visualiza una energía verde descendiendo lentamente.",
+        "Imagina que recorre tu cabeza, pecho, abdomen y extremidades.",
+        "Mantén la visualización durante diez minutos.",
+        "Finaliza agradeciendo por tu salud y bienestar."
+      ],
+      "oracion": "Padre celestial, luz divina y energía universal, fortalece mi cuerpo, mi mente y mi espíritu. Permite que la energía de la vida fluya libremente en mi interior. Que cada día encuentre fuerza, equilibrio y serenidad. Que mis pensamientos y emociones contribuyan a mi bienestar. Gracias por la vitalidad que sostiene mi camino. Recomendaciones Posteriores Beber agua. Realizar una caminata suave. Mantener pensamientos positivos.",
+      "resultados": [
+        "Sensación de energía renovada.",
+        "Mayor bienestar.",
+        "Equilibrio emocional."
+      ]
+    },
+    {
+      "id": 14,
+      "nombre": "Claridad Mental Y Serenidad",
+      "categoria": "Salud Espiritual",
+      "gratuito": false,
+      "duracion": "15 min",
+      "proposito": "Favorecer la concentración, la calma y la claridad de pensamiento.",
+      "materiales": [
+        "Vela azul.",
+        "Incienso de lavanda.",
+        "Papel blanco.",
+        "Bolígrafo."
+      ],
+      "preparacion": [
+        "Apaga distracciones.",
+        "Enciende la vela y el incienso.",
+        "Respira profundamente siete veces."
+      ],
+      "desarrollo": [
+        "Escribe aquello que te preocupa actualmente.",
+        "Lee cada situación lentamente.",
+        "Visualiza una esfera azul rodeando tu mente.",
+        "Imagina que cada preocupación se transforma en comprensión.",
+        "Mantén la visualización durante diez minutos.",
+        "Finaliza agradeciendo."
+      ],
+      "oracion": "Dios de sabiduría, paz y entendimiento, ilumina mis pensamientos y fortalece mi discernimiento. Permíteme actuar con serenidad ante los desafíos. Que mis decisiones nazcan desde la calma y la claridad. Que mi mente permanezca enfocada en aquello que contribuye a mi bienestar. Gracias por la guía que recibo cada día. Recomendaciones Posteriores Descansar adecuadamente. Evitar discusiones innecesarias. Registrar ideas importantes.",
+      "resultados": [
+        "Claridad mental.",
+        "Mayor concentración.",
+        "Disminución del estrés."
+      ]
+    },
+    {
+      "id": 15,
+      "nombre": "Equilibrio Integral Del Ser",
+      "categoria": "Salud Espiritual",
+      "gratuito": false,
+      "duracion": "20 min",
+      "proposito": "Favorecer la armonía entre cuerpo, mente, emociones y espíritu.",
+      "materiales": [
+        "Vela blanca.",
+        "Cuarzo transparente.",
+        "Incienso suave.",
+        "Vaso con agua."
+      ],
+      "preparacion": [
+        "Busca un lugar tranquilo.",
+        "Enciende la vela y el incienso.",
+        "Respira profundamente nueve veces."
+      ],
+      "desarrollo": [
+        "Sostén el cuarzo entre ambas manos.",
+        "Visualiza una columna de luz descendiendo desde el cielo.",
+        "Imagina que esa luz armoniza todas las áreas de tu vida.",
+        "Observa cómo se equilibran pensamientos, emociones y acciones.",
+        "Mantén la meditación durante quince minutos.",
+        "Finaliza agradeciendo."
+      ],
+      "oracion": "Luz divina, Dios de amor y energía universal, armoniza cada dimensión de mi existencia. Que mi cuerpo encuentre bienestar. Que mi mente encuentre claridad. Que mi corazón encuentre paz. Que mi espíritu encuentre propósito. Gracias por el equilibrio que se manifiesta en mi vida. Recomendaciones Posteriores Permanecer algunos minutos en silencio. Beber agua lentamente. Evitar actividades agitadas inmediatamente después.",
+      "resultados": [
+        "Sensación de equilibrio.",
+        "Paz interior.",
+        "Estabilidad emocional.",
+        "Conexión espiritual fortalecida."
+      ]
+    },
+    {
+      "id": 16,
+      "nombre": "Escudo Espiritual Protector",
+      "categoria": "Protección",
+      "gratuito": true,
+      "duracion": "5 min",
+      "proposito": "Fortalecer la sensación de seguridad, tranquilidad y protección personal.",
+      "materiales": [
+        "Vela blanca.",
+        "Vaso con agua."
+      ],
+      "preparacion": [
+        "Busca un lugar tranquilo.",
+        "Toma medio vaso de agua.",
+        "Enciende la vela blanca.",
+        "Realiza siete respiraciones profundas."
+      ],
+      "desarrollo": [
+        "Observa la llama durante un minuto.",
+        "Cierra los ojos.",
+        "Visualiza una esfera de luz blanca rodeando completamente tu cuerpo.",
+        "Imagina que esa luz te protege y fortalece.",
+        "Mantén la visualización durante tres minutos.",
+        "Finaliza agradeciendo."
+      ],
+      "oracion": "Que la luz divina me acompañe, me proteja y me guíe en cada paso de mi camino.",
+      "resultados": [
+        "Sensación de seguridad.",
+        "Tranquilidad emocional.",
+        "Confianza interior."
+      ]
+    },
+    {
+      "id": 17,
+      "nombre": "Protección Energética Básica",
+      "categoria": "Protección",
+      "gratuito": true,
+      "duracion": "5 min",
+      "proposito": "Favorecer la estabilidad emocional y fortalecer la percepción de protección cotidiana.",
+      "materiales": [
+        "Piedra protectora (obsidiana o turmalina negra).",
+        "Vela violeta."
+      ],
+      "preparacion": [
+        "Busca tranquilidad.",
+        "Enciende la vela.",
+        "Sostén la piedra entre tus manos."
+      ],
+      "desarrollo": [
+        "Observa la piedra durante unos segundos.",
+        "Visualiza una energía violeta rodeándote.",
+        "Imagina que la piedra absorbe preocupaciones y tensiones.",
+        "Mantén la visualización durante tres minutos.",
+        "Guarda la piedra contigo durante el día."
+      ],
+      "oracion": "Permanezco protegido, centrado y en armonía con la luz y la sabiduría divina.",
+      "resultados": [
+        "Mayor estabilidad emocional.",
+        "Sensación de resguardo.",
+        "Reducción de tensión mental."
+      ]
+    },
+    {
+      "id": 18,
+      "nombre": "Protección Del Hogar Y La Familia",
+      "categoria": "Protección",
+      "gratuito": false,
+      "duracion": "15 min",
+      "proposito": "Fortalecer la intención de armonía, unión y bienestar dentro del hogar.",
+      "materiales": [
+        "Vela blanca.",
+        "Romero.",
+        "Ruda.",
+        "Recipiente con agua.",
+        "Papel blanco.",
+        "Bolígrafo."
+      ],
+      "preparacion": [
+        "Ordena el espacio donde realizarás la práctica.",
+        "Ventila la habitación.",
+        "Toma medio vaso de agua.",
+        "Respira profundamente nueve veces."
+      ],
+      "desarrollo": [
+        "Coloca la vela en el centro.",
+        "Agrega romero y ruda al recipiente con agua.",
+        "Escribe en la hoja los nombres de las personas que viven en el hogar.",
+        "Enciende la vela.",
+        "Coloca la hoja frente a ti.",
+        "Visualiza una luz blanca cubriendo cada habitación.",
+        "Imagina armonía, salud y tranquilidad para todos los integrantes.",
+        "Mantén la visualización durante diez minutos.",
+        "Agradece por la protección y el bienestar de tu hogar.",
+        "Guarda la hoja durante siete días."
+      ],
+      "oracion": "bendice este hogar y a todas las personas que lo habitan. Que la armonía prevalezca sobre las diferencias. Que la salud, la tranquilidad y la prosperidad acompañen a esta familia. Que cada espacio de esta casa sea un lugar de paz y bienestar. Gracias por la protección que recibimos cada día. Recomendaciones Posteriores Mantener el hogar ordenado. Favorecer conversaciones positivas. Agradecer diariamente por la familia.",
+      "resultados": [
+        "Sensación de armonía familiar.",
+        "Mayor tranquilidad en el hogar.",
+        "Fortalecimiento de los vínculos familiares."
+      ]
+    },
+    {
+      "id": 19,
+      "nombre": "Protección Angelical Avanzada",
+      "categoria": "Protección",
+      "gratuito": false,
+      "duracion": "20 min",
+      "proposito": "Fortalecer la conexión con la protección espiritual y la confianza interior.",
+      "materiales": [
+        "Vela azul.",
+        "Vela blanca.",
+        "Cuarzo transparente.",
+        "Incienso de sándalo.",
+        "Vaso con agua."
+      ],
+      "preparacion": [
+        "Busca un lugar tranquilo.",
+        "Enciende las velas.",
+        "Enciende el incienso.",
+        "Realiza nueve respiraciones profundas."
+      ],
+      "desarrollo": [
+        "Sostén el cuarzo entre tus manos.",
+        "Visualiza una presencia de luz azul y blanca frente a ti.",
+        "Imagina que extiende un escudo protector a tu alrededor.",
+        "Observa cómo la luz rodea tu cuerpo.",
+        "Mantén la visualización durante diez minutos.",
+        "Agradece por la guía y la protección recibida.",
+        "Guarda el cuarzo durante siete días."
+      ],
+      "oracion": "Mensajeros de luz, sabiduría y protección, acompañen mi camino con serenidad y confianza. Fortalezcan mi espíritu en los momentos difíciles. Ayúdenme a actuar con prudencia, equilibrio y fe. Que la paz habite en mi mente y en mi corazón. Gracias por la protección visible e invisible que me acompaña. Recomendaciones Posteriores Mantener pensamientos positivos. Realizar una acción amable durante el día. Beber agua lentamente después de la práctica.",
+      "resultados": [
+        "Mayor confianza personal.",
+        "Paz emocional.",
+        "Fortalecimiento de la esperanza."
+      ]
+    },
+    {
+      "id": 20,
+      "nombre": "Limpia Con Sal Marina",
+      "categoria": "Limpias Energéticas",
+      "gratuito": true,
+      "duracion": "5 min",
+      "proposito": "Favorecer una sensación de renovación emocional y liberación de tensiones acumuladas.",
+      "materiales": [
+        "3 cucharadas de sal marina.",
+        "Recipiente con agua.",
+        "Vela blanca."
+      ],
+      "preparacion": [
+        "Busca un lugar tranquilo.",
+        "Toma medio vaso de agua.",
+        "Enciende la vela blanca.",
+        "Realiza siete respiraciones profundas."
+      ],
+      "desarrollo": [
+        "Coloca la sal marina dentro del recipiente.",
+        "Observa el agua durante un minuto.",
+        "Visualiza que toda tensión emocional se disuelve lentamente.",
+        "Lava suavemente tus manos con el agua.",
+        "Permanece en silencio durante tres minutos.",
+        "Finaliza agradeciendo."
+      ],
+      "oracion": "Que toda carga innecesaria se transforme en paz, claridad y bienestar.",
+      "resultados": [
+        "Sensación de alivio.",
+        "Relajación emocional.",
+        "Renovación energética."
+      ]
+    },
+    {
+      "id": 21,
+      "nombre": "Despojo Con Incienso",
+      "categoria": "Limpias Energéticas",
+      "gratuito": true,
+      "duracion": "5 min",
+      "proposito": "Favorecer una sensación de armonía y limpieza del espacio personal.",
+      "materiales": [
+        "Incienso de sándalo o copal.",
+        "Vela blanca."
+      ],
+      "preparacion": [
+        "Abre una ventana.",
+        "Busca tranquilidad.",
+        "Enciende la vela y el incienso."
+      ],
+      "desarrollo": [
+        "Recorre lentamente el espacio con el incienso.",
+        "Observa el movimiento del humo.",
+        "Visualiza que el ambiente se llena de calma y armonía.",
+        "Respira profundamente durante varios minutos.",
+        "Finaliza agradeciendo."
+      ],
+      "oracion": "Que la armonía, la paz y la luz permanezcan en este espacio.",
+      "resultados": [
+        "Sensación de bienestar.",
+        "Ambiente más agradable.",
+        "Mayor serenidad."
+      ]
+    },
+    {
+      "id": 22,
+      "nombre": "Despojo Con Hierbas Sagradas",
+      "categoria": "Limpias Energéticas",
+      "gratuito": false,
+      "duracion": "15 min",
+      "proposito": "Favorecer procesos simbólicos de renovación y fortalecimiento emocional.",
+      "materiales": [
+        "Romero.",
+        "Ruda.",
+        "Albahaca.",
+        "Recipiente con agua.",
+        "Vela blanca."
+      ],
+      "preparacion": [
+        "Ventila la habitación.",
+        "Prepara las hierbas.",
+        "Enciende la vela.",
+        "Realiza nueve respiraciones profundas."
+      ],
+      "desarrollo": [
+        "Coloca las hierbas dentro del recipiente con agua.",
+        "Observa las plantas durante unos minutos.",
+        "Visualiza que representan preocupaciones o situaciones que deseas dejar atrás.",
+        "Imagina una luz blanca transformando toda carga emocional en aprendizaje.",
+        "Mantén la visualización durante diez minutos.",
+        "Finaliza agradeciendo.",
+        "Desecha el agua en una planta o jardín."
+      ],
+      "oracion": "Dios de amor, luz divina y energía universal, ayúdame a liberar aquello que ya no necesito. Transforma mis preocupaciones en sabiduría. Transforma mis temores en confianza. Transforma mis cargas en aprendizaje. Gracias por las experiencias que fortalecen mi crecimiento. Recomendaciones Posteriores Descansar adecuadamente. Beber agua. Mantener pensamientos positivos.",
+      "resultados": [
+        "Sensación de renovación.",
+        "Liberación emocional.",
+        "Mayor tranquilidad interior."
+      ]
+    },
+    {
+      "id": 23,
+      "nombre": "Purgación Energética Del Hogar",
+      "categoria": "Limpias Energéticas",
+      "gratuito": false,
+      "duracion": "15 min",
+      "proposito": "Favorecer un ambiente de armonía y bienestar dentro del hogar.",
+      "materiales": [
+        "Incienso de copal o sándalo.",
+        "Romero.",
+        "Vela blanca.",
+        "Recipiente con agua."
+      ],
+      "preparacion": [
+        "Ordena las áreas principales de la vivienda.",
+        "Abre puertas y ventanas.",
+        "Enciende la vela y el incienso.",
+        "Respira profundamente nueve veces."
+      ],
+      "desarrollo": [
+        "Recorre lentamente cada habitación.",
+        "Visualiza una luz blanca entrando por puertas y ventanas.",
+        "Imagina que toda tensión abandona el hogar.",
+        "Coloca el recipiente con agua y romero en el centro de la casa.",
+        "Mantén la intención de armonía durante diez minutos.",
+        "Finaliza agradeciendo."
+      ],
+      "oracion": "Padre celestial y fuente de bienestar, bendice este hogar y a quienes viven en él. Que la paz habite en cada espacio. Que la comprensión fortalezca nuestras relaciones. Que la salud y la prosperidad acompañen a esta familia. Gracias por el refugio y las bendiciones recibidas. Recomendaciones Posteriores Mantener el orden. Colocar flores o plantas naturales. Favorecer conversaciones positivas.",
+      "resultados": [
+        "Mayor armonía doméstica.",
+        "Ambiente más tranquilo.",
+        "Bienestar emocional."
+      ]
+    },
+    {
+      "id": 24,
+      "nombre": "Corte De Bloqueos Y Cargas Negativas",
+      "categoria": "Limpias Energéticas",
+      "gratuito": false,
+      "duracion": "20 min",
+      "proposito": "Favorecer procesos simbólicos de cierre, liberación y renovación personal.",
+      "materiales": [
+        "Papel blanco.",
+        "Bolígrafo.",
+        "Vela blanca.",
+        "Vela violeta.",
+        "Recipiente resistente al fuego."
+      ],
+      "preparacion": [
+        "Busca un lugar tranquilo.",
+        "Enciende ambas velas.",
+        "Realiza nueve respiraciones profundas."
+      ],
+      "desarrollo": [
+        "Escribe aquello que deseas dejar atrás.",
+        "Expresa libremente tus pensamientos y emociones.",
+        "Lee el texto lentamente.",
+        "Reconoce los aprendizajes obtenidos.",
+        "Rompe el papel en pequeños fragmentos.",
+        "Deposítalos en el recipiente.",
+        "Visualiza una luz violeta transformando toda dificultad en sabiduría.",
+        "Mantén la meditación durante diez minutos.",
+        "Finaliza agradeciendo."
+      ],
+      "oracion": "Luz divina, Dios de misericordia y energía universal, ayúdame a liberar aquello que limita mi crecimiento. Permíteme avanzar con mayor confianza y serenidad. Transforma las dificultades en oportunidades de aprendizaje. Que mi camino continúe con claridad, fortaleza y esperanza. Gracias por la renovación que comienza en mi vida. Recomendaciones Posteriores Descansar. Beber agua. Escribir nuevas metas para la etapa que comienza.",
+      "resultados": [
+        "Sensación de liberación.",
+        "Renovación emocional.",
+        "Mayor claridad.",
+        "Motivación para avanzar.",
+        "⚠️ Descargo de Responsabilidad",
+        "Los ejercicios presentados en Guía Espiritual IA tienen fines de reflexión personal, bienestar emocional y crecimiento espiritual.",
+        "No sustituyen atención médica, psicológica, psiquiátrica, financiera, legal ni profesional de ningún tipo.",
+        "Los resultados pueden variar según la experiencia, interpretación y participación de cada persona.",
+        "Utilice estas prácticas como herramientas complementarias para la introspección, la gratitud, la relajación y el desarrollo personal.",
+        "El usuario es responsable del uso que haga de la información y prácticas ofrecidas dentro de la aplicación."
+      ]
+    }
+  ]
+}

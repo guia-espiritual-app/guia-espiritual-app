@@ -5,19 +5,9 @@ import avatarSacerdotisa from '../assets/avatares/sacerdotisa.png'
 import avatarNumerologo from '../assets/avatares/numerologo.png'
 import avatarGuardian from '../assets/avatares/guardian.png'
 import avatarChaman from '../assets/avatares/chaman.png'
-
-const FRASES_MISTICAS = [
-  'El universo conspira a tu favor cuando te alineas con tu verdadero propósito.',
-  'Cada final es un nuevo comienzo disfrazado de transformación.',
-  'Tu intuición es el susurro del alma, escúchala.',
-  'La luz que buscas ya habita en ti; solo hace falta recordarla.',
-  'No eres un capítulo, eres la historia completa que el cosmos está escribiendo.',
-  'Las estrellas no deciden tu destino; iluminan el camino que tú eliges.',
-  'En el silencio interior está la respuesta que tu corazón ya conoce.',
-  'Cada día es una carta nueva del tarot de tu vida: voltéala con confianza.',
-  'Tu energía atrae lo que eres; transforma tu interior y transformarás tu mundo.',
-  'El presente es el único momento donde la magia puede suceder.',
-]
+import avatarEjercicios from '../assets/avatares/ejercicios.png'
+import guImg from '../assets/avatares/gu.png'
+import BurbujaGU from '../components/BurbujaGU'
 
 function getSaludo() {
   const hora = new Date().getHours()
@@ -26,24 +16,27 @@ function getSaludo() {
   return 'Buenas noches'
 }
 
-function getFraseDelDia() {
-  const hoy = new Date().toISOString().slice(0, 10) // YYYY-MM-DD
-  const seed = hoy.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0)
-  const index = seed % FRASES_MISTICAS.length
-  return FRASES_MISTICAS[index]
-}
-
 const features = [
   { to: '/tarot', avatar: avatarVidente, title: 'Tarot', desc: 'Descubre tu camino', external: false },
   { to: '/horoscopo', avatar: avatarSacerdotisa, title: 'Horóscopo', desc: 'Tu energía hoy', external: false },
   { to: '/numerologia', avatar: avatarNumerologo, title: 'Numerología', desc: 'Tu número de vida', external: false },
   { to: '/carta-astral', avatar: avatarGuardian, title: 'Carta Astral', desc: 'Tu mapa cósmico', external: false, premium: true },
   { to: '/registros-akashicos', avatar: avatarChaman, title: 'Registros Akáshicos', desc: 'Sabiduría del alma', external: false, premium: true },
+  { to: '/rituales', avatar: avatarEjercicios, title: 'Rituales', desc: 'Prácticas para transformar tu energía', external: false, badgeGratis: '10 rituales gratis' },
 ]
+
+const WHATSAPP_CONSULTA_URL =
+  'https://wa.me/573004982667?text=Hola,%20quiero%20una%20consulta%20personalizada%20(app%20Gu%C3%ADa%20Espiritual)'
+
+function openConsultaWhatsApp() {
+  window.open(WHATSAPP_CONSULTA_URL, '_blank')
+}
+
+const bannerClass =
+  'w-full bg-purple-900/40 border-2 border-purple-500/60 rounded-2xl px-4 py-3.5 flex items-center gap-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_24px_rgba(139,92,246,0.5)] hover:border-purple-400/80'
 
 export default function Home() {
   const saludo = getSaludo()
-  const fraseDelDia = getFraseDelDia()
 
   return (
     <div className="max-w-md mx-auto px-5 pt-8 pb-24">
@@ -54,19 +47,12 @@ export default function Home() {
           alt="Guía Espiritual"
           className="mx-auto mb-2 max-w-[220px] w-full h-auto"
         />
+
+        <BurbujaGU seccion="inicio" className="mt-4 mb-6" />
+
         <h1 className="text-3xl font-bold text-yellow-300 mb-1">{saludo}</h1>
         <p className="text-purple-200 text-lg">¿Qué deseas descubrir hoy?</p>
       </header>
-
-      {/* Frase del Día */}
-      <section className="mb-10">
-        <div className="bg-gradient-to-br from-purple-900/60 to-black/40 border-2 border-purple-500/50 rounded-2xl p-6 shadow-xl shadow-purple-900/40 transition-all duration-300">
-          <p className="text-purple-100 italic text-base leading-relaxed flex items-start gap-2">
-            <span className="text-yellow-300 text-xl shrink-0">✨</span>
-            <span>{fraseDelDia}</span>
-          </p>
-        </div>
-      </section>
 
       {/* Grid de features */}
       <section className="grid grid-cols-2 gap-4">
@@ -80,11 +66,22 @@ export default function Home() {
                   </span>
                 </div>
               )}
-              <img
-                src={item.avatar}
-                alt=""
-                className="h-[65px] w-auto object-contain mb-3 drop-shadow-[0_0_10px_rgba(251,191,36,0.15)]"
-              />
+              {item.badgeGratis && (
+                <div className="absolute top-2 right-2">
+                  <span className="bg-gradient-to-r from-green-500 to-emerald-400 text-white text-[10px] font-bold px-2 py-1 rounded-full shadow-[0_0_10px_rgba(16,185,129,0.45)] border border-green-300/50">
+                    {item.badgeGratis}
+                  </span>
+                </div>
+              )}
+              {item.avatar ? (
+                <img
+                  src={item.avatar}
+                  alt=""
+                  className="h-[65px] w-auto object-contain mb-3 drop-shadow-[0_0_10px_rgba(251,191,36,0.15)]"
+                />
+              ) : (
+                <div className="text-5xl mb-3">{item.icon}</div>
+              )}
               <h2 className="text-yellow-300 font-bold text-lg mb-1">{item.title}</h2>
               <p className="text-purple-200 text-sm">{item.desc}</p>
             </>
@@ -109,6 +106,35 @@ const cardClass = `bg-purple-900/40 border-2 border-purple-500/60 rounded-2xl p-
             </Link>
           )
         })}
+      </section>
+
+      {/* Banners de ancho completo */}
+      <section className="mt-4 space-y-4">
+        <Link to="/tienda" className={bannerClass}>
+          <img src={guImg} alt="" className="h-10 w-10 object-contain shrink-0 drop-shadow-[0_0_10px_rgba(251,191,36,0.15)]" />
+          <div className="text-left flex-1 min-w-0">
+            <h2 className="text-yellow-300 font-bold text-base leading-snug mb-0.5">
+              Academia del Maestro GU y Tienda
+            </h2>
+            <p className="text-purple-200 text-sm leading-snug">Cristales, amuletos y guías</p>
+          </div>
+        </Link>
+
+        <button
+          type="button"
+          onClick={openConsultaWhatsApp}
+          className={`${bannerClass} bg-gradient-to-r from-purple-900/60 to-yellow-900/30 border-yellow-500/60 hover:border-yellow-400/80 hover:shadow-[0_0_24px_rgba(251,191,36,0.35)] text-left`}
+        >
+          <img src={guImg} alt="" className="h-10 w-10 object-contain shrink-0 drop-shadow-[0_0_10px_rgba(251,191,36,0.15)]" />
+          <div className="flex-1 min-w-0">
+            <h2 className="text-yellow-300 font-bold text-base leading-snug mb-0.5">
+              Consulta Personalizada
+            </h2>
+            <p className="text-purple-200 text-sm leading-snug">
+              Tu lectura personalizada por WhatsApp
+            </p>
+          </div>
+        </button>
       </section>
     </div>
   )

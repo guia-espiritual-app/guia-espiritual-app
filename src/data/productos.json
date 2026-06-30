@@ -1,0 +1,394 @@
+{
+  "info_envio": {
+    "precio_nacional_cop": 120000,
+    "precio_internacional_usd": 80,
+    "envio_incluido": true,
+    "tiempo_entrega": "5 a 30 días después de confirmado el pago, según país y ubicación",
+    "nota_artesanal": "Todos los elementos son preparados de manera artesanal y pueden presentar variaciones naturales en color, tamaño o apariencia."
+  },
+  "categorias": [
+    {
+      "nombre": "Amor",
+      "emoji": "❤️",
+      "orden": 1
+    },
+    {
+      "nombre": "Prosperidad",
+      "emoji": "💰",
+      "orden": 2
+    },
+    {
+      "nombre": "Protección y Sanación",
+      "emoji": "🛡️",
+      "orden": 3
+    },
+    {
+      "nombre": "Ebooks",
+      "emoji": "📚",
+      "orden": 4
+    }
+  ],
+  "disclaimer": "Los elementos ofrecidos tienen fines espirituales y de bienestar personal. No sustituyen asesorías médicas, psicológicas, jurídicas o financieras.",
+  "productos_fisicos": [
+    {
+      "id": "nudo-celta-amor",
+      "nombre": "Nudo Celta del Amor",
+      "tipo": "fisico",
+      "categoria": "Amor",
+      "subtipo": "Joya",
+      "proposito": "Relaciones duraderas, fidelidad y conexión espiritual entre parejas.",
+      "signos": [],
+      "precio_cop": 120000,
+      "precio_usd": 80,
+      "imagen": "nudo-celta-amor.jpg"
+    },
+    {
+      "id": "candado-llave-amor",
+      "nombre": "Candado y Llave del Amor",
+      "tipo": "fisico",
+      "categoria": "Amor",
+      "subtipo": "Joya",
+      "proposito": "Apertura al amor, compromiso y unión sentimental.",
+      "signos": [],
+      "precio_cop": 120000,
+      "precio_usd": 80,
+      "imagen": "candado-llave-amor.jpg"
+    },
+    {
+      "id": "pulsera-nudo-infinito",
+      "nombre": "Pulsera de Nudo Infinito",
+      "tipo": "fisico",
+      "categoria": "Amor",
+      "subtipo": "Joya",
+      "proposito": "Representa el amor duradero, fortalece los vínculos afectivos y favorece la estabilidad emocional; unión sin fin entre dos.",
+      "signos": [],
+      "precio_cop": 120000,
+      "precio_usd": 80,
+      "imagen": "pulsera-nudo-infinito.jpg"
+    },
+    {
+      "id": "cuarzo-rosa",
+      "nombre": "Cuarzo Rosa",
+      "tipo": "fisico",
+      "categoria": "Amor",
+      "subtipo": "Piedra",
+      "proposito": "Amor propio, atracción de relaciones armoniosas, sanación emocional y apertura del chakra del corazón.",
+      "signos": [
+        "Tauro",
+        "Libra",
+        "Cáncer"
+      ],
+      "precio_cop": 120000,
+      "precio_usd": 80,
+      "imagen": "cuarzo-rosa.jpg"
+    },
+    {
+      "id": "rodonita",
+      "nombre": "Rodonita",
+      "tipo": "fisico",
+      "categoria": "Amor",
+      "subtipo": "Piedra",
+      "proposito": "Perdón y reconciliación, sanación de heridas sentimentales, fortalecimiento de vínculos afectivos y equilibrio emocional.",
+      "signos": [
+        "Tauro",
+        "Libra",
+        "Aries",
+        "Cáncer"
+      ],
+      "precio_cop": 120000,
+      "precio_usd": 80,
+      "imagen": "rodonita.jpg"
+    },
+    {
+      "id": "piedra-luna",
+      "nombre": "Piedra Luna",
+      "tipo": "fisico",
+      "categoria": "Amor",
+      "subtipo": "Piedra",
+      "proposito": "Intuición afectiva, atracción romántica, armonía en pareja y conexión emocional profunda.",
+      "signos": [
+        "Cáncer",
+        "Piscis",
+        "Escorpio",
+        "Libra"
+      ],
+      "precio_cop": 120000,
+      "precio_usd": 80,
+      "imagen": "piedra-luna.jpg"
+    },
+    {
+      "id": "ojo-de-tigre",
+      "nombre": "Ojo de Tigre",
+      "tipo": "fisico",
+      "categoria": "Prosperidad",
+      "subtipo": "Piedra",
+      "proposito": "Determinación y liderazgo, protección financiera, seguridad en la toma de decisiones y atracción de oportunidades.",
+      "signos": [
+        "Leo",
+        "Capricornio",
+        "Géminis"
+      ],
+      "precio_cop": 120000,
+      "precio_usd": 80,
+      "imagen": "ojo-de-tigre.jpg"
+    },
+    {
+      "id": "citrino",
+      "nombre": "Citrino",
+      "tipo": "fisico",
+      "categoria": "Prosperidad",
+      "subtipo": "Piedra",
+      "proposito": "Atracción de riqueza, éxito en negocios, confianza para emprender y energía positiva y optimismo.",
+      "signos": [
+        "Leo",
+        "Sagitario",
+        "Géminis",
+        "Libra"
+      ],
+      "precio_cop": 120000,
+      "precio_usd": 80,
+      "imagen": "citrino.jpg"
+    },
+    {
+      "id": "pirita",
+      "nombre": "Pirita",
+      "tipo": "fisico",
+      "categoria": "Prosperidad",
+      "subtipo": "Piedra",
+      "proposito": "Atracción de abundancia, prosperidad económica, protección de bienes materiales y manifestación de metas financieras.",
+      "signos": [
+        "Leo",
+        "Aries",
+        "Sagitario",
+        "Capricornio"
+      ],
+      "precio_cop": 120000,
+      "precio_usd": 80,
+      "imagen": "pirita.jpg"
+    },
+    {
+      "id": "moneda-china-suerte",
+      "nombre": "Moneda China de la Suerte",
+      "tipo": "fisico",
+      "categoria": "Prosperidad",
+      "subtipo": "Amuleto",
+      "proposito": "Dinero, éxito comercial y flujo constante de prosperidad.",
+      "signos": [],
+      "precio_cop": 120000,
+      "precio_usd": 80,
+      "imagen": "moneda-china-suerte.jpg"
+    },
+    {
+      "id": "dije-arbol-vida",
+      "nombre": "Dije Árbol de la Vida",
+      "tipo": "fisico",
+      "categoria": "Prosperidad",
+      "subtipo": "Amuleto",
+      "proposito": "Crecimiento económico, estabilidad, expansión personal y material.",
+      "signos": [],
+      "precio_cop": 120000,
+      "precio_usd": 80,
+      "imagen": "dije-arbol-vida.jpg"
+    },
+    {
+      "id": "rana-tres-patas",
+      "nombre": "Rana de Tres Patas",
+      "tipo": "fisico",
+      "categoria": "Prosperidad",
+      "subtipo": "Amuleto",
+      "proposito": "Atracción de dinero, éxito financiero y buena fortuna en negocios.",
+      "signos": [],
+      "precio_cop": 120000,
+      "precio_usd": 80,
+      "imagen": "rana-tres-patas.jpg"
+    },
+    {
+      "id": "ojo-turco",
+      "nombre": "Ojo Turco",
+      "tipo": "fisico",
+      "categoria": "Protección y Sanación",
+      "subtipo": "Amuleto",
+      "proposito": "Protección contra envidias, defensa contra energías negativas, protección del hogar y la persona.",
+      "signos": [],
+      "precio_cop": 120000,
+      "precio_usd": 80,
+      "imagen": "ojo-turco.jpg"
+    },
+    {
+      "id": "medalla-san-miguel",
+      "nombre": "Medalla de San Miguel Arcángel",
+      "tipo": "fisico",
+      "categoria": "Protección y Sanación",
+      "subtipo": "Amuleto",
+      "proposito": "Protección divina, fortaleza espiritual y seguridad energética.",
+      "signos": [],
+      "precio_cop": 120000,
+      "precio_usd": 80,
+      "imagen": "medalla-san-miguel.jpg"
+    },
+    {
+      "id": "dije-mano-fatima",
+      "nombre": "Dije Mano de Fátima",
+      "tipo": "fisico",
+      "categoria": "Protección y Sanación",
+      "subtipo": "Amuleto",
+      "proposito": "Salud y bienestar, protección contra el mal de ojo, paz y armonía.",
+      "signos": [],
+      "precio_cop": 120000,
+      "precio_usd": 80,
+      "imagen": "dije-mano-fatima.jpg"
+    },
+    {
+      "id": "amatista",
+      "nombre": "Amatista",
+      "tipo": "fisico",
+      "categoria": "Protección y Sanación",
+      "subtipo": "Piedra",
+      "proposito": "Calma mental y emocional, favorece el descanso y el sueño, ayuda a liberar estrés y preocupaciones; usada en meditaciones de sanación.",
+      "signos": [
+        "Piscis",
+        "Acuario",
+        "Sagitario",
+        "Capricornio"
+      ],
+      "precio_cop": 120000,
+      "precio_usd": 80,
+      "imagen": "amatista.jpg"
+    },
+    {
+      "id": "cuarzo-transparente",
+      "nombre": "Cuarzo Transparente",
+      "tipo": "fisico",
+      "categoria": "Protección y Sanación",
+      "subtipo": "Piedra",
+      "proposito": "Amplía la energía positiva, equilibra todos los chakras, favorece la claridad mental y potencia otras piedras de sanación y protección.",
+      "signos": [
+        "Leo",
+        "Capricornio",
+        "Géminis",
+        "Acuario"
+      ],
+      "precio_cop": 120000,
+      "precio_usd": 80,
+      "imagen": "cuarzo-transparente.jpg"
+    },
+    {
+      "id": "selenita",
+      "nombre": "Selenita",
+      "tipo": "fisico",
+      "categoria": "Protección y Sanación",
+      "subtipo": "Piedra",
+      "proposito": "Limpieza de aura, purificación de espacios, armonización energética; aporta serenidad y paz interior.",
+      "signos": [
+        "Cáncer",
+        "Piscis",
+        "Tauro",
+        "Acuario"
+      ],
+      "precio_cop": 120000,
+      "precio_usd": 80,
+      "imagen": "selenita.jpg"
+    }
+  ],
+  "ebooks": [
+    {
+      "id": "numerologia-del-amor",
+      "nombre": "Numerología del Amor",
+      "subtitulo": "Descubre tu compatibilidad y tu alma gemela",
+      "descripcion": "Transforma tus relaciones desde la energía numérica. Incluye matriz de compatibilidad, energía de cada número, rituales para armonizar tu relación y números maestros.",
+      "imagen": "numerologia-del-amor.png",
+      "tipo": "ebook",
+      "precio_cop": 20000,
+      "precio_usd": 5,
+      "categoria": "Ebooks"
+    },
+    {
+      "id": "aprende-leer-tarot",
+      "nombre": "Aprende a Leer el Tarot",
+      "subtitulo": "Domina las cartas en solo 21 días",
+      "descripcion": "Aprende los 22 arcanos mayores, realiza tus primeras tiradas y desarrolla tu intuición. Tu guía para leer el tarot desde cero.",
+      "imagen": "aprende-leer-tarot.png",
+      "tipo": "ebook",
+      "precio_cop": 20000,
+      "precio_usd": 5,
+      "categoria": "Ebooks"
+    },
+    {
+      "id": "mision-de-vida",
+      "nombre": "Descubre tu Misión de Vida",
+      "subtitulo": "Con la Numerología",
+      "descripcion": "Conoce el propósito que tu alma vino a cumplir. Descubre tu propósito divino, tus talentos naturales y supera tus desafíos kármicos.",
+      "imagen": "mision-de-vida.png",
+      "tipo": "ebook",
+      "precio_cop": 20000,
+      "precio_usd": 5,
+      "categoria": "Ebooks"
+    },
+    {
+      "id": "libro-maestro-manifestacion",
+      "nombre": "El Libro Maestro de Manifestación",
+      "subtitulo": "Programa completo de transformación en 90 días",
+      "descripcion": "Integra todas las artes esotéricas: numerología, astrología, tarot, ciclos lunares, método 369 y energía. Transforma tu vida desde hoy.",
+      "imagen": "libro-maestro-manifestacion.png",
+      "tipo": "ebook",
+      "precio_cop": 20000,
+      "precio_usd": 5,
+      "categoria": "Ebooks"
+    },
+    {
+      "id": "limpieza-energetica-hogar",
+      "nombre": "Limpieza Energética del Hogar",
+      "subtitulo": "Elimina energías negativas y transforma tu espacio",
+      "descripcion": "Limpieza profunda paso a paso, sahumerios, sales y hierbas, rituales para cada habitación y protección. Convierte tu casa en un santuario de paz.",
+      "imagen": "limpieza-energetica-hogar.png",
+      "tipo": "ebook",
+      "precio_cop": 20000,
+      "precio_usd": 5,
+      "categoria": "Ebooks"
+    },
+    {
+      "id": "rituales-luna",
+      "nombre": "Rituales de Luna Nueva y Luna Llena",
+      "subtitulo": "Para manifestar tus deseos",
+      "descripcion": "Las 8 fases lunares y su energía, rituales completos paso a paso, calendario lunar 2026 y meditaciones poderosas. Descubre el poder de la luna.",
+      "imagen": "rituales-luna.png",
+      "tipo": "ebook",
+      "precio_cop": 20000,
+      "precio_usd": 5,
+      "categoria": "Ebooks"
+    },
+    {
+      "id": "poder-de-los-numeros",
+      "nombre": "Descifra el Poder de los Números",
+      "subtitulo": "La guía completa de Numerología para transformar tu vida",
+      "descripcion": "Conoce tu número personal, descubre tu propósito de vida y misión del alma, y mejora tus relaciones, trabajo y abundancia. Para principiantes.",
+      "imagen": "poder-de-los-numeros.png",
+      "tipo": "ebook",
+      "precio_cop": 20000,
+      "precio_usd": 5,
+      "categoria": "Ebooks"
+    },
+    {
+      "id": "metodo-369",
+      "nombre": "Método 369",
+      "subtitulo": "El código secreto de la manifestación",
+      "descripcion": "El método de manifestación inspirado en Tesla. Manifiesta tus sueños con intención, conecta con la energía universal y atrae abundancia. Guía práctica paso a paso.",
+      "imagen": "metodo-369.png",
+      "tipo": "ebook",
+      "precio_cop": 20000,
+      "precio_usd": 5,
+      "categoria": "Ebooks"
+    },
+    {
+      "id": "mercurio-retrogrado",
+      "nombre": "Mercurio Retrógrado",
+      "subtitulo": "La guía definitiva para navegar y aprovechar su energía",
+      "descripcion": "Entiende su influencia en tu vida, qué evitar y qué hacer durante el retrógrado. Transforma los retrasos en tu mayor evolución.",
+      "imagen": "mercurio-retrogrado.png",
+      "tipo": "ebook",
+      "precio_cop": 20000,
+      "precio_usd": 5,
+      "categoria": "Ebooks"
+    }
+  ]
+}

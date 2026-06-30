@@ -11,6 +11,8 @@ import Perfil from './pages/Perfil'
 import Historial from './pages/Historial'
 import CartaAstral from './pages/CartaAstral'
 import RegistrosAkashicos from './pages/RegistrosAkashicos'
+import Rituales from './pages/Rituales'
+import Tienda from './pages/Tienda'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import DeleteAccount from './pages/DeleteAccount'
 import { PremiumProvider } from './contexts/PremiumContext'
@@ -38,6 +40,8 @@ export default function App() {
             <Route path="/historial" element={<Historial />} />
             <Route path="/carta-astral" element={<CartaAstral />} />
             <Route path="/registros-akashicos" element={<RegistrosAkashicos />} />
+            <Route path="/rituales" element={<Rituales />} />
+            <Route path="/tienda" element={<Tienda />} />
             <Route path="/planes" element={<Planes />} />
           </Route>
 

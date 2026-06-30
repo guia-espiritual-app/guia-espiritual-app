@@ -4,6 +4,7 @@ import { saveNumerologyReading } from '../services/firestoreService'
 import DateSelect from '../components/DateSelect'
 import { useSound } from '../contexts/SoundContext'
 import ServiceAvatar from '../components/ServiceAvatar'
+import BurbujaGU from '../components/BurbujaGU'
 import avatarNumerologo from '../assets/avatares/numerologo.png'
 
 export default function Numerologia() {
@@ -170,7 +171,12 @@ export default function Numerologia() {
 
   return (
     <div className="max-w-md mx-auto px-4 pt-10 pb-4">
-      <ServiceAvatar src={avatarNumerologo} alt="Numerólogo" />
+      <BurbujaGU
+        seccion="numerologia"
+        avatarSrc={avatarNumerologo}
+        avatarAlt="Numerólogo"
+        className="mb-6"
+      />
       <h1 className="text-3xl font-bold text-yellow-300 mb-2 text-center">🔢 Numerología</h1>
       <p className="text-purple-200 mb-6 text-center">
         Descubre tu número de vida y su significado profundo

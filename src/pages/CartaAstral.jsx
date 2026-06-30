@@ -3,6 +3,7 @@ import { usePremium } from '../contexts/PremiumContext'
 import { useNavigate } from 'react-router-dom'
 import DateSelect from '../components/DateSelect'
 import ServiceAvatar from '../components/ServiceAvatar'
+import BurbujaGU from '../components/BurbujaGU'
 import avatarGuardian from '../assets/avatares/guardian.png'
 
 export default function CartaAstral() {
@@ -94,8 +95,13 @@ if (premiumLoading) {
   if (!isPremium) {
     return (
       <div className="max-w-md mx-auto px-4 pt-10 pb-4">
+        <BurbujaGU
+          seccion="carta_astral"
+          avatarSrc={avatarGuardian}
+          avatarAlt="Guardián de la Carta Astral"
+          className="mb-6"
+        />
         <div className="text-center mb-6">
-          <ServiceAvatar src={avatarGuardian} alt="Guardián de la Carta Astral" />
           <div className="text-6xl mb-4">🔒</div>
           <h1 className="text-3xl font-bold text-yellow-300 mb-2">Contenido Premium</h1>
           <p className="text-purple-200 mb-6">
@@ -225,13 +231,18 @@ if (premiumLoading) {
 
   return (
     <div className="max-w-md mx-auto px-4 pt-10 pb-4">
+      <BurbujaGU
+        seccion="carta_astral"
+        avatarSrc={avatarGuardian}
+        avatarAlt="Guardián de la Carta Astral"
+        className="mb-6"
+      />
       <div className="text-center mb-4">
         <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-purple-900 text-xs font-bold px-3 py-1 rounded-full">
           ⭐ PREMIUM
         </span>
       </div>
 
-      <ServiceAvatar src={avatarGuardian} alt="Guardián de la Carta Astral" />
       <h1 className="text-3xl font-bold text-yellow-300 mb-2 text-center">✨ Carta Astral</h1>
       <p className="text-purple-200 mb-6 text-center">
         Descubre tu mapa cósmico personal

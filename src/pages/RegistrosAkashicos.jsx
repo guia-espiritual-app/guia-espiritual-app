@@ -4,6 +4,7 @@ import { useSound } from '../contexts/SoundContext'
 import { useNavigate } from 'react-router-dom'
 import DateSelect from '../components/DateSelect'
 import ServiceAvatar from '../components/ServiceAvatar'
+import BurbujaGU from '../components/BurbujaGU'
 import avatarChaman from '../assets/avatares/chaman.png'
 
 export default function RegistrosAkashicos() {
@@ -114,8 +115,13 @@ export default function RegistrosAkashicos() {
   if (!isPremium) {
     return (
       <div className="max-w-md mx-auto px-4 pt-10 pb-4">
+        <BurbujaGU
+          seccion="registros_akashicos"
+          avatarSrc={avatarChaman}
+          avatarAlt="Chamán de los Registros Akáshicos"
+          className="mb-6"
+        />
         <div className="text-center mb-6">
-          <ServiceAvatar src={avatarChaman} alt="Chamán de los Registros Akáshicos" />
           <div className="text-6xl mb-4">🔒</div>
           <h1 className="text-3xl font-bold text-yellow-300 mb-2">Contenido Premium</h1>
           <p className="text-purple-200 mb-6">
@@ -230,13 +236,18 @@ export default function RegistrosAkashicos() {
   // Formulario
   return (
     <div className="max-w-md mx-auto px-4 pt-10 pb-4">
+      <BurbujaGU
+        seccion="registros_akashicos"
+        avatarSrc={avatarChaman}
+        avatarAlt="Chamán de los Registros Akáshicos"
+        className="mb-6"
+      />
       <div className="text-center mb-4">
         <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-purple-900 text-xs font-bold px-3 py-1 rounded-full">
           ⭐ PREMIUM
         </span>
       </div>
 
-      <ServiceAvatar src={avatarChaman} alt="Chamán de los Registros Akáshicos" />
       <h1 className="text-3xl font-bold text-yellow-300 mb-2 text-center">📜 Registros Akáshicos</h1>
       <p className="text-purple-200 mb-6 text-center">
         Accede a la sabiduría de tu alma y descubre tu propósito

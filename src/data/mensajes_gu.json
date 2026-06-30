@@ -1,0 +1,52 @@
+{
+  "inicio": {
+    "seccion": "Home",
+    "mensaje": "Hola {nombre}, soy GU, tu guía espiritual. ¿Qué quieres descubrir hoy?",
+    "usa_nombre": true
+  },
+  "tarot": {
+    "seccion": "Tarot",
+    "mensaje": "Bienvenido a tu lectura del tarot. Lava tus manos y toma medio vaso de agua, realiza tres respiraciones profundas y repite esta frase: \"Recibo esta guía con claridad, respeto y sabiduría\".",
+    "usa_nombre": false
+  },
+  "numerologia": {
+    "seccion": "Numerología",
+    "mensaje": "Antes de comenzar, respira tres veces profundamente y recuerda que cada número puede revelar una perspectiva diferente sobre tu vida.",
+    "usa_nombre": false
+  },
+  "horoscopo": {
+    "seccion": "Horóscopo",
+    "mensaje": "Respira profundamente y recibe este mensaje con serenidad. Los astros iluminan posibilidades; tus decisiones construyen el camino.",
+    "usa_nombre": false
+  },
+  "carta_astral": {
+    "seccion": "Carta Astral",
+    "mensaje": "Busca un momento de tranquilidad y lee esta carta astral con el corazón abierto. En ella encontrarás una guía para comprender tus talentos, desafíos y el potencial que tienes desde tu nacimiento y su influencia con los astros.",
+    "usa_nombre": false
+  },
+  "registros_akashicos": {
+    "seccion": "Registros Akáshicos",
+    "mensaje": "Respira lentamente. Los registros akáshicos invitan a la introspección. Lee cada mensaje con serenidad y toma aquello que inspire tu crecimiento personal y espiritual.",
+    "usa_nombre": false
+  },
+  "academia": {
+    "seccion": "Academia del Maestro GU",
+    "mensaje": "El conocimiento es uno de los mayores tesoros espirituales. Aprende a tu propio ritmo, fortalece tu sabiduría y recuerda que cada enseñanza cobra verdadero valor cuando la llevas a la práctica con respeto y responsabilidad.",
+    "usa_nombre": false
+  },
+  "tienda": {
+    "seccion": "Tienda",
+    "mensaje": "Los objetos espirituales son símbolos que pueden acompañar tus prácticas y recordarte tus propósitos. El verdadero poder nace de tus acciones, tu intención y tu compromiso con el crecimiento personal.",
+    "usa_nombre": false
+  },
+  "consulta_personalizada": {
+    "seccion": "Consulta Personalizada",
+    "mensaje": "Este es un espacio creado para escucharte y orientarte. Comparte tu consulta con sinceridad y la abordaré con respeto. Separa tu cita aquí y ahora.",
+    "usa_nombre": false
+  },
+  "rituales": {
+    "seccion": "Rituales Caseros",
+    "mensaje": "No necesitas conocimientos previos, solo una mente abierta y la disposición de dedicar unos minutos a ti mismo. Sigue cada paso con atención y permite que esta práctica sea un espacio de cambio y bienestar en tu vida.",
+    "usa_nombre": false
+  }
+}

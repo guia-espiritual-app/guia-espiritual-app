@@ -21,12 +21,23 @@ export function SoundProvider({ children }) {
   const chimeRef = useRef(null)
 
   const createBgHowl = useCallback(() => {
-    console.log('[SoundContext] creando instancia de música de fondo')
+    console.log('[SoundContext] creando instancia de música de fondo — src:', bgMusic)
     return new Howl({
       src: [bgMusic],
+      format: ['mp3'],
+      html5: true,
       loop: true,
       volume: 0.4,
       preload: true,
+      onload: () => {
+        console.log('[SoundContext] música de fondo cargada correctamente')
+      },
+      onloaderror: (id, err) => {
+        console.log('[SoundContext] Error carga música:', id, err)
+      },
+      onplayerror: (id, err) => {
+        console.log('[SoundContext] Error play música:', id, err)
+      },
     })
   }, [])
 

@@ -3,6 +3,7 @@ import signosData from '../data/signos.json'
 import { saveHoroscopeReading } from '../services/firestoreService'
 import { useSound } from '../contexts/SoundContext'
 import ServiceAvatar from '../components/ServiceAvatar'
+import BurbujaGU from '../components/BurbujaGU'
 import avatarSacerdotisa from '../assets/avatares/sacerdotisa.png'
 
 const rotarCompatibilidades = (compatibilidadOriginal) => {
@@ -220,7 +221,12 @@ export default function Horoscopo() {
 
   return (
     <div className="max-w-md mx-auto px-4 pt-10 pb-4">
-      <ServiceAvatar src={avatarSacerdotisa} alt="Sacerdotisa del Horóscopo" />
+      <BurbujaGU
+        seccion="horoscopo"
+        avatarSrc={avatarSacerdotisa}
+        avatarAlt="Sacerdotisa del Horóscopo"
+        className="mb-6"
+      />
       <h1 className="text-3xl font-bold text-yellow-300 mb-2 text-center">♈ Horóscopo</h1>
       <p className="text-purple-200 mb-6 text-center">
         Explora las energías de los signos y cómo influyen en tu día a día.
