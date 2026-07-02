@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { signOut } from 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth'
+import { Capacitor } from '@capacitor/core'
 import { auth } from '../firebase'
 
 export default function Perfil() {
@@ -23,8 +24,13 @@ export default function Perfil() {
   }
 
   const handleEnableNotifications = async () => {
+    if (Capacitor.isNativePlatform()) {
+      alert('Las notificaciones en la app nativa se configurarán próximamente.')
+      return
+    }
+
     try {
-      if (window.OneSignal) {
+      if (window.OneSignal?.Slidedown?.promptPush) {
         await window.OneSignal.Slidedown.promptPush()
         alert('¡Notificaciones activadas! Recibirás la frase del día.')
       } else {
