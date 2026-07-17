@@ -3,12 +3,17 @@ import numerologiaData from '../data/numerologia.json'
 import { saveNumerologyReading } from '../services/firestoreService'
 import DateSelect from '../components/DateSelect'
 import { useSound } from '../contexts/SoundContext'
+import { useLimiteDiario } from '../hooks/useLimiteDiario'
 import ServiceAvatar from '../components/ServiceAvatar'
 import BurbujaGU from '../components/BurbujaGU'
+import CierreLecturaGU from '../components/CierreLecturaGU'
+import AvisoLimiteDiario from '../components/AvisoLimiteDiario'
+import BotonAtras from '../components/BotonAtras'
 import avatarNumerologo from '../assets/avatares/numerologo.png'
 
 export default function Numerologia() {
   const { playChime } = useSound()
+  const { limiteAlcanzado, listo, intentarLectura } = useLimiteDiario('numerologia')
   const [nombre, setNombre] = useState('')
   const [fechaNacimiento, setFechaNacimiento] = useState('')
   const [resultado, setResultado] = useState(null)
@@ -34,13 +39,16 @@ export default function Numerologia() {
     return suma
   }
 
-  const calcular = (e) => {
+  const calcular = async (e) => {
     e.preventDefault()
     
     if (!nombre || !fechaNacimiento) {
       alert('Por favor completa todos los campos')
       return
     }
+
+    const permitido = await intentarLectura()
+    if (!permitido) return
 
     const numeroVida = calcularNumeroVida(fechaNacimiento)
     const datosNumerologia = numerologiaData.numerologia_1_9.find(n => n.numero === numeroVida)
@@ -82,6 +90,7 @@ export default function Numerologia() {
   if (resultado) {
     return (
       <div className="max-w-md mx-auto px-4 pt-10 pb-4">
+        <BotonAtras />
         <ServiceAvatar src={avatarNumerologo} alt="Numerólogo" />
         <h1 className="text-3xl font-bold text-yellow-300 mb-6 text-center">🔢 Tu Número de Vida</h1>
         
@@ -165,12 +174,15 @@ export default function Numerologia() {
         >
           ✨ Nueva Consulta
         </button>
+
+        <CierreLecturaGU />
       </div>
     )
   }
 
   return (
     <div className="max-w-md mx-auto px-4 pt-10 pb-4">
+        <BotonAtras />
       <BurbujaGU
         seccion="numerologia"
         avatarSrc={avatarNumerologo}
@@ -182,6 +194,14 @@ export default function Numerologia() {
         Descubre tu número de vida y su significado profundo
       </p>
 
+      {!listo ? (
+        <div className="text-center py-8">
+          <div className="text-4xl mb-3 animate-pulse">🔮</div>
+          <p className="text-purple-300 text-sm">Consultando los astros...</p>
+        </div>
+      ) : limiteAlcanzado ? (
+        <AvisoLimiteDiario />
+      ) : (
       <form onSubmit={calcular} className="bg-purple-900/40 border-2 border-purple-500/60 rounded-2xl p-8 shadow-lg shadow-purple-900/60">
         <div className="space-y-6">
           <div>
@@ -212,6 +232,7 @@ export default function Numerologia() {
           </button>
         </div>
       </form>
+      )}
     </div>
   )
 }

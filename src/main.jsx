@@ -3,11 +3,18 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { SoundProvider } from './contexts/SoundContext'
+import { initRevenueCat } from './lib/revenuecat'
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <SoundProvider>
-      <App />
-    </SoundProvider>
-  </StrictMode>,
-)
+async function bootstrap() {
+  await initRevenueCat()
+
+  createRoot(document.getElementById('root')).render(
+    <StrictMode>
+      <SoundProvider>
+        <App />
+      </SoundProvider>
+    </StrictMode>,
+  )
+}
+
+bootstrap()

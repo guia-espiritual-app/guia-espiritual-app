@@ -128,11 +128,21 @@ select {
   box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
 }
 
+.tarot-flip-scene--large {
+  max-width: 22rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media (min-width: 768px) {
   .tarot-flip-scene {
     max-width: 20rem;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .tarot-flip-scene--large {
+    max-width: 24rem;
   }
 }
 

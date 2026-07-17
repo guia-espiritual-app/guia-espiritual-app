@@ -1,9 +1,14 @@
 import { useState } from 'react'
 import signosData from '../data/signos.json'
+import horoscopoMensajes from '../data/horoscopo_mensajes.json'
 import { saveHoroscopeReading } from '../services/firestoreService'
 import { useSound } from '../contexts/SoundContext'
+import { useLimiteDiario } from '../hooks/useLimiteDiario'
 import ServiceAvatar from '../components/ServiceAvatar'
 import BurbujaGU from '../components/BurbujaGU'
+import AvisoLimiteDiario from '../components/AvisoLimiteDiario'
+import CierreLecturaGU from '../components/CierreLecturaGU'
+import BotonAtras from '../components/BotonAtras'
 import avatarSacerdotisa from '../assets/avatares/sacerdotisa.png'
 
 const rotarCompatibilidades = (compatibilidadOriginal) => {
@@ -32,45 +37,52 @@ const simbolosZodiacales = {
   'Piscis': '♓'
 }
 
-const generarPrediccionDiaria = (signo) => {
-  const elemento = signo.elemento
-  const fortalezaPrincipal = signo.fortalezas[0] || 'energía'
-  const nombre = signo.nombre
+/** Día del año local (1–366), para rotación consistente entre usuarios. */
+function getDiaDelAno(fecha = new Date()) {
+  const year = fecha.getFullYear()
+  const inicio = new Date(year, 0, 1)
+  const hoy = new Date(year, fecha.getMonth(), fecha.getDate())
+  const diffMs = hoy.getTime() - inicio.getTime()
+  return Math.floor(diffMs / 86400000) + 1
+}
 
-  const prediccionesPorElemento = {
-    'Fuego': [
-      `Hoy tu energía de fuego brilla intensamente. Es momento de liderar con tu ${fortalezaPrincipal} natural y compartir tu luz con quienes te rodean.`,
-      `Tu ${fortalezaPrincipal} será reconocida hoy. Confía en tu instinto y no temas expresar tus ideas con ese carisma que te caracteriza.`,
-      `La pasión que te define como ${nombre} se activa hoy. Usa tu ${fortalezaPrincipal} para inspirar a otros y avanzar en tus proyectos.`,
-      `Hoy el universo te invita a encender tu fuego interior. Tu ${fortalezaPrincipal} es tu mayor aliado para superar cualquier desafío.`
-    ],
-    'Tierra': [
-      `Hoy es un día perfecto para construir sobre bases sólidas. Tu ${fortalezaPrincipal} te ayudará a materializar tus planes con paciencia y determinación.`,
-      `La estabilidad que caracteriza a ${nombre} será tu guía hoy. Confía en tu ${fortalezaPrincipal} para tomar decisiones prácticas y sensatas.`,
-      `Tu conexión con lo tangible se fortalece hoy. Usa tu ${fortalezaPrincipal} para crear algo duradero y significativo en tu vida.`,
-      `Hoy la tierra te ofrece su sabiduría. Aprovecha tu ${fortalezaPrincipal} para cultivar resultados concretos y satisfactorios.`
-    ],
-    'Aire': [
-      `Hoy las ideas fluyen libremente para ti, ${nombre}. Tu ${fortalezaPrincipal} te permitirá comunicar con claridad y conectar con otros.`,
-      `El viento de la inspiración sopla a tu favor hoy. Usa tu ${fortalezaPrincipal} para compartir tus pensamientos y crear nuevas conexiones.`,
-      `Tu mente está especialmente activa hoy. Aprovecha tu ${fortalezaPrincipal} para aprender algo nuevo y expandir tus horizontes.`,
-      `Hoy es momento de elevar tu perspectiva, ${nombre}. Tu ${fortalezaPrincipal} te ayudará a ver las situaciones desde un ángulo más amplio.`
-    ],
-    'Agua': [
-      `Hoy tus emociones fluyen con sabiduría, ${nombre}. Tu ${fortalezaPrincipal} te guiará para navegar los sentimientos con intuición y compasión.`,
-      `La profundidad emocional que caracteriza a ${nombre} se activa hoy. Confía en tu ${fortalezaPrincipal} para sanar y conectar profundamente.`,
-      `Hoy el agua te invita a sumergirte en tu mundo interior. Tu ${fortalezaPrincipal} te ayudará a entender mejor tus emociones y las de otros.`,
-      `La sensibilidad de ${nombre} será tu guía hoy. Usa tu ${fortalezaPrincipal} para crear vínculos emocionales auténticos y sanadores.`
-    ]
+/**
+ * Predicción del día: misma fecha + mismo signo → mismo contenido para todos.
+ * Índice = díaDelAño % cantidad de mensajes del signo.
+ */
+function obtenerPrediccionDiaria(signo) {
+  const mensajes = horoscopoMensajes[signo.nombre]
+  const fallback = {
+    general: 'Hoy los astros te invitan a confiar en tu camino con serenidad.',
+    amor: 'Abre el corazón con honestidad y suavidad.',
+    dinero: 'Organiza prioridades y avanza con foco.',
+    salud: 'Honra descanso y movimiento consciente.',
+    piedra: {
+      nombre: 'Cuarzo Transparente',
+      emoji: '✨',
+      motivo: 'para clarificar tu intención del día.',
+    },
   }
 
-  const mensajes = prediccionesPorElemento[elemento] || prediccionesPorElemento['Fuego']
-  const indiceAleatorio = Math.floor(Math.random() * mensajes.length)
-  return mensajes[indiceAleatorio]
+  if (!mensajes?.length) return fallback
+
+  const dia = getDiaDelAno()
+  const indice = (dia - 1) % mensajes.length
+  return mensajes[indice]
+}
+
+function SeccionPrediccion({ titulo, texto }) {
+  return (
+    <div className="bg-purple-800/40 border border-purple-600/60 rounded-xl p-4">
+      <h3 className="text-[#fbbf24] font-bold text-base mb-2">{titulo}</h3>
+      <p className="text-purple-100 text-sm leading-relaxed">{texto}</p>
+    </div>
+  )
 }
 
 export default function Horoscopo() {
   const { playChime } = useSound()
+  const { limiteAlcanzado, listo, intentarLectura, periodo } = useLimiteDiario('horoscopo')
   const [signoSeleccionado, setSignoSeleccionado] = useState(null)
   const [saving, setSaving] = useState(false)
   const [saveMessage, setSaveMessage] = useState('')
@@ -95,7 +107,10 @@ export default function Horoscopo() {
     setSaving(false)
   }
 
-  const verPrediccion = (signo) => {
+  const verPrediccion = async (signo) => {
+    const permitido = await intentarLectura()
+    if (!permitido) return
+
     setSignoSeleccionado(signo)
     playChime()
   }
@@ -105,8 +120,11 @@ export default function Horoscopo() {
   }
 
   if (signoSeleccionado) {
+    const prediccion = obtenerPrediccionDiaria(signoSeleccionado)
+
     return (
       <div className="max-w-md mx-auto px-4 pt-10 pb-4">
+        <BotonAtras />
         <ServiceAvatar src={avatarSacerdotisa} alt="Sacerdotisa del Horóscopo" />
         <div className="bg-gradient-to-br from-purple-900/90 to-purple-700/90 border-2 border-purple-500/60 rounded-2xl p-6 shadow-lg shadow-purple-900/60">
           <h1 className="text-4xl font-bold text-yellow-300 mb-2 text-center">
@@ -131,9 +149,20 @@ export default function Horoscopo() {
             </div>
 
             <div className="bg-purple-800/30 border border-purple-500/50 rounded-xl p-5">
-              <h2 className="text-yellow-300 font-bold text-lg mb-3">Tu Predicción de Hoy</h2>
+              <h2 className="text-[#fbbf24] font-bold text-lg mb-3">Tu Predicción de Hoy</h2>
               <p className="text-purple-100 italic leading-relaxed">
-                {generarPrediccionDiaria(signoSeleccionado)}
+                {prediccion.general}
+              </p>
+            </div>
+
+            <SeccionPrediccion titulo="💖 Amor" texto={prediccion.amor} />
+            <SeccionPrediccion titulo="💰 Dinero / Trabajo" texto={prediccion.dinero} />
+            <SeccionPrediccion titulo="🌿 Salud" texto={prediccion.salud} />
+
+            <div className="bg-gradient-to-br from-yellow-900/35 to-purple-900/50 border-2 border-[#fbbf24]/45 rounded-xl p-4">
+              <h3 className="text-[#fbbf24] font-bold text-base mb-2">Piedra recomendada hoy</h3>
+              <p className="text-purple-100 text-sm leading-relaxed">
+                {prediccion.piedra.nombre} {prediccion.piedra.emoji} — {prediccion.piedra.motivo}
               </p>
             </div>
 
@@ -213,6 +242,8 @@ export default function Horoscopo() {
             >
               ← Volver a Signos
             </button>
+
+            <CierreLecturaGU />
           </div>
         </div>
       </div>
@@ -221,6 +252,7 @@ export default function Horoscopo() {
 
   return (
     <div className="max-w-md mx-auto px-4 pt-10 pb-4">
+        <BotonAtras />
       <BurbujaGU
         seccion="horoscopo"
         avatarSrc={avatarSacerdotisa}
@@ -232,6 +264,14 @@ export default function Horoscopo() {
         Explora las energías de los signos y cómo influyen en tu día a día.
       </p>
 
+      {!listo ? (
+        <div className="text-center py-8">
+          <div className="text-4xl mb-3 animate-pulse">🔮</div>
+          <p className="text-purple-300 text-sm">Consultando los astros...</p>
+        </div>
+      ) : limiteAlcanzado ? (
+        <AvisoLimiteDiario periodo={periodo} />
+      ) : (
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {signos.map((signo) => (
           <button
@@ -248,6 +288,7 @@ export default function Horoscopo() {
           </button>
         ))}
       </div>
+      )}
     </div>
   )
 }

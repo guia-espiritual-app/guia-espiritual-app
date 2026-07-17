@@ -1,16 +1,19 @@
 import { useState } from 'react'
 import { usePremium } from '../contexts/PremiumContext'
 import { useSound } from '../contexts/SoundContext'
-import { useNavigate } from 'react-router-dom'
+import { useLimiteDiario } from '../hooks/useLimiteDiario'
 import DateSelect from '../components/DateSelect'
 import ServiceAvatar from '../components/ServiceAvatar'
 import BurbujaGU from '../components/BurbujaGU'
+import CierreLecturaGU from '../components/CierreLecturaGU'
+import AvisoLimiteDiario from '../components/AvisoLimiteDiario'
+import BotonAtras from '../components/BotonAtras'
 import avatarChaman from '../assets/avatares/chaman.png'
 
 export default function RegistrosAkashicos() {
-  const { isPremium, loading: premiumLoading } = usePremium()
+  const { isPremium } = usePremium()
   const { playChime } = useSound()
-  const navigate = useNavigate()
+  const { limiteAlcanzado, listo, intentarLectura } = useLimiteDiario('registros')
   
   const [formData, setFormData] = useState({
     nombre: '',
@@ -76,13 +79,16 @@ export default function RegistrosAkashicos() {
     }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     
     if (!formData.nombre || !formData.fecha || !formData.areaVida) {
       alert('Por favor completa los campos requeridos')
       return
     }
+
+    const permitido = await intentarLectura()
+    if (!permitido) return
 
     const resultado = generarLectura(formData)
     setLectura(resultado)
@@ -99,92 +105,18 @@ export default function RegistrosAkashicos() {
     setLectura(null)
   }
 
-  // Loading mientras verifica premium
-  if (premiumLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="text-6xl mb-4 animate-pulse">🔮</div>
-          <p className="text-purple-300">Cargando...</p>
-        </div>
-      </div>
-    )
-  }
-
-  // Paywall para usuarios no premium
-  if (!isPremium) {
-    return (
-      <div className="max-w-md mx-auto px-4 pt-10 pb-4">
-        <BurbujaGU
-          seccion="registros_akashicos"
-          avatarSrc={avatarChaman}
-          avatarAlt="Chamán de los Registros Akáshicos"
-          className="mb-6"
-        />
-        <div className="text-center mb-6">
-          <div className="text-6xl mb-4">🔒</div>
-          <h1 className="text-3xl font-bold text-yellow-300 mb-2">Contenido Premium</h1>
-          <p className="text-purple-200 mb-6">
-            Los Registros Akáshicos son una funcionalidad exclusiva para miembros Premium
-          </p>
-        </div>
-
-        <div className="bg-gradient-to-br from-yellow-900/60 to-yellow-700/60 border-4 border-yellow-400/80 rounded-2xl p-6 mb-6">
-          <h2 className="text-xl font-bold text-yellow-200 mb-4 text-center">
-            ✨ Con Premium obtienes:
-          </h2>
-          
-          <div className="space-y-3">
-            <div className="flex items-start gap-2">
-              <span className="text-yellow-300 mt-0.5">⭐</span>
-              <p className="text-yellow-100 text-sm">Acceso completo a tus Registros Akáshicos</p>
-            </div>
-            <div className="flex items-start gap-2">
-              <span className="text-yellow-300 mt-0.5">⭐</span>
-              <p className="text-yellow-100 text-sm">Carta Astral completa con todos los planetas</p>
-            </div>
-            <div className="flex items-start gap-2">
-              <span className="text-yellow-300 mt-0.5">⭐</span>
-              <p className="text-yellow-100 text-sm">Lecturas ilimitadas de Tarot</p>
-            </div>
-            <div className="flex items-start gap-2">
-              <span className="text-yellow-300 mt-0.5">⭐</span>
-              <p className="text-yellow-100 text-sm">Sin anuncios</p>
-            </div>
-          </div>
-
-          <div className="text-center mt-6">
-            <p className="text-3xl font-bold text-yellow-300 mb-1">$4.99/mes</p>
-            <p className="text-yellow-200 text-sm">Cancela cuando quieras</p>
-          </div>
-        </div>
-
-        <button
-          onClick={() => navigate('/planes')}
-          className="w-full bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-purple-900 font-bold py-4 px-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] mb-3"
-        >
-          🚀 Actualizar a Premium
-        </button>
-
-        <button
-          onClick={() => navigate('/')}
-          className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-xl transition-all duration-200"
-        >
-          ← Volver al Inicio
-        </button>
-      </div>
-    )
-  }
-
   // Vista de resultado
   if (lectura) {
     return (
       <div className="max-w-md mx-auto px-4 pt-10 pb-4">
-        <div className="text-center mb-4">
-          <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-purple-900 text-xs font-bold px-3 py-1 rounded-full">
-            ⭐ PREMIUM
-          </span>
-        </div>
+        <BotonAtras />
+        {isPremium && (
+          <div className="text-center mb-4">
+            <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-purple-900 text-xs font-bold px-3 py-1 rounded-full">
+              ⭐ PREMIUM
+            </span>
+          </div>
+        )}
 
         <ServiceAvatar src={avatarChaman} alt="Chamán de los Registros Akáshicos" />
         <h1 className="text-3xl font-bold text-yellow-300 mb-2 text-center">📜 Tu Lectura Akáshica</h1>
@@ -228,6 +160,8 @@ export default function RegistrosAkashicos() {
           >
             ✨ Nueva Consulta Akáshica
           </button>
+
+          <CierreLecturaGU />
         </div>
       </div>
     )
@@ -236,23 +170,26 @@ export default function RegistrosAkashicos() {
   // Formulario
   return (
     <div className="max-w-md mx-auto px-4 pt-10 pb-4">
+        <BotonAtras />
       <BurbujaGU
         seccion="registros_akashicos"
         avatarSrc={avatarChaman}
         avatarAlt="Chamán de los Registros Akáshicos"
         className="mb-6"
       />
-      <div className="text-center mb-4">
-        <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-purple-900 text-xs font-bold px-3 py-1 rounded-full">
-          ⭐ PREMIUM
-        </span>
-      </div>
-
       <h1 className="text-3xl font-bold text-yellow-300 mb-2 text-center">📜 Registros Akáshicos</h1>
       <p className="text-purple-200 mb-6 text-center">
         Accede a la sabiduría de tu alma y descubre tu propósito
       </p>
 
+      {!listo ? (
+        <div className="text-center py-8">
+          <div className="text-4xl mb-3 animate-pulse">🔮</div>
+          <p className="text-purple-300 text-sm">Consultando los astros...</p>
+        </div>
+      ) : limiteAlcanzado ? (
+        <AvisoLimiteDiario />
+      ) : (
       <form onSubmit={handleSubmit} className="bg-purple-900/40 border-2 border-purple-500/60 rounded-2xl p-8 shadow-lg">
         <div className="space-y-5">
           <div>
@@ -318,6 +255,7 @@ export default function RegistrosAkashicos() {
           </button>
         </div>
       </form>
+      )}
     </div>
   )
 }

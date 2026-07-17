@@ -2,10 +2,15 @@ import { useState } from 'react'
 import tarotData from '../data/tarot.json'
 import { saveTarotReading } from '../services/firestoreService'
 import { useSound } from '../contexts/SoundContext'
+import { useLimiteDiario } from '../hooks/useLimiteDiario'
 import TarotFlipCard from '../components/TarotFlipCard'
 import ServiceAvatar from '../components/ServiceAvatar'
 import BurbujaGU from '../components/BurbujaGU'
+import AvisoLimiteDiario from '../components/AvisoLimiteDiario'
+import CierreLecturaGU from '../components/CierreLecturaGU'
+import BotonAtras from '../components/BotonAtras'
 import avatarVidente from '../assets/avatares/vidente.png'
+import { Link } from 'react-router-dom'
 
 const imagenes = import.meta.glob('../assets/cartas/*.jpg', { eager: true, import: 'default' })
 
@@ -20,8 +25,8 @@ function CartaImagen({ carta }) {
 
   if (!src || error) {
     return (
-      <div className="w-full aspect-[2/3] max-h-44 flex items-center justify-center rounded-lg border-2 border-[#fbbf24]/40 bg-purple-950/40">
-        <span className="text-4xl text-purple-400/70" aria-hidden="true">🃏</span>
+      <div className="w-full aspect-[2/3] max-h-80 flex items-center justify-center rounded-lg border-2 border-[#fbbf24]/40 bg-purple-950/40">
+        <span className="text-5xl text-purple-400/70" aria-hidden="true">🃏</span>
       </div>
     )
   }
@@ -31,13 +36,14 @@ function CartaImagen({ carta }) {
       src={src}
       alt={carta.nombre}
       onError={() => setError(true)}
-      className="w-full max-h-44 object-contain rounded-lg border-2 border-[#fbbf24]/60 shadow-[0_0_12px_rgba(251,191,36,0.2)]"
+      className="w-full max-h-80 object-contain rounded-lg border-2 border-[#fbbf24]/60 shadow-[0_0_16px_rgba(251,191,36,0.25)]"
     />
   )
 }
 
 export default function Tarot() {
   const { playChime } = useSound()
+  const { limiteAlcanzado, listo, intentarLectura } = useLimiteDiario('tarot')
   const [tipoLectura, setTipoLectura] = useState(null)
   const [cartasSeleccionadas, setCartasSeleccionadas] = useState([])
   const [cartasVolteadas, setCartasVolteadas] = useState({})
@@ -60,7 +66,10 @@ export default function Tarot() {
     return seleccionadas
   }
 
-  const iniciarLectura = (tipo) => {
+  const iniciarLectura = async (tipo) => {
+    const permitido = await intentarLectura()
+    if (!permitido) return
+
     const cantidad = tipo === 'una' ? 1 : 3
     const cartas = seleccionarCartasAleatorias(cantidad)
     setTipoLectura(tipo)
@@ -195,6 +204,7 @@ export default function Tarot() {
   if (!tipoLectura) {
     return (
       <div className="max-w-md mx-auto px-4 pt-10 pb-4">
+        <BotonAtras />
         <BurbujaGU
           seccion="tarot"
           avatarSrc={avatarVidente}
@@ -205,7 +215,15 @@ export default function Tarot() {
         <p className="text-purple-200 mb-6 text-center">
           Conecta con la sabiduría del tarot y recibe orientación para tu camino espiritual.
         </p>
-        
+
+        {!listo ? (
+          <div className="text-center py-8">
+            <div className="text-4xl mb-3 animate-pulse">🔮</div>
+            <p className="text-purple-300 text-sm">Consultando los astros...</p>
+          </div>
+        ) : limiteAlcanzado ? (
+          <AvisoLimiteDiario />
+        ) : (
         <div className="space-y-4">
           <button
             onClick={() => iniciarLectura('una')}
@@ -225,12 +243,14 @@ export default function Tarot() {
             <p className="text-sm text-purple-100">Pasado, Presente y Futuro</p>
           </button>
         </div>
+        )}
       </div>
     )
   }
 
   return (
     <div className="max-w-md mx-auto px-4 pt-10 pb-24">
+      <BotonAtras />
       <ServiceAvatar src={avatarVidente} alt="Vidente del Tarot" />
       <h1 className="text-3xl font-bold text-yellow-300 mb-2 text-center">🃏 Tarot</h1>
       
@@ -243,10 +263,11 @@ export default function Tarot() {
               const mensajeInterpretativo = obtenerMensajeInterpretativo(tipoLectura, index, carta)
 
               return (
-                <div key={index} className="flex flex-col items-center">
+                <div key={index} className="flex flex-col items-center max-w-sm mx-auto w-full">
                   <TarotFlipCard
                     flipped={!!estaVolteada}
                     onFlip={() => voltearCarta(index)}
+                    className="tarot-flip-scene--large"
                   >
                     {renderContenidoCarta(carta, mensajeInterpretativo)}
                   </TarotFlipCard>
@@ -310,6 +331,21 @@ export default function Tarot() {
             >
               ✨ Nueva Lectura
             </button>
+
+            <CierreLecturaGU>
+              <div className="mt-4 pt-3 border-t border-purple-500/30">
+                <p className="text-purple-200 text-xs leading-relaxed mb-2">
+                  ¿Quieres aprender a leer el tarot tú mismo? Explora la Academia
+                  del Maestro GU y descubre nuestras guías. 📖
+                </p>
+                <Link
+                  to="/academia"
+                  className="inline-flex text-xs text-[#fbbf24]/90 hover:text-[#fbbf24] underline-offset-2 hover:underline transition-colors"
+                >
+                  Ir a la Academia del Maestro GU
+                </Link>
+              </div>
+            </CierreLecturaGU>
           </div>
         )}
       </div>

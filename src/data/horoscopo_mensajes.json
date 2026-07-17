@@ -1,0 +1,1082 @@
+{
+  "Aries": [
+    {
+      "general": "Hoy tu fuego pide acción consciente: lidera con corazón, no solo con impulso.",
+      "amor": "Un gesto sincero acerca más que mil discursos.",
+      "dinero": "Organiza prioridades financieras; la claridad atrae flujo.",
+      "salud": "Muévete con gusto y descansa sin culpa.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "Los astros te invitan a iniciar con valentía y a medir el ritmo.",
+      "amor": "Habla con claridad; el corazón agradece la verdad amable.",
+      "dinero": "Una oportunidad laboral pide foco, no prisa.",
+      "salud": "Hidrátate y cuida el sueño: son tu medicina básica.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "Tu energía brilla; canalízala hacia lo que realmente importa.",
+      "amor": "Evita malentendidos: pregunta antes de asumir.",
+      "dinero": "Evita gastos impulsivos; espera un día antes de decidir.",
+      "salud": "Respira profundo cuando sientas tensión acumulada.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "Hay impulso para avanzar: elige un solo foco y ve hasta el final.",
+      "amor": "La ternura y el respeto abren puertas afectivas.",
+      "dinero": "Tu talento merece presentarse con confianza serena.",
+      "salud": "Atiende espalda, cuello o mandíbula con pausas conscientes.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener salud y armonía."
+      }
+    },
+    {
+      "general": "Marte te anima a defender tus límites con claridad.",
+      "amor": "Da espacio sin desaparecer; equilibra cercanía y libertad.",
+      "dinero": "Revisa números y pendientes; el orden suma prosperidad.",
+      "salud": "Alterna actividad y silencio; el cuerpo lo agradece.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "Hoy gana quien combina pasión con estrategia breve.",
+      "amor": "Celebra a quien te acompaña con un detalle simple.",
+      "dinero": "Negocia con respeto y datos; ganas sin pelear.",
+      "salud": "Come con calma y escucha señales de fatiga.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "Tu chispa inspira; compártela sin quemarte.",
+      "amor": "Una conversación honesta desbloquea tensión.",
+      "dinero": "Un avance concreto es posible si eliges un solo objetivo.",
+      "salud": "Un paseo al aire libre equilibra mente y energía.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "Actúa, pero escucha también el silencio entre pasos.",
+      "amor": "El amor propio es la base de cualquier vínculo sano.",
+      "dinero": "Protege lo construido y siembra para el mediano plazo.",
+      "salud": "Suave disciplina: menos extremos, más constancia.",
+      "piedra": {
+        "nombre": "Ágata Musgosa",
+        "emoji": "🌿",
+        "motivo": "para conectar con la vitalidad natural."
+      }
+    }
+  ],
+  "Tauro": [
+    {
+      "general": "Hoy la tierra te pide constancia: construye despacio y con sentido.",
+      "amor": "Habla con claridad; el corazón agradece la verdad amable.",
+      "dinero": "Evita gastos impulsivos; espera un día antes de decidir.",
+      "salud": "Atiende espalda, cuello o mandíbula con pausas conscientes.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "La estabilidad es tu aliada; evita prisas innecesarias.",
+      "amor": "Evita malentendidos: pregunta antes de asumir.",
+      "dinero": "Tu talento merece presentarse con confianza serena.",
+      "salud": "Alterna actividad y silencio; el cuerpo lo agradece.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "Honra lo sensorial y lo práctico: ambos nutren tu día.",
+      "amor": "La ternura y el respeto abren puertas afectivas.",
+      "dinero": "Revisa números y pendientes; el orden suma prosperidad.",
+      "salud": "Come con calma y escucha señales de fatiga.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "Un paso firme vale más que mil impulsos.",
+      "amor": "Da espacio sin desaparecer; equilibra cercanía y libertad.",
+      "dinero": "Negocia con respeto y datos; ganas sin pelear.",
+      "salud": "Un paseo al aire libre equilibra mente y energía.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener salud y armonía."
+      }
+    },
+    {
+      "general": "Venus favorece lo bello y lo útil en equilibrio.",
+      "amor": "Celebra a quien te acompaña con un detalle simple.",
+      "dinero": "Un avance concreto es posible si eliges un solo objetivo.",
+      "salud": "Suave disciplina: menos extremos, más constancia.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "Cuida tus bases: cuerpo, hogar y finanzas.",
+      "amor": "Una conversación honesta desbloquea tensión.",
+      "dinero": "Protege lo construido y siembra para el mediano plazo.",
+      "salud": "Muévete con gusto y descansa sin culpa.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "La paciencia abre puertas que la prisa cierra.",
+      "amor": "El amor propio es la base de cualquier vínculo sano.",
+      "dinero": "Organiza prioridades financieras; la claridad atrae flujo.",
+      "salud": "Hidrátate y cuida el sueño: son tu medicina básica.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "Ancla tu energía y deja que madure lo sembrado.",
+      "amor": "Un gesto sincero acerca más que mil discursos.",
+      "dinero": "Una oportunidad laboral pide foco, no prisa.",
+      "salud": "Respira profundo cuando sientas tensión acumulada.",
+      "piedra": {
+        "nombre": "Ágata Musgosa",
+        "emoji": "🌿",
+        "motivo": "para conectar con la vitalidad natural."
+      }
+    }
+  ],
+  "Geminis": [
+    {
+      "general": "Hoy las palabras tienen poder: elige las que unen.",
+      "amor": "Evita malentendidos: pregunta antes de asumir.",
+      "dinero": "Revisa números y pendientes; el orden suma prosperidad.",
+      "salud": "Un paseo al aire libre equilibra mente y energía.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "Tu mente brilla; ordena ideas antes de dispersarte.",
+      "amor": "La ternura y el respeto abren puertas afectivas.",
+      "dinero": "Negocia con respeto y datos; ganas sin pelear.",
+      "salud": "Suave disciplina: menos extremos, más constancia.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "Mercurio favorece el aprendizaje y las conexiones.",
+      "amor": "Da espacio sin desaparecer; equilibra cercanía y libertad.",
+      "dinero": "Un avance concreto es posible si eliges un solo objetivo.",
+      "salud": "Muévete con gusto y descansa sin culpa.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "Curiosidad sí, pero con un hilo conductor.",
+      "amor": "Celebra a quien te acompaña con un detalle simple.",
+      "dinero": "Protege lo construido y siembra para el mediano plazo.",
+      "salud": "Hidrátate y cuida el sueño: son tu medicina básica.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener salud y armonía."
+      }
+    },
+    {
+      "general": "Dialoga con claridad; evita malentendidos.",
+      "amor": "Una conversación honesta desbloquea tensión.",
+      "dinero": "Organiza prioridades financieras; la claridad atrae flujo.",
+      "salud": "Respira profundo cuando sientas tensión acumulada.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "Una conversación puede cambiar el rumbo del día.",
+      "amor": "El amor propio es la base de cualquier vínculo sano.",
+      "dinero": "Una oportunidad laboral pide foco, no prisa.",
+      "salud": "Atiende espalda, cuello o mandíbula con pausas conscientes.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "Alterna movimiento mental con pausas reales.",
+      "amor": "Un gesto sincero acerca más que mil discursos.",
+      "dinero": "Evita gastos impulsivos; espera un día antes de decidir.",
+      "salud": "Alterna actividad y silencio; el cuerpo lo agradece.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "Comparte lo que sabes y escucha lo nuevo.",
+      "amor": "Habla con claridad; el corazón agradece la verdad amable.",
+      "dinero": "Tu talento merece presentarse con confianza serena.",
+      "salud": "Come con calma y escucha señales de fatiga.",
+      "piedra": {
+        "nombre": "Ágata Musgosa",
+        "emoji": "🌿",
+        "motivo": "para conectar con la vitalidad natural."
+      }
+    }
+  ],
+  "Cancer": [
+    {
+      "general": "Hoy la Luna pide cuidado: atiéndete para poder cuidar.",
+      "amor": "La ternura y el respeto abren puertas afectivas.",
+      "dinero": "Un avance concreto es posible si eliges un solo objetivo.",
+      "salud": "Hidrátate y cuida el sueño: son tu medicina básica.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "Tu intuición está alta; confía en lo que sientes con calma.",
+      "amor": "Da espacio sin desaparecer; equilibra cercanía y libertad.",
+      "dinero": "Protege lo construido y siembra para el mediano plazo.",
+      "salud": "Respira profundo cuando sientas tensión acumulada.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "El hogar interior necesita armonía antes que ruido.",
+      "amor": "Celebra a quien te acompaña con un detalle simple.",
+      "dinero": "Organiza prioridades financieras; la claridad atrae flujo.",
+      "salud": "Atiende espalda, cuello o mandíbula con pausas conscientes.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "Protege tu sensibilidad sin cerrarte al amor.",
+      "amor": "Una conversación honesta desbloquea tensión.",
+      "dinero": "Una oportunidad laboral pide foco, no prisa.",
+      "salud": "Alterna actividad y silencio; el cuerpo lo agradece.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener salud y armonía."
+      }
+    },
+    {
+      "general": "Un gesto tierno transforma el clima emocional.",
+      "amor": "El amor propio es la base de cualquier vínculo sano.",
+      "dinero": "Evita gastos impulsivos; espera un día antes de decidir.",
+      "salud": "Come con calma y escucha señales de fatiga.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "Honra tus raíces y tu necesidad de seguridad.",
+      "amor": "Un gesto sincero acerca más que mil discursos.",
+      "dinero": "Tu talento merece presentarse con confianza serena.",
+      "salud": "Un paseo al aire libre equilibra mente y energía.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "Siente, nombra y suelta lo que ya no cabe.",
+      "amor": "Habla con claridad; el corazón agradece la verdad amable.",
+      "dinero": "Revisa números y pendientes; el orden suma prosperidad.",
+      "salud": "Suave disciplina: menos extremos, más constancia.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "La empatía es fuerza cuando tiene límites.",
+      "amor": "Evita malentendidos: pregunta antes de asumir.",
+      "dinero": "Negocia con respeto y datos; ganas sin pelear.",
+      "salud": "Muévete con gusto y descansa sin culpa.",
+      "piedra": {
+        "nombre": "Ágata Musgosa",
+        "emoji": "🌿",
+        "motivo": "para conectar con la vitalidad natural."
+      }
+    }
+  ],
+  "Leo": [
+    {
+      "general": "Hoy el Sol te invita a brillar con generosidad.",
+      "amor": "Da espacio sin desaparecer; equilibra cercanía y libertad.",
+      "dinero": "Organiza prioridades financieras; la claridad atrae flujo.",
+      "salud": "Alterna actividad y silencio; el cuerpo lo agradece.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "Tu carisma abre puertas; úsalo con humildad luminosa.",
+      "amor": "Celebra a quien te acompaña con un detalle simple.",
+      "dinero": "Una oportunidad laboral pide foco, no prisa.",
+      "salud": "Come con calma y escucha señales de fatiga.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "Expresa tu creatividad; el mundo necesita tu color.",
+      "amor": "Una conversación honesta desbloquea tensión.",
+      "dinero": "Evita gastos impulsivos; espera un día antes de decidir.",
+      "salud": "Un paseo al aire libre equilibra mente y energía.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "Lidera con calidez, no con orgullo frío.",
+      "amor": "El amor propio es la base de cualquier vínculo sano.",
+      "dinero": "Tu talento merece presentarse con confianza serena.",
+      "salud": "Suave disciplina: menos extremos, más constancia.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener salud y armonía."
+      }
+    },
+    {
+      "general": "Hay espacio para reconocimiento si actúas con autenticidad.",
+      "amor": "Un gesto sincero acerca más que mil discursos.",
+      "dinero": "Revisa números y pendientes; el orden suma prosperidad.",
+      "salud": "Muévete con gusto y descansa sin culpa.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "Comparte el escenario: el brillo crece en compañía.",
+      "amor": "Habla con claridad; el corazón agradece la verdad amable.",
+      "dinero": "Negocia con respeto y datos; ganas sin pelear.",
+      "salud": "Hidrátate y cuida el sueño: son tu medicina básica.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "Celebra lo que eres y lo que estás construyendo.",
+      "amor": "Evita malentendidos: pregunta antes de asumir.",
+      "dinero": "Un avance concreto es posible si eliges un solo objetivo.",
+      "salud": "Respira profundo cuando sientas tensión acumulada.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "Tu luz sana cuando no necesita apagar a otros.",
+      "amor": "La ternura y el respeto abren puertas afectivas.",
+      "dinero": "Protege lo construido y siembra para el mediano plazo.",
+      "salud": "Atiende espalda, cuello o mandíbula con pausas conscientes.",
+      "piedra": {
+        "nombre": "Ágata Musgosa",
+        "emoji": "🌿",
+        "motivo": "para conectar con la vitalidad natural."
+      }
+    }
+  ],
+  "Virgo": [
+    {
+      "general": "Hoy el detalle importa: ordena lo esencial y suelta el resto.",
+      "amor": "Celebra a quien te acompaña con un detalle simple.",
+      "dinero": "Evita gastos impulsivos; espera un día antes de decidir.",
+      "salud": "Suave disciplina: menos extremos, más constancia.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "Tu servicio es sagrado cuando nace de amor, no de crítica.",
+      "amor": "Una conversación honesta desbloquea tensión.",
+      "dinero": "Tu talento merece presentarse con confianza serena.",
+      "salud": "Muévete con gusto y descansa sin culpa.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "Mejora un proceso pequeño; eso suma paz.",
+      "amor": "El amor propio es la base de cualquier vínculo sano.",
+      "dinero": "Revisa números y pendientes; el orden suma prosperidad.",
+      "salud": "Hidrátate y cuida el sueño: son tu medicina básica.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "La claridad mental llega con pausas y rutina amable.",
+      "amor": "Un gesto sincero acerca más que mil discursos.",
+      "dinero": "Negocia con respeto y datos; ganas sin pelear.",
+      "salud": "Respira profundo cuando sientas tensión acumulada.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener salud y armonía."
+      }
+    },
+    {
+      "general": "Atiende cuerpo y mente con la misma dedicación.",
+      "amor": "Habla con claridad; el corazón agradece la verdad amable.",
+      "dinero": "Un avance concreto es posible si eliges un solo objetivo.",
+      "salud": "Atiende espalda, cuello o mandíbula con pausas conscientes.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "Menos perfeccionismo, más presencia útil.",
+      "amor": "Evita malentendidos: pregunta antes de asumir.",
+      "dinero": "Protege lo construido y siembra para el mediano plazo.",
+      "salud": "Alterna actividad y silencio; el cuerpo lo agradece.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "Organiza el día en tres prioridades reales.",
+      "amor": "La ternura y el respeto abren puertas afectivas.",
+      "dinero": "Organiza prioridades financieras; la claridad atrae flujo.",
+      "salud": "Come con calma y escucha señales de fatiga.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "Tu sabiduría práctica puede iluminar a alguien cercano.",
+      "amor": "Da espacio sin desaparecer; equilibra cercanía y libertad.",
+      "dinero": "Una oportunidad laboral pide foco, no prisa.",
+      "salud": "Un paseo al aire libre equilibra mente y energía.",
+      "piedra": {
+        "nombre": "Ágata Musgosa",
+        "emoji": "🌿",
+        "motivo": "para conectar con la vitalidad natural."
+      }
+    }
+  ],
+  "Libra": [
+    {
+      "general": "Hoy Venus pide equilibrio entre dar y recibir.",
+      "amor": "Una conversación honesta desbloquea tensión.",
+      "dinero": "Revisa números y pendientes; el orden suma prosperidad.",
+      "salud": "Respira profundo cuando sientas tensión acumulada.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "Busca armonía sin sacrificar tu verdad.",
+      "amor": "El amor propio es la base de cualquier vínculo sano.",
+      "dinero": "Negocia con respeto y datos; ganas sin pelear.",
+      "salud": "Atiende espalda, cuello o mandíbula con pausas conscientes.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "Una decisión justa trae alivio a largo plazo.",
+      "amor": "Un gesto sincero acerca más que mil discursos.",
+      "dinero": "Un avance concreto es posible si eliges un solo objetivo.",
+      "salud": "Alterna actividad y silencio; el cuerpo lo agradece.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "La belleza del día está en los gestos justos.",
+      "amor": "Habla con claridad; el corazón agradece la verdad amable.",
+      "dinero": "Protege lo construido y siembra para el mediano plazo.",
+      "salud": "Come con calma y escucha señales de fatiga.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener salud y armonía."
+      }
+    },
+    {
+      "general": "Negocia con diplomacia y límites claros.",
+      "amor": "Evita malentendidos: pregunta antes de asumir.",
+      "dinero": "Organiza prioridades financieras; la claridad atrae flujo.",
+      "salud": "Un paseo al aire libre equilibra mente y energía.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "Evita postergar lo importante por quedar bien.",
+      "amor": "La ternura y el respeto abren puertas afectivas.",
+      "dinero": "Una oportunidad laboral pide foco, no prisa.",
+      "salud": "Suave disciplina: menos extremos, más constancia.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "La relación contigo es el primer acuerdo.",
+      "amor": "Da espacio sin desaparecer; equilibra cercanía y libertad.",
+      "dinero": "Evita gastos impulsivos; espera un día antes de decidir.",
+      "salud": "Muévete con gusto y descansa sin culpa.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "Equilibra lo social y lo silencioso.",
+      "amor": "Celebra a quien te acompaña con un detalle simple.",
+      "dinero": "Tu talento merece presentarse con confianza serena.",
+      "salud": "Hidrátate y cuida el sueño: son tu medicina básica.",
+      "piedra": {
+        "nombre": "Ágata Musgosa",
+        "emoji": "🌿",
+        "motivo": "para conectar con la vitalidad natural."
+      }
+    }
+  ],
+  "Escorpio": [
+    {
+      "general": "Hoy la profundidad transforma: mira debajo de la superficie.",
+      "amor": "El amor propio es la base de cualquier vínculo sano.",
+      "dinero": "Un avance concreto es posible si eliges un solo objetivo.",
+      "salud": "Come con calma y escucha señales de fatiga.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "Tu poder está en soltar con conciencia.",
+      "amor": "Un gesto sincero acerca más que mil discursos.",
+      "dinero": "Protege lo construido y siembra para el mediano plazo.",
+      "salud": "Un paseo al aire libre equilibra mente y energía.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "Intensidad con respeto regenera vínculos y proyectos.",
+      "amor": "Habla con claridad; el corazón agradece la verdad amable.",
+      "dinero": "Organiza prioridades financieras; la claridad atrae flujo.",
+      "salud": "Suave disciplina: menos extremos, más constancia.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "Investiga con intuición; actúa con estrategia.",
+      "amor": "Evita malentendidos: pregunta antes de asumir.",
+      "dinero": "Una oportunidad laboral pide foco, no prisa.",
+      "salud": "Muévete con gusto y descansa sin culpa.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener salud y armonía."
+      }
+    },
+    {
+      "general": "Hay energía para cerrar ciclos y renacer.",
+      "amor": "La ternura y el respeto abren puertas afectivas.",
+      "dinero": "Evita gastos impulsivos; espera un día antes de decidir.",
+      "salud": "Hidrátate y cuida el sueño: son tu medicina básica.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "La honestidad emocional es tu alquimia.",
+      "amor": "Da espacio sin desaparecer; equilibra cercanía y libertad.",
+      "dinero": "Tu talento merece presentarse con confianza serena.",
+      "salud": "Respira profundo cuando sientas tensión acumulada.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "Protege tu misterio; comparte solo lo sagrado.",
+      "amor": "Celebra a quien te acompaña con un detalle simple.",
+      "dinero": "Revisa números y pendientes; el orden suma prosperidad.",
+      "salud": "Atiende espalda, cuello o mandíbula con pausas conscientes.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "De lo oculto puede nacer una verdad liberadora.",
+      "amor": "Una conversación honesta desbloquea tensión.",
+      "dinero": "Negocia con respeto y datos; ganas sin pelear.",
+      "salud": "Alterna actividad y silencio; el cuerpo lo agradece.",
+      "piedra": {
+        "nombre": "Ágata Musgosa",
+        "emoji": "🌿",
+        "motivo": "para conectar con la vitalidad natural."
+      }
+    }
+  ],
+  "Sagitario": [
+    {
+      "general": "Hoy Júpiter amplía horizontes: aprende y avanza.",
+      "amor": "Un gesto sincero acerca más que mil discursos.",
+      "dinero": "Organiza prioridades financieras; la claridad atrae flujo.",
+      "salud": "Muévete con gusto y descansa sin culpa.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "La esperanza es motor; acompáñala con un plan simple.",
+      "amor": "Habla con claridad; el corazón agradece la verdad amable.",
+      "dinero": "Una oportunidad laboral pide foco, no prisa.",
+      "salud": "Hidrátate y cuida el sueño: son tu medicina básica.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "Aventura y sentido pueden ir de la mano.",
+      "amor": "Evita malentendidos: pregunta antes de asumir.",
+      "dinero": "Evita gastos impulsivos; espera un día antes de decidir.",
+      "salud": "Respira profundo cuando sientas tensión acumulada.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "Di la verdad con bondad y visión amplia.",
+      "amor": "La ternura y el respeto abren puertas afectivas.",
+      "dinero": "Tu talento merece presentarse con confianza serena.",
+      "salud": "Atiende espalda, cuello o mandíbula con pausas conscientes.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener salud y armonía."
+      }
+    },
+    {
+      "general": "Un viaje corto o un aprendizaje abren puertas.",
+      "amor": "Da espacio sin desaparecer; equilibra cercanía y libertad.",
+      "dinero": "Revisa números y pendientes; el orden suma prosperidad.",
+      "salud": "Alterna actividad y silencio; el cuerpo lo agradece.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "Optimismo sí; pies en la tierra también.",
+      "amor": "Celebra a quien te acompaña con un detalle simple.",
+      "dinero": "Negocia con respeto y datos; ganas sin pelear.",
+      "salud": "Come con calma y escucha señales de fatiga.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "Expande tu mapa sin perder el norte ético.",
+      "amor": "Una conversación honesta desbloquea tensión.",
+      "dinero": "Un avance concreto es posible si eliges un solo objetivo.",
+      "salud": "Un paseo al aire libre equilibra mente y energía.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "La fe se demuestra en el siguiente paso concreto.",
+      "amor": "El amor propio es la base de cualquier vínculo sano.",
+      "dinero": "Protege lo construido y siembra para el mediano plazo.",
+      "salud": "Suave disciplina: menos extremos, más constancia.",
+      "piedra": {
+        "nombre": "Ágata Musgosa",
+        "emoji": "🌿",
+        "motivo": "para conectar con la vitalidad natural."
+      }
+    }
+  ],
+  "Capricornio": [
+    {
+      "general": "Hoy Saturno favorece la disciplina amable y el logro real.",
+      "amor": "Habla con claridad; el corazón agradece la verdad amable.",
+      "dinero": "Evita gastos impulsivos; espera un día antes de decidir.",
+      "salud": "Atiende espalda, cuello o mandíbula con pausas conscientes.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "Construye con paciencia: tu estructura sostiene sueños.",
+      "amor": "Evita malentendidos: pregunta antes de asumir.",
+      "dinero": "Tu talento merece presentarse con confianza serena.",
+      "salud": "Alterna actividad y silencio; el cuerpo lo agradece.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "Responsabilidad no es carga si eliges con conciencia.",
+      "amor": "La ternura y el respeto abren puertas afectivas.",
+      "dinero": "Revisa números y pendientes; el orden suma prosperidad.",
+      "salud": "Come con calma y escucha señales de fatiga.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "Un avance profesional o práctico es posible.",
+      "amor": "Da espacio sin desaparecer; equilibra cercanía y libertad.",
+      "dinero": "Negocia con respeto y datos; ganas sin pelear.",
+      "salud": "Un paseo al aire libre equilibra mente y energía.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener salud y armonía."
+      }
+    },
+    {
+      "general": "Honra el descanso como parte del éxito.",
+      "amor": "Celebra a quien te acompaña con un detalle simple.",
+      "dinero": "Un avance concreto es posible si eliges un solo objetivo.",
+      "salud": "Suave disciplina: menos extremos, más constancia.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "Metas claras, pasos pequeños, resultados sólidos.",
+      "amor": "Una conversación honesta desbloquea tensión.",
+      "dinero": "Protege lo construido y siembra para el mediano plazo.",
+      "salud": "Muévete con gusto y descansa sin culpa.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "Tu reputación se cuida con hechos consistentes.",
+      "amor": "El amor propio es la base de cualquier vínculo sano.",
+      "dinero": "Organiza prioridades financieras; la claridad atrae flujo.",
+      "salud": "Hidrátate y cuida el sueño: son tu medicina básica.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "La ambición madura cuando incluye autocuidado.",
+      "amor": "Un gesto sincero acerca más que mil discursos.",
+      "dinero": "Una oportunidad laboral pide foco, no prisa.",
+      "salud": "Respira profundo cuando sientas tensión acumulada.",
+      "piedra": {
+        "nombre": "Ágata Musgosa",
+        "emoji": "🌿",
+        "motivo": "para conectar con la vitalidad natural."
+      }
+    }
+  ],
+  "Acuario": [
+    {
+      "general": "Hoy Urano despierta ideas: innova con corazón.",
+      "amor": "Evita malentendidos: pregunta antes de asumir.",
+      "dinero": "Revisa números y pendientes; el orden suma prosperidad.",
+      "salud": "Un paseo al aire libre equilibra mente y energía.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "Tu originalidad es un regalo; compártela en comunidad.",
+      "amor": "La ternura y el respeto abren puertas afectivas.",
+      "dinero": "Negocia con respeto y datos; ganas sin pelear.",
+      "salud": "Suave disciplina: menos extremos, más constancia.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "Libertad y vínculo pueden coexistir.",
+      "amor": "Da espacio sin desaparecer; equilibra cercanía y libertad.",
+      "dinero": "Un avance concreto es posible si eliges un solo objetivo.",
+      "salud": "Muévete con gusto y descansa sin culpa.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "Una red de apoyo abre caminos inesperados.",
+      "amor": "Celebra a quien te acompaña con un detalle simple.",
+      "dinero": "Protege lo construido y siembra para el mediano plazo.",
+      "salud": "Hidrátate y cuida el sueño: son tu medicina básica.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener salud y armonía."
+      }
+    },
+    {
+      "general": "Piensa distinto, actúa con ética colectiva.",
+      "amor": "Una conversación honesta desbloquea tensión.",
+      "dinero": "Organiza prioridades financieras; la claridad atrae flujo.",
+      "salud": "Respira profundo cuando sientas tensión acumulada.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "Desconecta del ruido para oír tu visión.",
+      "amor": "El amor propio es la base de cualquier vínculo sano.",
+      "dinero": "Una oportunidad laboral pide foco, no prisa.",
+      "salud": "Atiende espalda, cuello o mandíbula con pausas conscientes.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "El futuro se inventa en el presente con pequeños experimentos.",
+      "amor": "Un gesto sincero acerca más que mil discursos.",
+      "dinero": "Evita gastos impulsivos; espera un día antes de decidir.",
+      "salud": "Alterna actividad y silencio; el cuerpo lo agradece.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "Sé auténtico sin volverte distante.",
+      "amor": "Habla con claridad; el corazón agradece la verdad amable.",
+      "dinero": "Tu talento merece presentarse con confianza serena.",
+      "salud": "Come con calma y escucha señales de fatiga.",
+      "piedra": {
+        "nombre": "Ágata Musgosa",
+        "emoji": "🌿",
+        "motivo": "para conectar con la vitalidad natural."
+      }
+    }
+  ],
+  "Piscis": [
+    {
+      "general": "Hoy Neptuno suaviza: siente, crea y protege tu energía.",
+      "amor": "La ternura y el respeto abren puertas afectivas.",
+      "dinero": "Un avance concreto es posible si eliges un solo objetivo.",
+      "salud": "Hidrátate y cuida el sueño: son tu medicina básica.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "Tu empatía es don; ponle límites amorosos.",
+      "amor": "Da espacio sin desaparecer; equilibra cercanía y libertad.",
+      "dinero": "Protege lo construido y siembra para el mediano plazo.",
+      "salud": "Respira profundo cuando sientas tensión acumulada.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "Los sueños guían si les das un paso práctico.",
+      "amor": "Celebra a quien te acompaña con un detalle simple.",
+      "dinero": "Organiza prioridades financieras; la claridad atrae flujo.",
+      "salud": "Atiende espalda, cuello o mandíbula con pausas conscientes.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "Arte, silencio o agua restauran tu alma.",
+      "amor": "Una conversación honesta desbloquea tensión.",
+      "dinero": "Una oportunidad laboral pide foco, no prisa.",
+      "salud": "Alterna actividad y silencio; el cuerpo lo agradece.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener salud y armonía."
+      }
+    },
+    {
+      "general": "Intuye el camino y verifica con gentileza.",
+      "amor": "El amor propio es la base de cualquier vínculo sano.",
+      "dinero": "Evita gastos impulsivos; espera un día antes de decidir.",
+      "salud": "Come con calma y escucha señales de fatiga.",
+      "piedra": {
+        "nombre": "Citrino",
+        "emoji": "💛",
+        "motivo": "para activar prosperidad y confianza en el trabajo."
+      }
+    },
+    {
+      "general": "Compasión hacia ti primero; luego hacia el mundo.",
+      "amor": "Un gesto sincero acerca más que mil discursos.",
+      "dinero": "Tu talento merece presentarse con confianza serena.",
+      "salud": "Un paseo al aire libre equilibra mente y energía.",
+      "piedra": {
+        "nombre": "Jade",
+        "emoji": "💚",
+        "motivo": "para sostener tu vitalidad y bienestar."
+      }
+    },
+    {
+      "general": "La magia del día está en lo sutil y lo sincero.",
+      "amor": "Habla con claridad; el corazón agradece la verdad amable.",
+      "dinero": "Revisa números y pendientes; el orden suma prosperidad.",
+      "salud": "Suave disciplina: menos extremos, más constancia.",
+      "piedra": {
+        "nombre": "Cuarzo Rosa",
+        "emoji": "💗",
+        "motivo": "para armonizar tus relaciones."
+      }
+    },
+    {
+      "general": "Navega emociones sin naufragar en ellas.",
+      "amor": "Evita malentendidos: pregunta antes de asumir.",
+      "dinero": "Negocia con respeto y datos; ganas sin pelear.",
+      "salud": "Muévete con gusto y descansa sin culpa.",
+      "piedra": {
+        "nombre": "Ágata Musgosa",
+        "emoji": "🌿",
+        "motivo": "para conectar con la vitalidad natural."
+      }
+    }
+  ]
+}

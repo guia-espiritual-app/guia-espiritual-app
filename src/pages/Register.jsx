@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { auth } from '../firebase'
 
 export default function Register() {
@@ -10,6 +10,8 @@ export default function Register() {
   const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
   const navigate = useNavigate()
 
@@ -43,7 +45,11 @@ export default function Register() {
     setLoading(true)
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password)
+      const { user } = await createUserWithEmailAndPassword(auth, email, password)
+      const nombre = name.trim()
+      if (nombre) {
+        await updateProfile(user, { displayName: nombre })
+      }
       navigate('/')
     } catch (err) {
       console.error(err)
@@ -112,32 +118,52 @@ export default function Register() {
             <label className="block text-sm font-semibold text-yellow-300 mb-2" htmlFor="password">
               Contraseña
             </label>
-            <input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full bg-black/30 border-2 border-purple-400/70 rounded-xl px-4 py-3 text-purple-100 placeholder-purple-400/60 focus:outline-none focus:border-yellow-300 focus:ring-2 focus:ring-yellow-300/40 transition-all duration-200"
-              placeholder="Mínimo 6 caracteres"
-              required
-              minLength={6}
-            />
+            <div className="relative">
+              <input
+                id="password"
+                type={showPassword ? 'text' : 'password'}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full bg-black/30 border-2 border-purple-400/70 rounded-xl px-4 py-3 pr-12 text-purple-100 placeholder-purple-400/60 focus:outline-none focus:border-yellow-300 focus:ring-2 focus:ring-yellow-300/40 transition-all duration-200"
+                placeholder="Mínimo 6 caracteres"
+                required
+                minLength={6}
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword((v) => !v)}
+                aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-lg text-[#fbbf24]/80 hover:text-[#fbbf24] transition-colors"
+              >
+                {showPassword ? '🙈' : '👁'}
+              </button>
+            </div>
           </div>
 
           <div>
             <label className="block text-sm font-semibold text-yellow-300 mb-2" htmlFor="confirmPassword">
               Confirmar contraseña
             </label>
-            <input
-              id="confirmPassword"
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              className="w-full bg-black/30 border-2 border-purple-400/70 rounded-xl px-4 py-3 text-purple-100 placeholder-purple-400/60 focus:outline-none focus:border-yellow-300 focus:ring-2 focus:ring-yellow-300/40 transition-all duration-200"
-              placeholder="Repite tu contraseña"
-              required
-              minLength={6}
-            />
+            <div className="relative">
+              <input
+                id="confirmPassword"
+                type={showConfirmPassword ? 'text' : 'password'}
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                className="w-full bg-black/30 border-2 border-purple-400/70 rounded-xl px-4 py-3 pr-12 text-purple-100 placeholder-purple-400/60 focus:outline-none focus:border-yellow-300 focus:ring-2 focus:ring-yellow-300/40 transition-all duration-200"
+                placeholder="Repite tu contraseña"
+                required
+                minLength={6}
+              />
+              <button
+                type="button"
+                onClick={() => setShowConfirmPassword((v) => !v)}
+                aria-label={showConfirmPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-lg text-[#fbbf24]/80 hover:text-[#fbbf24] transition-colors"
+              >
+                {showConfirmPassword ? '🙈' : '👁'}
+              </button>
+            </div>
           </div>
 
           {error && (

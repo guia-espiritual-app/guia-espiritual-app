@@ -221,8 +221,10 @@ export function SoundProvider({ children }) {
           >
             <div className="flex items-start gap-3">
               <p className="flex-1 text-purple-100 text-sm leading-relaxed pt-0.5">
-                <span className="mr-1">🔊</span>
-                <span className="text-yellow-300 font-semibold">Activa la experiencia sonora mística</span>
+                <span className="mr-1">🎻</span>
+                <span className="text-yellow-300 font-semibold">
+                  Activa la frecuencia sonora y entra en un estado meditativo.
+                </span>
                 <span className="block text-purple-300 text-xs mt-1">
                   Música ambiental y campanas en tus lecturas
                 </span>

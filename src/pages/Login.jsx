@@ -1,20 +1,41 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { signInWithEmailAndPassword } from 'firebase/auth'
+import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth'
 import { auth } from '../firebase'
 import logoGuia from '../assets/logo-guia.png'
+
+function mensajeErrorReset(code) {
+  switch (code) {
+    case 'auth/invalid-email':
+      return 'El formato del correo no es válido.'
+    case 'auth/user-not-found':
+      return 'No encontramos una cuenta con ese correo.'
+    case 'auth/missing-email':
+      return 'Escribe tu correo para recuperar la contraseña.'
+    case 'auth/too-many-requests':
+      return 'Demasiados intentos. Espera un momento e inténtalo de nuevo.'
+    case 'auth/network-request-failed':
+      return 'Sin conexión. Revisa tu internet e inténtalo de nuevo.'
+    default:
+      return 'No pudimos enviar el correo de recuperación. Intenta de nuevo.'
+  }
+}
 
 export default function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const [resetMessage, setResetMessage] = useState('')
   const [loading, setLoading] = useState(false)
+  const [resetting, setResetting] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
 
   const navigate = useNavigate()
 
   const handleEmailLogin = async (e) => {
     e.preventDefault()
     setError('')
+    setResetMessage('')
     setLoading(true)
 
     try {
@@ -25,6 +46,30 @@ export default function Login() {
       console.error(err)
     } finally {
       setLoading(false)
+    }
+  }
+
+  const handleForgotPassword = async () => {
+    setError('')
+    setResetMessage('')
+
+    const correo = email.trim()
+    if (!correo) {
+      setError('Escribe tu correo primero para recuperar la contraseña.')
+      return
+    }
+
+    setResetting(true)
+    try {
+      await sendPasswordResetEmail(auth, correo)
+      setResetMessage(
+        'Te enviamos un correo para restablecer tu contraseña. Revisa tu bandeja de entrada.'
+      )
+    } catch (err) {
+      setError(mensajeErrorReset(err.code))
+      console.error(err)
+    } finally {
+      setResetting(false)
     }
   }
 
@@ -76,15 +121,35 @@ export default function Login() {
             <label className="block text-sm font-semibold text-yellow-300 mb-2" htmlFor="password">
               Contraseña
             </label>
-            <input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full bg-black/30 border-2 border-purple-400/70 rounded-xl px-4 py-3 text-purple-100 placeholder-purple-400/60 focus:outline-none focus:border-yellow-300 focus:ring-2 focus:ring-yellow-300/40 transition-all duration-200"
-              placeholder="Tu contraseña"
-              required
-            />
+            <div className="relative">
+              <input
+                id="password"
+                type={showPassword ? 'text' : 'password'}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full bg-black/30 border-2 border-purple-400/70 rounded-xl px-4 py-3 pr-12 text-purple-100 placeholder-purple-400/60 focus:outline-none focus:border-yellow-300 focus:ring-2 focus:ring-yellow-300/40 transition-all duration-200"
+                placeholder="Tu contraseña"
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword((v) => !v)}
+                aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-lg text-[#fbbf24]/80 hover:text-[#fbbf24] transition-colors"
+              >
+                {showPassword ? '🙈' : '👁'}
+              </button>
+            </div>
+            <div className="mt-2 text-right">
+              <button
+                type="button"
+                onClick={handleForgotPassword}
+                disabled={loading || resetting}
+                className="text-sm text-[#fbbf24]/90 hover:text-[#fbbf24] underline-offset-2 hover:underline transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {resetting ? 'Enviando...' : '¿Olvidaste tu contraseña?'}
+              </button>
+            </div>
           </div>
 
           {error && (
@@ -93,9 +158,15 @@ export default function Login() {
             </p>
           )}
 
+          {resetMessage && (
+            <p className="text-[#fbbf24] text-sm bg-[#2d1b4e]/80 border border-[#fbbf24]/40 rounded-xl px-3 py-2">
+              {resetMessage}
+            </p>
+          )}
+
           <button
             type="submit"
-            disabled={loading}
+            disabled={loading || resetting}
             className="w-full bg-gradient-to-r from-yellow-600/90 to-yellow-500/90 border-2 border-yellow-400/80 rounded-xl py-3 px-6 text-purple-900 font-bold text-base shadow-lg shadow-yellow-900/70 hover:shadow-yellow-500/50 hover:scale-[1.02] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {loading ? 'Cargando...' : 'Iniciar Sesión'}

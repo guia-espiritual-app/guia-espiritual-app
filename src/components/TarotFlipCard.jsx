@@ -1,4 +1,4 @@
-export default function TarotFlipCard({ flipped, onFlip, label, children }) {
+export default function TarotFlipCard({ flipped, onFlip, label, children, className = '' }) {
   return (
     <div className="w-full">
       {label && (
@@ -6,7 +6,7 @@ export default function TarotFlipCard({ flipped, onFlip, label, children }) {
       )}
 
       <div
-        className={`tarot-flip-scene w-full ${flipped ? 'tarot-flip-scene--revealed' : ''}`}
+        className={`tarot-flip-scene w-full ${flipped ? 'tarot-flip-scene--revealed' : ''} ${className}`}
         onClick={() => !flipped && onFlip()}
         onKeyDown={(e) => {
           if (!flipped && (e.key === 'Enter' || e.key === ' ')) {
