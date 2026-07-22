@@ -44,7 +44,7 @@ export default function Home() {
   return (
     <div className="max-w-md mx-auto px-5 pt-4 pb-24">
       <header className="text-center mb-8">
-        <BurbujaGU seccion="inicio" className="mb-5" />
+        <BurbujaGU seccion="inicio" className="mt-5 mb-5" />
 
         <img
           src={logoGuia}
@@ -134,10 +134,10 @@ export default function Home() {
           <img src={iconRituales} alt="" className={servicioIconClass} />
           <div className="flex-1 min-w-0 pr-10">
             <h2 className="text-yellow-300 font-bold text-base leading-snug mb-0.5">
-              Rituales
+              Rituales y Meditaciones
             </h2>
             <p className="text-purple-200 text-sm leading-snug">
-              Prácticas para transformar tu energía
+              Prácticas y audios guiados para tu energía
             </p>
             <p className="text-green-300/90 text-[10px] mt-1 font-medium">10 rituales gratis</p>
           </div>

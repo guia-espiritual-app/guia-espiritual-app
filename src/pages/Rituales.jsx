@@ -1,12 +1,25 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { usePremium } from '../contexts/PremiumContext'
 import BurbujaGU from '../components/BurbujaGU'
 import BotonAtras from '../components/BotonAtras'
 import Paywall from '../components/Paywall'
+import MeditacionPlayer from '../components/MeditacionPlayer'
 import iconRituales from '../assets/avatares/rituales.png'
 import ritualesData from '../data/rituales.json'
 
 const categorias = [...ritualesData.categorias].sort((a, b) => a.orden - b.orden)
+
+const MEDITACIONES = [
+  {
+    id: 'meditacion-1',
+    titulo: 'Meditación Guiada de Relajación',
+    descripcion:
+      'Una guía suave para soltar la tensión, calmar la mente y volver al presente con respiración consciente.',
+    duracionLabel: 'Audio guiado',
+    premium: true,
+  },
+]
 
 function contarEjercicios(nombreCategoria) {
   const count = ritualesData.rituales.filter((r) => r.categoria === nombreCategoria).length
@@ -134,10 +147,47 @@ function PaywallModal({ open, onClose }) {
   )
 }
 
+function TabsRitualesMeditaciones({ tab, onChange }) {
+  return (
+    <div
+      className="mb-6 grid grid-cols-2 gap-2 rounded-2xl border border-[#fbbf24]/30 bg-[#2d1b4e]/70 p-1.5"
+      role="tablist"
+      aria-label="Rituales y Meditaciones"
+    >
+      {[
+        { id: 'rituales', label: 'Rituales' },
+        { id: 'meditaciones', label: 'Meditaciones' },
+      ].map((item) => {
+        const activo = tab === item.id
+        return (
+          <button
+            key={item.id}
+            type="button"
+            role="tab"
+            aria-selected={activo}
+            onClick={() => onChange(item.id)}
+            className={[
+              'min-h-[44px] rounded-xl px-3 py-2.5 text-sm font-bold transition-all duration-200',
+              activo
+                ? 'bg-gradient-to-r from-[#fbbf24] to-yellow-500 text-[#2d1b4e] shadow-[0_0_16px_rgba(251,191,36,0.3)]'
+                : 'text-purple-200 hover:text-[#fbbf24] hover:bg-purple-900/50',
+            ].join(' ')}
+          >
+            {item.label}
+          </button>
+        )
+      })}
+    </div>
+  )
+}
+
 export default function Rituales() {
+  const navigate = useNavigate()
   const { isPremium, loading: premiumLoading } = usePremium()
+  const [tab, setTab] = useState('rituales')
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null)
   const [ritualSeleccionado, setRitualSeleccionado] = useState(null)
+  const [meditacionSeleccionada, setMeditacionSeleccionada] = useState(null)
   const [paywallOpen, setPaywallOpen] = useState(false)
 
   const puedeVerCompleto = (ritual) => ritual.gratuito || isPremium
@@ -152,6 +202,13 @@ export default function Rituales() {
     }
   }, [isPremium, paywallOpen])
 
+  const cambiarTab = (nuevoTab) => {
+    setTab(nuevoTab)
+    setCategoriaSeleccionada(null)
+    setRitualSeleccionado(null)
+    setMeditacionSeleccionada(null)
+  }
+
   if (premiumLoading) {
     return (
       <div className="min-h-[50vh] flex items-center justify-center">
@@ -159,6 +216,53 @@ export default function Rituales() {
           <div className="text-6xl mb-4 animate-pulse">🔮</div>
           <p className="text-purple-300">Cargando...</p>
         </div>
+      </div>
+    )
+  }
+
+  if (meditacionSeleccionada) {
+    const med = meditacionSeleccionada
+    const bloqueada = med.premium && !isPremium
+
+    return (
+      <div className="max-w-md mx-auto px-4 pt-10 pb-24">
+        <BotonAtras />
+        <button
+          type="button"
+          onClick={() => setMeditacionSeleccionada(null)}
+          className="text-purple-300 hover:text-yellow-300 text-sm mb-4 transition-colors"
+        >
+          ← Volver a Meditaciones
+        </button>
+
+        <div className="flex flex-wrap items-center gap-2 mb-2">
+          <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-purple-900 text-xs font-bold px-2 py-0.5 rounded-full">
+            Premium
+          </span>
+          <span className="text-purple-400 text-xs">⏱ {med.duracionLabel}</span>
+        </div>
+
+        <h1 className="text-2xl font-bold text-yellow-300 mb-3">{med.titulo}</h1>
+        <p className="text-purple-200 text-sm leading-relaxed mb-6">{med.descripcion}</p>
+
+        {bloqueada ? (
+          <div className="rounded-2xl border-2 border-yellow-500/40 bg-gradient-to-b from-purple-950/80 to-[#1a1a2e]/90 px-6 py-8 text-center">
+            <div className="text-5xl mb-3">🔒</div>
+            <h3 className="text-yellow-300 font-bold text-lg mb-2">Esta meditación es Premium</h3>
+            <p className="text-purple-200 text-sm mb-5 leading-relaxed">
+              Suscríbete para acceder a meditaciones guiadas y elevar tu práctica diaria.
+            </p>
+            <button
+              type="button"
+              onClick={() => navigate('/planes')}
+              className="w-full bg-gradient-to-r from-[#fbbf24] to-yellow-500 hover:from-yellow-400 hover:to-[#fbbf24] text-[#2d1b4e] font-bold py-3 px-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02]"
+            >
+              Hazte Premium
+            </button>
+          </div>
+        ) : (
+          <MeditacionPlayer />
+        )}
       </div>
     )
   }
@@ -260,11 +364,11 @@ export default function Rituales() {
   return (
     <>
     <div className="max-w-md mx-auto px-4 pt-10 pb-24">
-        <BotonAtras />
+      <BotonAtras />
       <BurbujaGU
         seccion="rituales"
         avatarSrc={iconRituales}
-        avatarAlt="Rituales"
+        avatarAlt="Rituales y Meditaciones"
         className="mb-6"
       />
       <div className="flex flex-col items-center mb-2">
@@ -273,38 +377,76 @@ export default function Rituales() {
           alt=""
           className="h-20 w-20 object-contain mb-3 drop-shadow-[0_0_14px_rgba(251,191,36,0.25)]"
         />
-        <h1 className="text-3xl font-bold text-yellow-300 text-center">Rituales</h1>
+        <h1 className="text-3xl font-bold text-yellow-300 text-center">
+          Rituales y Meditaciones
+        </h1>
       </div>
-      <p className="text-purple-200 text-center mb-8 text-sm">
-        Prácticas esotéricas caseras para armonizar tu energía
+      <p className="text-purple-200 text-center mb-5 text-sm">
+        Prácticas y audios guiados para armonizar tu energía
       </p>
 
-      <div className="space-y-3">
-        {categorias.map((categoria) => (
-          <button
-            key={categoria.nombre}
-            type="button"
-            onClick={() => setCategoriaSeleccionada(categoria)}
-            className="w-full text-left bg-purple-900/40 border-2 border-purple-500/60 rounded-2xl p-5 hover:scale-[1.01] hover:border-purple-400/80 hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] transition-all duration-300"
-            style={{ borderLeftWidth: '4px', borderLeftColor: categoria.color }}
-          >
-            <div className="flex items-center gap-4">
-              <span className="text-3xl shrink-0">{categoria.emoji}</span>
-              <div>
-                <h2 className="text-yellow-300 font-bold text-lg">{categoria.nombre}</h2>
-                <p className="text-purple-300 text-sm">
-                  {categoria.nombre} · {contarEjercicios(categoria.nombre)}
+      <TabsRitualesMeditaciones tab={tab} onChange={cambiarTab} />
+
+      {tab === 'rituales' && (
+        <>
+          <div className="space-y-3">
+            {categorias.map((categoria) => (
+              <button
+                key={categoria.nombre}
+                type="button"
+                onClick={() => setCategoriaSeleccionada(categoria)}
+                className="w-full text-left bg-purple-900/40 border-2 border-purple-500/60 rounded-2xl p-5 hover:scale-[1.01] hover:border-purple-400/80 hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] transition-all duration-300"
+                style={{ borderLeftWidth: '4px', borderLeftColor: categoria.color }}
+              >
+                <div className="flex items-center gap-4">
+                  <span className="text-3xl shrink-0">{categoria.emoji}</span>
+                  <div>
+                    <h2 className="text-yellow-300 font-bold text-lg">{categoria.nombre}</h2>
+                    <p className="text-purple-300 text-sm">
+                      {categoria.nombre} · {contarEjercicios(categoria.nombre)}
+                    </p>
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+
+          <p className="mt-10 mb-4 text-center text-[11px] leading-relaxed text-purple-400/70 px-2">
+            Contenido con fines de entretenimiento y bienestar personal. No garantiza
+            resultados ni sustituye consejo profesional.
+          </p>
+        </>
+      )}
+
+      {tab === 'meditaciones' && (
+        <div className="space-y-3">
+          {MEDITACIONES.map((med) => {
+            const bloqueada = med.premium && !isPremium
+            return (
+              <button
+                key={med.id}
+                type="button"
+                onClick={() => setMeditacionSeleccionada(med)}
+                className="w-full text-left bg-purple-900/40 border-2 border-[#fbbf24]/40 rounded-2xl p-5 hover:border-[#fbbf24]/70 hover:shadow-[0_0_20px_rgba(251,191,36,0.25)] transition-all duration-300"
+              >
+                <div className="flex items-start justify-between gap-3 mb-2">
+                  <h2 className="text-yellow-300 font-bold text-lg leading-snug">
+                    {bloqueada && <span className="mr-1.5">🔒</span>}
+                    {med.titulo}
+                  </h2>
+                  <span className="shrink-0 bg-gradient-to-r from-yellow-400 to-yellow-600 text-purple-900 text-xs font-bold px-2 py-0.5 rounded-full">
+                    Premium
+                  </span>
+                </div>
+                <p className="text-purple-200 text-sm leading-relaxed mb-2">
+                  {med.descripcion}
                 </p>
-              </div>
-            </div>
-          </button>
-        ))}
-      </div>
-
-      <p className="mt-10 mb-4 text-center text-[11px] leading-relaxed text-purple-400/70 px-2">
-        Contenido con fines de entretenimiento y bienestar personal. No garantiza
-        resultados ni sustituye consejo profesional.
-      </p>
+                <p className="text-purple-400 text-xs">⏱ {med.duracionLabel}</p>
+              </button>
+            )
+          })}
+        </div>
+      )}
     </div>
     <PaywallModal open={paywallOpen} onClose={() => setPaywallOpen(false)} />
     </>

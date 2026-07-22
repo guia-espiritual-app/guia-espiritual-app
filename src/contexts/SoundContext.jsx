@@ -19,6 +19,8 @@ export function SoundProvider({ children }) {
   const soundEnabledRef = useRef(false)
   const bgMusicRef = useRef(null)
   const chimeRef = useRef(null)
+  /** Evita que la música de fondo se reanude sola mientras suena otro audio (ej. meditación). */
+  const suppressBgRef = useRef(false)
 
   const createBgHowl = useCallback(() => {
     console.log('[SoundContext] creando instancia de música de fondo — src:', bgMusic)
@@ -116,11 +118,24 @@ export function SoundProvider({ children }) {
     }
   }, [ensureBgHowl, ensureChimeHowl])
 
+  const pauseBgForContent = useCallback(() => {
+    suppressBgRef.current = true
+    pauseBgMusic()
+  }, [pauseBgMusic])
+
+  const resumeBgAfterContent = useCallback(() => {
+    suppressBgRef.current = false
+    if (soundEnabledRef.current) {
+      playBgMusic()
+    }
+  }, [playBgMusic])
+
   useEffect(() => {
     const resumeIfNeeded = () => {
       if (
         document.visibilityState === 'visible' &&
         soundEnabledRef.current &&
+        !suppressBgRef.current &&
         isHowlUsable(bgMusicRef.current) &&
         !bgMusicRef.current.playing()
       ) {
@@ -204,8 +219,20 @@ export function SoundProvider({ children }) {
       welcomeVisible,
       dismissWelcome,
       activateFromWelcome,
+      pauseBgForContent,
+      resumeBgAfterContent,
     }),
-    [soundEnabled, toggleSound, playChime, enableSound, welcomeVisible, dismissWelcome, activateFromWelcome]
+    [
+      soundEnabled,
+      toggleSound,
+      playChime,
+      enableSound,
+      welcomeVisible,
+      dismissWelcome,
+      activateFromWelcome,
+      pauseBgForContent,
+      resumeBgAfterContent,
+    ]
   )
 
   return (

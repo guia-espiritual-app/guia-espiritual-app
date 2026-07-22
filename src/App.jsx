@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
+import ScrollToTop from './components/ScrollToTop'
 import ProtectedRoute from './components/ProtectedRoute'
 import Home from './pages/Home'
 import Tarot from './pages/Tarot'
@@ -23,8 +24,8 @@ export default function App() {
   return (
     <PremiumProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
-        
           {/* Rutas públicas */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -46,7 +47,6 @@ export default function App() {
             <Route path="/academia" element={<Academia />} />
             <Route path="/planes" element={<Planes />} />
           </Route>
-
         </Routes>
       </BrowserRouter>
     </PremiumProvider>
