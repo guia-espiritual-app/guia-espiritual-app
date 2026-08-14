@@ -58,9 +58,8 @@ export default function Paywall({ className = '' }) {
       }
     } catch (err) {
       console.error('[Paywall] Error cargando offering:', err)
-      const mensaje = getRevenueCatErrorMessage(err)
       setPriceString(null)
-      setError(mensaje)
+      setError(getRevenueCatErrorMessage(err))
     } finally {
       setPriceLoading(false)
     }

@@ -10,6 +10,76 @@ import AvisoLimiteDiario from '../components/AvisoLimiteDiario'
 import BotonAtras from '../components/BotonAtras'
 import avatarChaman from '../assets/avatares/chaman.png'
 
+const APERTURAS_SI = [
+  'Las energías de tus registros se inclinan hacia el SÍ...',
+  'La respuesta no es definitiva, pero la energía apunta más al SÍ...',
+  'En este momento, tus registros muestran una suave tendencia hacia el SÍ...',
+]
+
+const APERTURAS_NO = [
+  'Los registros muestran una tendencia hacia el NO en este momento...',
+  'La energía actual se inclina con suavidad hacia el NO...',
+  'Tus registros revelan una inclinación momentánea hacia el NO...',
+]
+
+const GUIAS_REFLEXIVAS = [
+  'Escucha lo que tu intuición confirma cuando respiras en silencio. La claridad llega al honrar tu ritmo interior.',
+  'Observa las señales sutiles de los próximos días: coincidencias, sensaciones y sueños pueden completar este mensaje.',
+  'Usa esta inclinación como espejo, no como mandato. Tu alma ya conoce el siguiente paso alineado contigo.',
+]
+
+const CIERRE_SENSIBLE =
+  'Recuerda: esta es una reflexión espiritual, no un consejo médico, legal ni financiero. Para decisiones importantes, busca acompañamiento profesional.'
+
+function esPreguntaSensible(pregunta, areaVida) {
+  const texto = `${pregunta} ${areaVida || ''}`.toLowerCase()
+  const patrones = [
+    /\bsalud\b/,
+    /\benferme/,
+    /\bm[eé]dic/,
+    /\bdiagn[oó]st/,
+    /\bc[aá]ncer\b/,
+    /\bembaraz/,
+    /\bdolor\b/,
+    /\bdinero\b/,
+    /\binversi/,
+    /\bdeuda/,
+    /\bbanco/,
+    /\blegal\b/,
+    /\babogad/,
+    /\bjuicio/,
+    /\bdivorci/,
+    /\bherencia/,
+    /\bcontrat/,
+  ]
+  if (areaVida === 'Salud y bienestar' || areaVida === 'Carrera y abundancia') {
+    return true
+  }
+  return patrones.some((p) => p.test(texto))
+}
+
+function elegir(lista) {
+  return lista[Math.floor(Math.random() * lista.length)]
+}
+
+/** Inclinación sí/no suavizada (sesgo leve hacia sí ~60%). */
+function construirRespuestaPregunta({ pregunta, nombre, areaVida }) {
+  const inclinaSi = Math.random() < 0.6
+  const apertura = elegir(inclinaSi ? APERTURAS_SI : APERTURAS_NO)
+  const guia = elegir(GUIAS_REFLEXIVAS)
+  const sensible = esPreguntaSensible(pregunta, areaVida)
+
+  let texto = `Respecto a tu pregunta: "${pregunta}"\n\n${apertura} ${guia}`
+
+  if (sensible) {
+    texto += `\n\n${CIERRE_SENSIBLE}`
+  } else {
+    texto += ` Confía, ${nombre}, en lo que tu corazón reconoce como verdad viva.`
+  }
+
+  return texto
+}
+
 export default function RegistrosAkashicos() {
   const { isPremium } = usePremium()
   const { playChime } = useSound()
@@ -70,12 +140,19 @@ export default function RegistrosAkashicos() {
 
     const mensajes = lecturasPorArea[areaVida] || lecturasPorArea['Propósito de vida']
     const indice = Math.floor(Math.random() * mensajes.length)
+
+    let mensajeAdicional = null
+    if (preguntaPrincipal?.trim()) {
+      mensajeAdicional = construirRespuestaPregunta({
+        pregunta: preguntaPrincipal.trim(),
+        nombre,
+        areaVida,
+      })
+    }
     
     return {
       lecturaPrincipal: mensajes[indice],
-      mensajeAdicional: preguntaPrincipal 
-        ? `Respecto a tu pregunta: "${preguntaPrincipal}", los registros sugieren que la respuesta que buscas ya habita en tu corazón. Permite que el silencio y la meditación te revelen lo que tu alma ya sabe. Confía en las señales que el universo te envía.`
-        : null
+      mensajeAdicional,
     }
   }
 
@@ -141,7 +218,7 @@ export default function RegistrosAkashicos() {
                 <span>💫</span>
                 <span>Guía sobre tu Pregunta</span>
               </h2>
-              <p className="text-yellow-100 leading-relaxed italic">
+              <p className="text-yellow-100 leading-relaxed italic whitespace-pre-line">
                 {lectura.mensajeAdicional}
               </p>
             </div>

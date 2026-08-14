@@ -60,6 +60,59 @@ export function getPackagePriceString(pkg) {
   return pkg.product?.priceString ?? pkg.storeProduct?.priceString ?? null
 }
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
+/** Normaliza la respuesta de getOfferings (plugin a veces envuelve en .offerings). */
+function normalizeOfferingsResult(result) {
+  if (!result) return null
+  if (result.offerings) return result.offerings
+  if (result.all !== undefined || result.current !== undefined) return result
+  return result
+}
+
+async function tryInvalidateCustomerInfoCache() {
+  if (typeof Purchases.invalidateCustomerInfoCache !== 'function') {
+    return false
+  }
+
+  try {
+    await Purchases.invalidateCustomerInfoCache()
+    return true
+  } catch (error) {
+    console.warn('[RevenueCat] invalidateCustomerInfoCache() falló:', error)
+    return false
+  }
+}
+
+async function getOfferingsWithRetry({ maxAttempts = 3, delayMs = 1500 } = {}) {
+  let lastOfferings = null
+  let lastError = null
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      const result = await Purchases.getOfferings()
+      const offeringsObj = normalizeOfferingsResult(result)
+      lastOfferings = offeringsObj
+      lastError = null
+
+      if (offeringsObj?.current) {
+        return { offerings: offeringsObj, lastError: null }
+      }
+    } catch (error) {
+      lastError = error
+      console.error(`[RevenueCat] getOfferings() falló en intento ${attempt}:`, error)
+    }
+
+    if (attempt < maxAttempts) {
+      await sleep(delayMs)
+    }
+  }
+
+  return { offerings: lastOfferings, lastError }
+}
+
 export async function fetchPremiumPackage() {
   await whenRevenueCatReady()
 
@@ -70,7 +123,16 @@ export async function fetchPremiumPackage() {
     )
   }
 
-  const { offerings } = await Purchases.getOfferings()
+  await tryInvalidateCustomerInfoCache()
+
+  const { offerings, lastError } = await getOfferingsWithRetry({
+    maxAttempts: 3,
+    delayMs: 1500,
+  })
+
+  if (lastError && !offerings?.current) {
+    throw new Error(getRevenueCatErrorMessage(lastError))
+  }
 
   if (!offerings?.current) {
     throw new Error(

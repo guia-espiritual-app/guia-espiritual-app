@@ -34,21 +34,27 @@ export default function BurbujaGU({
   const esHome = seccion === 'inicio'
 
   return (
-    <div className={`flex items-center gap-0 text-left ${className}`}>
+    <div
+      className={`flex items-center gap-0 text-left ${
+        esHome ? 'justify-center -translate-x-6' : ''
+      } ${className}`}
+    >
       <img
         src={avatarSrc}
         alt={avatarAlt}
         className={`relative z-10 w-auto object-contain shrink-0 drop-shadow-[0_0_12px_rgba(251,191,36,0.25)] ${
           esHome
-            ? 'h-[230px] max-w-[240px]'
-            : 'h-[150px] max-w-[155px]'
+            ? 'h-[230px] max-w-[240px] -mr-10'
+            : 'h-[150px] max-w-[155px] -mr-2'
         }`}
       />
 
-      {/* Burbuja pegada a GU, un poco más arriba (altura de la cabeza/boca) */}
+      {/* Burbuja pegada a GU (globo de diálogo) */}
       <div
-        className={`relative z-0 flex-1 min-w-0 -ml-1 ${
-          esHome ? '-translate-y-7' : '-translate-y-3'
+        className={`relative z-0 min-w-0 ${
+          esHome
+            ? 'w-[min(52%,13.5rem)] -ml-3 -translate-y-4'
+            : 'flex-1 -translate-y-2'
         }`}
       >
         <div
@@ -56,14 +62,14 @@ export default function BurbujaGU({
             esHome ? 'px-2.5 py-2' : 'px-3.5 py-3'
           }`}
         >
-          {/* Cola del bocadillo: borde dorado + relleno (apunta a GU) */}
+          {/* Cola del bocadillo: casi tocando a GU */}
           <span
             aria-hidden="true"
-            className="pointer-events-none absolute left-[-14px] top-[42%] w-0 h-0 border-y-[10px] border-y-transparent border-r-[14px] border-r-[#fbbf24]/45"
+            className="pointer-events-none absolute left-[-8px] top-[40%] w-0 h-0 border-y-[7px] border-y-transparent border-r-[9px] border-r-[#fbbf24]/45"
           />
           <span
             aria-hidden="true"
-            className="pointer-events-none absolute left-[-11px] top-[calc(42%+1.5px)] w-0 h-0 border-y-[8.5px] border-y-transparent border-r-[12px] border-r-[#2d1b4e]"
+            className="pointer-events-none absolute left-[-5px] top-[calc(40%+1.5px)] w-0 h-0 border-y-[5.5px] border-y-transparent border-r-[7px] border-r-[#2d1b4e]"
           />
 
           <p

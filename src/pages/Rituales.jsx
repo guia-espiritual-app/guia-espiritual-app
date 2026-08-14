@@ -7,17 +7,29 @@ import Paywall from '../components/Paywall'
 import MeditacionPlayer from '../components/MeditacionPlayer'
 import iconRituales from '../assets/avatares/rituales.png'
 import ritualesData from '../data/rituales.json'
+import audioMeditacion1 from '../assets/sounds/meditacion-1.mp3'
+import audioMeditacion2 from '../assets/sounds/meditacion-2-ansiedad.mp3'
 
 const categorias = [...ritualesData.categorias].sort((a, b) => a.orden - b.orden)
 
 const MEDITACIONES = [
   {
     id: 'meditacion-1',
-    titulo: 'Meditación Guiada de Relajación',
+    titulo: 'Meditación guiada para la depresión',
     descripcion:
-      'Una guía suave para soltar la tensión, calmar la mente y volver al presente con respiración consciente.',
+      'Una meditación suave para acompañarte en momentos de tristeza, calmar la mente y reconectar con la calma interior.',
     duracionLabel: 'Audio guiado',
     premium: true,
+    audioSrc: audioMeditacion1,
+  },
+  {
+    id: 'meditacion-2',
+    titulo: 'Meditación guiada para la ansiedad',
+    descripcion:
+      'Una guía para aliviar la tensión, calmar la respiración y encontrar serenidad en momentos de inquietud.',
+    duracionLabel: 'Audio guiado',
+    premium: true,
+    audioSrc: audioMeditacion2,
   },
 ]
 
@@ -261,7 +273,7 @@ export default function Rituales() {
             </button>
           </div>
         ) : (
-          <MeditacionPlayer />
+          <MeditacionPlayer src={med.audioSrc} />
         )}
       </div>
     )

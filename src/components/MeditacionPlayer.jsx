@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { Howl, Howler } from 'howler'
 import { useSound } from '../contexts/SoundContext'
-import meditacionAudio from '../assets/sounds/meditacion-1.mp3'
 
 function formatearTiempo(segundos) {
   if (!Number.isFinite(segundos) || segundos < 0) return '0:00'
@@ -13,8 +12,9 @@ function formatearTiempo(segundos) {
 /**
  * Reproductor de meditación con Howler (html5: true, obligatorio en iOS WebView).
  * Instancia separada de la música de fondo y el chime.
+ * @param {string} src — URL del audio importado como módulo Vite
  */
-export default function MeditacionPlayer({ className = '' }) {
+export default function MeditacionPlayer({ src, className = '' }) {
   const { pauseBgForContent, resumeBgAfterContent } = useSound()
   const howlRef = useRef(null)
   const rafRef = useRef(null)
@@ -41,8 +41,15 @@ export default function MeditacionPlayer({ className = '' }) {
   }, [stopProgressLoop])
 
   useEffect(() => {
+    if (!src) return undefined
+
+    setReady(false)
+    setPlaying(false)
+    setProgress(0)
+    setDuration(0)
+
     const howl = new Howl({
-      src: [meditacionAudio],
+      src: [src],
       format: ['mp3'],
       html5: true,
       preload: true,
@@ -87,7 +94,7 @@ export default function MeditacionPlayer({ className = '' }) {
       howl.unload()
       howlRef.current = null
     }
-  }, [pauseBgForContent, resumeBgAfterContent, stopProgressLoop, tickProgress])
+  }, [src, pauseBgForContent, resumeBgAfterContent, stopProgressLoop, tickProgress])
 
   const togglePlay = () => {
     const howl = howlRef.current

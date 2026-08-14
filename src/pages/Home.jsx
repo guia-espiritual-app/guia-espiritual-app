@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import logoGuia from '../assets/logo-guia.png'
 import avatarVidente from '../assets/avatares/vidente.png'
 import avatarSacerdotisa from '../assets/avatares/sacerdotisa.png'
@@ -33,8 +33,17 @@ const servicioIconClass =
 
 export default function Home() {
   const { soundEnabled, toggleSound } = useSound()
+  const location = useLocation()
+  const navigate = useNavigate()
   const [modalConsulta, setModalConsulta] = useState(false)
   const [toastProximamente, setToastProximamente] = useState(false)
+
+  useEffect(() => {
+    if (!location.state?.openConsulta) return
+
+    setModalConsulta(true)
+    navigate(location.pathname, { replace: true, state: {} })
+  }, [location.state, location.pathname, navigate])
 
   const handleBannerProximamente = () => {
     setToastProximamente(true)
@@ -42,18 +51,18 @@ export default function Home() {
   }
 
   return (
-    <div className="max-w-md mx-auto px-5 pt-4 pb-24">
-      <header className="text-center mb-8">
-        <BurbujaGU seccion="inicio" className="mt-5 mb-5" />
-
+    <div className="max-w-md mx-auto px-5 pt-2 pb-24">
+      <header className="text-center mb-4">
         <img
           src={logoGuia}
           alt="Guía Espiritual"
-          className="mx-auto mb-5 max-w-[200px] w-full h-auto"
+          className="mx-auto mt-3 mb-0 max-w-[170px] w-full h-auto"
         />
 
-        {/* Control de frecuencia sonora (junto al saludo) */}
-        <div className="mb-5 flex items-center gap-2.5 rounded-2xl border border-[#fbbf24]/30 bg-[#2d1b4e]/70 px-3 py-2.5 text-left shadow-[0_0_16px_rgba(251,191,36,0.08)]">
+        <BurbujaGU seccion="inicio" className="-mt-1 -mb-8" />
+
+        {/* Control de frecuencia sonora */}
+        <div className="mb-2 flex items-center gap-2.5 rounded-2xl border border-[#fbbf24]/30 bg-[#2d1b4e]/70 px-3 py-2.5 text-left shadow-[0_0_16px_rgba(251,191,36,0.08)]">
           <p className="flex-1 min-w-0 text-[11px] leading-snug text-purple-200 sm:text-xs">
             {soundEnabled
               ? 'Frecuencia sonora activa 🎻'
@@ -76,7 +85,7 @@ export default function Home() {
       </header>
 
       {/* Revelaciones: lecturas místicas */}
-      <section className="mb-8">
+      <section className="mb-6">
         <div className="flex items-center gap-2 mb-3 px-1">
           <span className="text-indigo-300 text-sm font-semibold tracking-wide uppercase">
             ✨ Revelaciones
