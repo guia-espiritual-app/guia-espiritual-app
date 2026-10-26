@@ -1,4 +1,4 @@
-import { NavLink, Outlet, useNavigate } from 'react-router-dom'
+import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import iconTienda from '../assets/avatares/tienda.png'
 import iconAcademia from '../assets/avatares/academia.png'
 import iconConsulta from '../assets/avatares/consulta.png'
@@ -51,12 +51,20 @@ function ConsultaTab() {
 }
 
 export default function Layout() {
+  const { pathname } = useLocation()
+  const juegoPantallaCompleta = pathname === '/juego'
+
   return (
-    <div className="min-h-screen flex flex-col bg-[#1a1a2e] text-purple-100">
-      <main className="flex-1 pt-3 pb-20 relative z-10">
+    <div
+      className={`min-h-screen flex flex-col bg-[#1a1a2e] text-purple-100 ${
+        juegoPantallaCompleta ? 'h-dvh overflow-hidden' : ''
+      }`}
+    >
+      <main className={juegoPantallaCompleta ? 'flex-1 relative z-10' : 'flex-1 pt-3 pb-20 relative z-10'}>
         <Outlet />
       </main>
 
+      {!juegoPantallaCompleta && (
       <nav className="fixed inset-x-0 bottom-0 z-50 bg-[#0f1020]/95 border-t border-purple-700/40 backdrop-blur-md">
         <div className="max-w-md mx-auto flex justify-around px-2 py-2">
           {navItems.slice(0, 3).map((item) => (
@@ -85,6 +93,7 @@ export default function Layout() {
           ))}
         </div>
       </nav>
+      )}
     </div>
   )
 }

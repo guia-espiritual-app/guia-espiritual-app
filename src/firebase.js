@@ -6,6 +6,7 @@ import {
   GoogleAuthProvider,
 } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
+import { getFunctions } from 'firebase/functions'
 import { Capacitor } from '@capacitor/core'
 
 const firebaseConfig = {
@@ -29,5 +30,8 @@ export const auth = Capacitor.isNativePlatform()
 export const googleProvider = Capacitor.isNativePlatform() ? null : new GoogleAuthProvider()
 
 export const db = getFirestore(app)
+
+/** Callable functions (p. ej. verifyPayPalSubscription) — región us-central1 */
+export const functions = getFunctions(app, 'us-central1')
 
 export default app

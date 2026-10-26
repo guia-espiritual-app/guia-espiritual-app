@@ -10,6 +10,7 @@ import iconRituales from '../assets/avatares/rituales.png'
 import iconAcademia from '../assets/avatares/academia.png'
 import iconTienda from '../assets/avatares/tienda.png'
 import iconConsulta from '../assets/avatares/consulta.png'
+import iconGu from '../assets/avatares/gu.png'
 import BurbujaGU from '../components/BurbujaGU'
 import ConsultaPersonalizadaModal from '../components/ConsultaPersonalizadaModal'
 import { useSound } from '../contexts/SoundContext'
@@ -23,7 +24,7 @@ const revelaciones = [
 ]
 
 const revelacionCardClass =
-  'bg-gradient-to-b from-indigo-950/50 to-purple-900/40 border-2 border-indigo-400/50 rounded-2xl p-5 flex flex-col items-center text-center transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_24px_rgba(99,102,241,0.45)] hover:border-indigo-300/70 relative cursor-pointer'
+  'bg-purple-950/30 border border-indigo-400/25 rounded-xl p-2.5 flex flex-col items-center text-center transition-colors duration-200 hover:border-indigo-300/40 relative cursor-pointer'
 
 const servicioBannerClass =
   'w-full bg-gradient-to-r from-[#2d1b4e]/90 to-yellow-950/40 border-2 border-[#fbbf24]/45 rounded-2xl px-4 py-3.5 flex items-center gap-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_24px_rgba(251,191,36,0.3)] hover:border-[#fbbf24]/70 text-left'
@@ -59,7 +60,31 @@ export default function Home() {
           className="mx-auto mt-3 mb-0 max-w-[170px] w-full h-auto"
         />
 
-        <BurbujaGU seccion="inicio" className="-mt-1 -mb-8" />
+        <BurbujaGU seccion="inicio" className="-mt-1 -mb-4" />
+
+        <Link
+          to="/juego"
+          className="mb-5 block w-full overflow-hidden rounded-3xl border-2 border-[#fbbf24]/75 bg-gradient-to-br from-[#4c1d95] via-[#2d1b4e] to-yellow-950/60 px-5 py-6 text-left shadow-[0_0_40px_rgba(251,191,36,0.32)] transition-all duration-300 hover:scale-[1.02] hover:border-[#fbbf24] hover:shadow-[0_0_48px_rgba(251,191,36,0.45)]"
+        >
+          <div className="flex items-center gap-4">
+            <img
+              src={iconGu}
+              alt=""
+              className="h-28 w-28 shrink-0 object-contain drop-shadow-[0_0_18px_rgba(251,191,36,0.45)]"
+            />
+            <div className="min-w-0">
+              <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#fbbf24]">
+                Experiencia principal
+              </p>
+              <h2 className="mt-1 text-2xl font-bold leading-tight text-yellow-200">
+                Las Aventuras del Maestro GU
+              </h2>
+              <p className="mt-2 text-sm leading-snug text-purple-100">
+                Entra a la aventura.
+              </p>
+            </div>
+          </div>
+        </Link>
 
         {/* Control de frecuencia sonora */}
         <div className="mb-2 flex items-center gap-2.5 rounded-2xl border border-[#fbbf24]/30 bg-[#2d1b4e]/70 px-3 py-2.5 text-left shadow-[0_0_16px_rgba(251,191,36,0.08)]">
@@ -83,43 +108,6 @@ export default function Home() {
           ¿Qué deseas descubrir hoy?
         </p>
       </header>
-
-      {/* Revelaciones: lecturas místicas */}
-      <section className="mb-6">
-        <div className="flex items-center gap-2 mb-3 px-1">
-          <span className="text-indigo-300 text-sm font-semibold tracking-wide uppercase">
-            ✨ Revelaciones
-          </span>
-          <span className="flex-1 h-px bg-indigo-400/30" />
-        </div>
-        <p className="text-purple-300/80 text-xs mb-4 px-1">
-          Lecturas y guías místicas para tu camino
-        </p>
-
-        <div className="grid grid-cols-2 gap-4">
-          {revelaciones.map((item) => (
-            <Link key={item.title} to={item.to} className={revelacionCardClass}>
-              <span className="absolute top-2 left-2 bg-indigo-500/30 text-indigo-100 text-[9px] font-bold px-1.5 py-0.5 rounded border border-indigo-400/40">
-                Lectura
-              </span>
-              {item.premium && (
-                <div className="absolute top-2 right-2">
-                  <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-purple-900 text-xs font-bold px-2 py-1 rounded-full">
-                    PREMIUM
-                  </span>
-                </div>
-              )}
-              <img
-                src={item.avatar}
-                alt=""
-                className="h-[88px] w-auto object-contain mb-3 mt-3 drop-shadow-[0_0_10px_rgba(129,140,248,0.25)]"
-              />
-              <h2 className="text-yellow-300 font-bold text-lg mb-1">{item.title}</h2>
-              <p className="text-purple-200 text-sm">{item.desc}</p>
-            </Link>
-          ))}
-        </div>
-      </section>
 
       {/* Servicios */}
       <section className="space-y-4 mb-8">
@@ -220,6 +208,29 @@ export default function Home() {
           </p>
         )}
       </button>
+
+      <section className="mt-8">
+        <div className="flex items-center gap-2 mb-3 px-1">
+          <span className="text-purple-300/80 text-xs font-medium">
+            Más herramientas de reflexión
+          </span>
+          <span className="flex-1 h-px bg-purple-400/20" />
+        </div>
+
+        <div className="grid grid-cols-2 gap-2">
+          {revelaciones.map((item) => (
+            <Link key={item.title} to={item.to} className={revelacionCardClass}>
+              <img
+                src={item.avatar}
+                alt=""
+                className="h-12 w-auto object-contain mb-1.5"
+              />
+              <h2 className="text-purple-100 font-medium text-sm leading-tight">{item.title}</h2>
+              <p className="text-purple-300/80 text-[11px] leading-snug mt-0.5">{item.desc}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       <ConsultaPersonalizadaModal
         abierto={modalConsulta}

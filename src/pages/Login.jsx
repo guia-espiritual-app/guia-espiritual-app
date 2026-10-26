@@ -73,7 +73,9 @@ export default function Login() {
     }
   }
 
-  // Temporalmente deshabilitado para Android nativo (se puede restaurar fácil)
+  // Guideline 4.8: en iOS nativo no se ofrece "Iniciar sesión con Google".
+  // No hay botón de Google en ninguna plataforma; Android y web siguen solo con correo.
+
   // const handleGoogleLogin = async () => {
   //   setError('')
   //   setLoading(true)

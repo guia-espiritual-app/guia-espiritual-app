@@ -1,9 +1,17 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { signOut, updateProfile } from 'firebase/auth'
+import {
+  deleteUser,
+  EmailAuthProvider,
+  reauthenticateWithCredential,
+  signOut,
+  updateProfile,
+} from 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth'
+import { collection, deleteDoc, doc, getDocs } from 'firebase/firestore'
 import { Capacitor } from '@capacitor/core'
-import { auth } from '../firebase'
+import { auth, db } from '../firebase'
+import { usePremium } from '../contexts/PremiumContext'
 
 export default function Perfil() {
   const [user, loading] = useAuthState(auth)
@@ -14,6 +22,11 @@ export default function Perfil() {
   const [savingName, setSavingName] = useState(false)
   const [nameMessage, setNameMessage] = useState('')
   const [nameError, setNameError] = useState('')
+  const [deleteStep, setDeleteStep] = useState(null)
+  const [deletePassword, setDeletePassword] = useState('')
+  const [deleteError, setDeleteError] = useState('')
+  const [deleting, setDeleting] = useState(false)
+  const { isPremium } = usePremium()
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -63,6 +76,55 @@ export default function Perfil() {
     setEditingName(false)
     setNameInput('')
     setNameError('')
+  }
+
+  const borrarDatosFirestore = async (uid) => {
+    const readings = await getDocs(collection(db, 'users', uid, 'readings'))
+    await Promise.all(readings.docs.map((item) => deleteDoc(item.ref)))
+    await deleteDoc(doc(db, 'users', uid))
+  }
+
+  const eliminarUsuarioAuth = async (currentUser, password) => {
+    try {
+      await deleteUser(currentUser)
+    } catch (error) {
+      if (error?.code !== 'auth/requires-recent-login') throw error
+      if (!password) {
+        const recentLogin = new Error('Se necesita la contraseña reciente.')
+        recentLogin.code = 'auth/requires-recent-login'
+        throw recentLogin
+      }
+      const credential = EmailAuthProvider.credential(currentUser.email, password)
+      await reauthenticateWithCredential(currentUser, credential)
+      await deleteUser(currentUser)
+    }
+  }
+
+  const handleDeleteAccount = async () => {
+    const currentUser = auth.currentUser
+    if (!currentUser) return
+
+    setDeleting(true)
+    setDeleteError('')
+
+    try {
+      await borrarDatosFirestore(currentUser.uid)
+      await eliminarUsuarioAuth(currentUser, deletePassword)
+      navigate('/login')
+    } catch (error) {
+      console.error('Error al eliminar cuenta:', error)
+      if (error?.code === 'auth/requires-recent-login') {
+        setDeleteStep('password')
+        setDeleteError('Por seguridad, escribe tu contraseña para confirmar el borrado.')
+      } else if (error?.code === 'auth/wrong-password' || error?.code === 'auth/invalid-credential') {
+        setDeleteStep('password')
+        setDeleteError('La contraseña no es correcta. Inténtalo de nuevo.')
+      } else {
+        setDeleteError('No pudimos eliminar la cuenta. Intenta de nuevo en unos minutos.')
+      }
+    } finally {
+      setDeleting(false)
+    }
   }
 
   const handleSaveName = async () => {
@@ -221,6 +283,115 @@ export default function Perfil() {
       >
         🔔 Activar Notificaciones
       </button>
+
+      <button
+        type="button"
+        onClick={() => {
+          setDeleteError('')
+          setDeletePassword('')
+          setDeleteStep('confirm1')
+        }}
+        className="w-full border border-red-400/50 text-red-200 font-medium py-3 px-6 rounded-xl mb-3 hover:bg-red-950/40 transition-colors"
+      >
+        Eliminar mi cuenta
+      </button>
+
+      {deleteStep && (
+        <div className="mb-4 rounded-2xl border-2 border-red-500/50 bg-red-950/40 px-4 py-4 text-left">
+          {deleteStep === 'confirm1' && (
+            <>
+              <p className="text-red-100 text-sm leading-relaxed mb-3">
+                Esta acción es permanente. Se borrarán tu perfil, tus lecturas y el acceso a esta cuenta.
+              </p>
+              {isPremium && (
+                <p className="text-yellow-200 text-sm leading-relaxed mb-3">
+                  Tienes una suscripción activa. Eliminar la cuenta no cancela el cobro: cancélala en la App Store, Google Play o PayPal antes de continuar.
+                </p>
+              )}
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  onClick={() => setDeleteStep('confirm2')}
+                  className="flex-1 bg-red-600 text-white font-bold py-2.5 rounded-xl"
+                >
+                  Continuar
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setDeleteStep(null)}
+                  className="flex-1 border border-purple-400/50 text-purple-100 py-2.5 rounded-xl"
+                >
+                  Cancelar
+                </button>
+              </div>
+            </>
+          )}
+
+          {deleteStep === 'confirm2' && (
+            <>
+              <p className="text-red-100 text-sm leading-relaxed mb-3">
+                Esta acción es permanente. No podrás recuperar la cuenta ni las lecturas guardadas.
+              </p>
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  onClick={handleDeleteAccount}
+                  disabled={deleting}
+                  className="flex-1 bg-red-600 text-white font-bold py-2.5 rounded-xl disabled:opacity-50"
+                >
+                  {deleting ? 'Eliminando...' : 'Sí, eliminar mi cuenta'}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setDeleteStep(null)}
+                  disabled={deleting}
+                  className="flex-1 border border-purple-400/50 text-purple-100 py-2.5 rounded-xl"
+                >
+                  Cancelar
+                </button>
+              </div>
+            </>
+          )}
+
+          {deleteStep === 'password' && (
+            <>
+              <p className="text-red-100 text-sm leading-relaxed mb-3">
+                Firebase pide una sesión reciente. Escribe tu contraseña para terminar de eliminar la cuenta.
+              </p>
+              <input
+                type="password"
+                value={deletePassword}
+                onChange={(e) => setDeletePassword(e.target.value)}
+                placeholder="Tu contraseña"
+                autoComplete="current-password"
+                className="w-full mb-3 bg-black/30 border border-red-400/40 rounded-xl px-4 py-3 text-purple-100 outline-none"
+              />
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  onClick={handleDeleteAccount}
+                  disabled={deleting || !deletePassword.trim()}
+                  className="flex-1 bg-red-600 text-white font-bold py-2.5 rounded-xl disabled:opacity-50"
+                >
+                  {deleting ? 'Eliminando...' : 'Confirmar borrado'}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setDeleteStep(null)}
+                  disabled={deleting}
+                  className="flex-1 border border-purple-400/50 text-purple-100 py-2.5 rounded-xl"
+                >
+                  Cancelar
+                </button>
+              </div>
+            </>
+          )}
+
+          {deleteError && (
+            <p className="mt-3 text-red-200 text-xs leading-relaxed">{deleteError}</p>
+          )}
+        </div>
+      )}
 
       <button
         type="button"

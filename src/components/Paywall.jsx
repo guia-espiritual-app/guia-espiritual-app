@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
+import { Link } from 'react-router-dom'
 import { Capacitor } from '@capacitor/core'
 import { usePremium } from '../contexts/PremiumContext'
 import {
@@ -6,8 +7,13 @@ import {
   getRevenueCatErrorMessage,
   isRevenueCatConfigured,
 } from '../lib/revenuecat'
+import PayPalSubscribeButton from './PayPalSubscribeButton'
 
-const isNativePlatform = Capacitor.getPlatform() !== 'web'
+const platform = Capacitor.getPlatform()
+const isIOS = platform === 'ios'
+const isNativePlatform = platform === 'ios' || platform === 'android'
+/** PayPal solo en web. En iOS nativo el único flujo de suscripción es RevenueCat. */
+const mostrarPayPal = !isIOS && !isNativePlatform
 
 const BENEFICIOS = [
   { emoji: '✨', texto: 'Lecturas ILIMITADAS en todos los servicios' },
@@ -15,8 +21,22 @@ const BENEFICIOS = [
   { emoji: '🛍️', texto: 'Descuentos en la Tienda y en lecturas' },
   { emoji: '🔮', texto: 'Novedades y contenido nuevo antes que nadie' },
   { emoji: '🚀', texto: 'Ser pionero y acceso anticipado a nuevas funciones' },
-  { emoji: '🎮', texto: 'Acceso al juego (próximamente)' },
 ]
+
+const BENEFICIOS_IOS = [
+  { emoji: '🕯️', texto: 'Todos los rituales originales desbloqueados' },
+  { emoji: '🧘', texto: 'Meditaciones guiadas exclusivas' },
+  { emoji: '📚', texto: 'Contenido extra de la Academia del Maestro GU' },
+  { emoji: '🛍️', texto: 'Descuentos en la Tienda y en consultas personalizadas' },
+  { emoji: '🔮', texto: 'Novedades y contenido nuevo antes que nadie' },
+  { emoji: '🚀', texto: 'Acceso anticipado a nuevas funciones' },
+]
+
+const INTRO_IOS =
+  'Eleva tu camino espiritual con rituales, meditaciones y contenido exclusivo para quienes quieren ir más allá.'
+
+const INTRO_DEFAULT =
+  'Eleva tu camino espiritual: lecturas sin límites, profundidad extra y ventajas exclusivas para quienes quieren ir más allá.'
 
 function esErrorConfiguracion(mensaje = '') {
   const lower = mensaje.toLowerCase()
@@ -53,7 +73,9 @@ export default function Paywall({ className = '' }) {
       setPriceString(precio)
       if (!precio) {
         setError(
-          'El producto existe pero Google Play no devolvió el precio. Verifica que la suscripción esté activa en Play Console y que la app esté instalada desde una pista de prueba.'
+          isIOS
+            ? 'No pudimos obtener el precio de la App Store. Intenta de nuevo en unos minutos.'
+            : 'El producto existe pero Google Play no devolvió el precio. Verifica que la suscripción esté activa en Play Console y que la app esté instalada desde una pista de prueba.'
         )
       }
     } catch (err) {
@@ -146,8 +168,7 @@ export default function Paywall({ className = '' }) {
               Desbloquea Premium
             </h2>
             <p className="text-purple-200/90 text-sm leading-relaxed">
-              Eleva tu camino espiritual: lecturas sin límites, profundidad extra y ventajas exclusivas
-              para quienes quieren ir más allá.
+              {isIOS ? INTRO_IOS : INTRO_DEFAULT}
             </p>
           </div>
 
@@ -156,7 +177,7 @@ export default function Paywall({ className = '' }) {
               ⭐ Todo lo que incluye Premium
             </h3>
             <ul className="space-y-2.5">
-              {BENEFICIOS.map((beneficio) => (
+              {(isIOS ? BENEFICIOS_IOS : BENEFICIOS).map((beneficio) => (
                 <li
                   key={beneficio.texto}
                   className="flex items-start gap-2.5 rounded-xl border border-[#fbbf24]/15 bg-purple-950/40 px-3 py-2.5"
@@ -173,20 +194,22 @@ export default function Paywall({ className = '' }) {
           </div>
 
           <div className="text-center mb-6 py-4 rounded-xl bg-purple-900/40 border border-purple-500/30">
-            {priceLoading ? (
-              <p className="text-purple-300 text-sm animate-pulse">Cargando precio...</p>
-            ) : priceString ? (
-              <>
-                <p className="text-4xl font-bold text-yellow-300">{priceString}</p>
-                <p className="text-purple-300 text-xs mt-1">Suscripción mensual · Cancela cuando quieras</p>
-              </>
-            ) : isNativePlatform ? (
-              <p className="text-purple-300 text-sm">Precio no disponible en este momento</p>
-            ) : (
-              <p className="text-purple-300 text-sm">
-                Las suscripciones están disponibles en la app móvil
-              </p>
-            )}
+            {isNativePlatform ? (
+              priceLoading ? (
+                <p className="text-purple-300 text-sm animate-pulse">Cargando precio...</p>
+              ) : priceString ? (
+                <>
+                  <p className="text-4xl font-bold text-yellow-300">{priceString}</p>
+                  <p className="text-purple-300 text-xs mt-1">Suscripción mensual · Cancela cuando quieras</p>
+                </>
+              ) : (
+                <p className="text-purple-300 text-sm">Precio no disponible en este momento</p>
+              )
+            ) : mostrarPayPal ? (
+              <div className="px-1">
+                <PayPalSubscribeButton />
+              </div>
+            ) : null}
           </div>
 
           {error && (
@@ -225,23 +248,74 @@ export default function Paywall({ className = '' }) {
             </div>
           )}
 
-          <button
-            type="button"
-            onClick={handleSubscribe}
-            disabled={buying || restoring || priceLoading}
-            className="w-full bg-gradient-to-r from-yellow-500 to-mystic-gold hover:from-yellow-400 hover:to-yellow-500 text-purple-950 font-bold py-4 px-6 rounded-xl shadow-lg shadow-yellow-900/30 transition-all duration-300 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 mb-3"
-          >
-            {buying ? 'Procesando...' : 'Suscribirme'}
-          </button>
+          {isNativePlatform && (
+            <>
+              <button
+                type="button"
+                onClick={handleSubscribe}
+                disabled={buying || restoring || priceLoading}
+                className="w-full bg-gradient-to-r from-yellow-500 to-mystic-gold hover:from-yellow-400 hover:to-yellow-500 text-purple-950 font-bold py-4 px-6 rounded-xl shadow-lg shadow-yellow-900/30 transition-all duration-300 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 mb-3"
+              >
+                {buying ? 'Procesando...' : 'Suscribirme'}
+              </button>
 
-          <button
-            type="button"
-            onClick={handleRestore}
-            disabled={buying || restoring}
-            className="w-full bg-transparent border border-purple-500/60 hover:border-purple-400 hover:bg-purple-900/30 text-purple-200 font-medium py-3 px-6 rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {restoring ? 'Restaurando...' : 'Restaurar compras'}
-          </button>
+              <div className="mb-4 space-y-2 text-center">
+                <p className="text-yellow-200 text-sm font-semibold">Premium mensual</p>
+                <p className="text-yellow-300 text-lg font-bold">
+                  {priceLoading ? 'Cargando precio...' : priceString || 'Precio según la tienda de tu dispositivo'}
+                </p>
+                <p className="text-purple-200 text-xs leading-relaxed">
+                  Premium mensual, se renueva automáticamente cada mes. Cancela cuando quieras desde los ajustes de tu cuenta.
+                </p>
+                <p className="text-xs pt-1">
+                  <Link to="/privacy-policy" className="text-[#fbbf24] underline underline-offset-2">
+                    Política de privacidad
+                  </Link>
+                  <span className="text-purple-400 mx-2">·</span>
+                  <a
+                    href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#fbbf24] underline underline-offset-2"
+                  >
+                    Términos de uso
+                  </a>
+                </p>
+              </div>
+
+              <button
+                type="button"
+                onClick={handleRestore}
+                disabled={buying || restoring}
+                className="w-full bg-transparent border border-purple-500/60 hover:border-purple-400 hover:bg-purple-900/30 text-purple-200 font-medium py-3 px-6 rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {restoring ? 'Restaurando...' : 'Restaurar compras'}
+              </button>
+            </>
+          )}
+
+          {mostrarPayPal && (
+            <div className="mt-4 space-y-2 text-center">
+              <p className="text-yellow-200 text-sm font-semibold">Premium mensual</p>
+              <p className="text-purple-200 text-xs leading-relaxed">
+                Premium mensual, se renueva automáticamente cada mes. Cancela cuando quieras desde los ajustes de tu cuenta.
+              </p>
+              <p className="text-xs pt-1">
+                <Link to="/privacy-policy" className="text-[#fbbf24] underline underline-offset-2">
+                  Política de privacidad
+                </Link>
+                <span className="text-purple-400 mx-2">·</span>
+                <a
+                  href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#fbbf24] underline underline-offset-2"
+                >
+                  Términos de uso
+                </a>
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>
